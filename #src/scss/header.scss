@@ -1,0 +1,157 @@
+//====================================================================================================
+
+//====================================================================================================
+/*
+	Стиль иконки бургера
+	.icon-menu{
+		display: block;
+		position: absolute;
+		top: 18px;
+		right: 10px;
+		width:30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+		span{@include anim(0.3s,0s);top: 8px;left: 0px;position: absolute;width: 100%;height: 2px;background-color: #000;
+			&:first-child{top: 0px;}
+			&:last-child{top: auto;bottom: 0px;}
+		}
+		&.active{
+			span{@include scale(0);
+				&:first-child{@include rotate(-45deg);top: 8px;}
+				&:last-child{@include rotate(45deg);bottom: 8px;}
+			}
+		}
+	}
+*/
+
+
+#modal-city {
+	display: none;
+}
+
+.header-page {
+	padding: 30px 0;
+
+	&__container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__start {
+
+	}
+
+	&__medium {
+		display: flex;
+		align-items: center;
+	}
+	&__end {
+
+	}
+
+	&__nav {
+		 margin: 0px 110px;
+	}
+
+	&__ul {
+		list-style: none;
+		display: flex;
+		margin: 0;
+		padding: 0;
+	}
+
+	&__li {
+		margin-right: 20px;
+	}
+
+	&__li:last-child {
+		margin-right: 0px;
+	}
+
+	&__link {
+		text-transform: uppercase;
+		color: #898989;
+		text-decoration: none;
+		display: block;
+		padding: 10px;
+		font-family: $fontfamily;
+		font-weight: 900;
+		font-size: 14px;
+	}
+
+	&__link:hover{
+		color: #1f1f1f;
+	}
+
+	&__text {
+		position: relative;
+		transition: color .2s;
+	}
+
+	&__phone {
+	}
+
+	&__hamburger {
+		display: none;
+		margin-right: -15px;
+	}
+}
+
+@media (max-width: 1387px) {
+	.header-page__nav {
+		margin:0px 45px;
+	}
+}
+
+@media (max-width: 1171px) {
+	.header-page__nav {
+		margin:0px 25px;
+	}
+	.header-page__li {
+		margin:0px 5px;
+	}
+}
+
+@media (max-width: 1092px) {
+	.header-page__start {
+		max-width: 125px;
+		width: 100%;
+	}
+	.logo {
+		width: 125px;
+	}
+	.header-page__link {
+		font-size: 12px;
+	}
+}
+
+  @media (max-width: 992px) {
+	.header-page__nav {
+	  display: none;
+	}
+
+	.header-page__hamburger {
+	  display: block;
+	}
+
+	.header-page__container {
+		justify-content: space-between;
+	}
+
+	.header-page__end {
+		position:  absolute;
+		right: 95px;
+	}
+  }
+
+  @media (max-width: 465px) {
+
+	.header-page__end {
+		display: none;
+	}
+  }
+  
+
+  /* header-page end */
