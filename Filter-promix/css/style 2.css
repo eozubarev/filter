@@ -18,6 +18,11 @@
   font-style: style;
 }
 
+body {
+  font-family: "Roboto";
+  font-size: 14px;
+}
+
 * {
   padding: 0px;
   margin: 0px;
@@ -994,12 +999,6 @@ body.ie .ibg img {
 
 /* components start */
 
-body {
-  font-family: "Roboto";
-  font-size: 14px;
-  color: #898989;
-}
-
 hr {
   border: none;
   /* Убираем границу */
@@ -1127,7 +1126,6 @@ hr {
   text-align: center;
   margin: 0 auto 30px;
   font-family: "Roboto";
-  color: #000;
   font-size: 40px;
   font-weight: 900;
 }
@@ -1601,81 +1599,6 @@ hr {
   margin-top: 80px;
 }
 
-/* section-complex start */
-
-.section-complex {
-  margin-top: 60px;
-}
-
-.section-complex__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: -20px;
-}
-
-.section-complex__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: calc(100% / 3);
-  height: auto;
-  margin-top: 45px;
-  padding: 0 15px;
-}
-
-.section-complex__info {
-  margin: 15px 0px 0px 70px;
-}
-
-.section-complex__icon {
-  width: 40px;
-  min-width: 40px;
-  margin-right: 25px;
-}
-
-.section-complex__footer {
-  margin-top: 70px;
-  margin-bottom: 43px;
-}
-
-.section-complex__footer span {
-  font-size: 24px;
-}
-
-.section-complex__title {
-  max-width: 190px;
-  width: 100%;
-  font-weight: 500;
-  margin-bottom: 5px;
-  font-family: "Roboto";
-  font-size: 20px;
-  color: #000;
-}
-
-.section-complex__form {
-  max-width: 795px;
-  margin: 0 auto;
-}
-
-/* section-complex end */
-
 @media (min-width: 1800px) {
   .section-right__content {
     font-size: 25px;
@@ -1832,37 +1755,6 @@ hr {
     position: absolute;
     right: 95px;
   }
-
-  .section-complex__item {
-    width: 50%;
-  }
-}
-
-@media (max-width: 768px) {
-  .section-complex__container {
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
-
-  .section-complex__item {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  .section-complex__icon {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-
-  .section-complex__title {
-    text-align: center;
-  }
 }
 
 @media (max-width: 767.98px) {
@@ -2012,12 +1904,6 @@ hr {
   .filter-img-change {
     padding-top: 35px;
     max-width: 75%;
-  }
-}
-
-@media (max-width: 380px) {
-  .section-complex__item {
-    width: 100%;
   }
 }
 

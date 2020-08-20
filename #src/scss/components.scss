@@ -1,5 +1,11 @@
 /* components start */
 
+body {
+	font-family: $fontfamily;
+	font-size: 14px;
+	color: #898989;
+}
+
 hr {
   border: none; /* Убираем границу */
   background-color: #a3a3a3; /* Цвет линии */
@@ -127,6 +133,7 @@ hr {
     text-align: center;
     margin: 0 auto 30px;
     font-family: $fontfamily;
+    color: #000;
     font-size: 40px;
     font-weight: 900;    
   }
