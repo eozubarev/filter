@@ -78,7 +78,7 @@ hr {
   .btn-menu__inner::before,
   .btn-menu__inner::after,
   .btn-menu__inner {
-    background: #000;
+    background: #cfad7a;
     width: 100%;
     height: 4px;
     border-radius: 5px;
@@ -131,7 +131,10 @@ hr {
   /* page-title start */
   .page-title {
     text-align: center;
+
     margin: 0 auto 30px;
+    padding: 0px 15px;
+
     font-family: $fontfamily;
     color: #000;
     font-size: 40px;
@@ -144,7 +147,7 @@ hr {
   
   @media (max-width: 576px) {
     .page-title {
-      font-size: 32px;
+      font-size: 29px;
     }
   }
   /* page-title end */
@@ -368,6 +371,37 @@ background: #257a75;
 @media (max-width: 567px) {
 
   .content_toggle2 {
+      text-align: center;
+      display: block;
+      max-width: 125px;
+      width: 100%;
+
+  }
+}
+
+.content_toggle3 {
+  display: none;
+  padding: 10px 14px;
+  background: linear-gradient(to top, #13a89e, #37c6bc);
+  font-size: 15px;
+  text-decoration: none;
+  color: #fff;
+  margin: 10px auto 10px;
+  border-radius: 5px;
+  border-bottom: 3px solid #1f706b;
+}
+.content_toggle3:hover {
+color: #fff;
+background: linear-gradient(to top, #109289, #2ca19a);
+border-bottom: 3px solid #1d756f;
+}
+.content_toggle2:active {
+background: #257a75;
+}
+
+@media (max-width: 567px) {
+
+  .content_toggle3 {
       text-align: center;
       display: block;
       max-width: 125px;

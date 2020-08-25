@@ -1,7 +1,7 @@
 /* section-complex start */
 
 .section-complex {
-    margin-top: 60px;
+    margin: 60px auto 60px;
   
     &__title {
     }
@@ -41,6 +41,12 @@
 
     &__info {
         margin: 15px 0px 0px 70px;
+        @media (max-width: 627px) {
+          margin: 15px 0px 0px 35px;
+        }
+        @media (max-width: 450px) {
+          margin: 15px 0px 0px 0px;
+        }
     }
   
     &__icon {

@@ -8,6 +8,7 @@
 //&display=swap&subset=cyrillic-ext
 //Плагин Google fonts >google fonts
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,regular,500,700&display=swap&subset=cyrillic-ext");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic");
 @import "fonts";
 //</Подключаем шрифты>=======================================================================================
 
@@ -17,6 +18,7 @@
 
 //<Шрифт по умолчанию>==========================================================================================
 $fontfamily: "Roboto";
+$fontDeputy: "Open Sans";
 //</Шрифт по умолчанию>==========================================================================================
 
 //</ШРИФТЫ>=======================================================================================================
@@ -91,6 +93,9 @@ body {
 @import "section-top.scss";
 @import "section-about.scss";
 @import "section-complex.scss";
+@import "section-components.scss";
+@import "section-regeneration.scss";
+@import "section-prefits.scss";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 
 //<ОСНОВНОЙ БЛОК>====================================================================================================
