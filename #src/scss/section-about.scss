@@ -119,7 +119,7 @@
     }
 
     .section-about {
-        padding: 70px 0px 100px;
+        padding: 70px 0px 30px;
 
     }
 
@@ -138,6 +138,10 @@
 @media (max-width: 567px) {
     .section-right__content span {
         display: none;
+    }
+
+    .section-about {
+        padding: 20px 0px 10px;
     }
 }
 

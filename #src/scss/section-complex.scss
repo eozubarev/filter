@@ -2,6 +2,10 @@
 
 .section-complex {
     margin: 60px auto 60px;
+
+    @media (max-width: 416px) {
+      margin: 0px auto 25px;
+    }
   
     &__title {
     }
@@ -41,6 +45,7 @@
 
     &__info {
         margin: 15px 0px 0px 70px;
+        display: flex;
         @media (max-width: 627px) {
           margin: 15px 0px 0px 35px;
         }

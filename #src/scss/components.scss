@@ -151,6 +151,30 @@ hr {
     }
   }
   /* page-title end */
+
+  /* page-subtitle start */
+  .page-subtitle {
+    text-align: center;
+    max-width: 850px;
+    line-height: 24px;
+
+    margin: 0 auto 30px;
+    padding: 0px 15px;
+
+    font-family: $fontfamily;
+    color: #000;
+    font-size: 14px;
+  }
+  
+  @media (max-width: 576px) {
+    .page-subtitle {
+      font-size: 15px;
+      line-height: 22px;
+      margin: 0 auto 0px;
+
+    }
+  }
+  /* page-subtitle end */
   
   /* socials start */
   .socials {

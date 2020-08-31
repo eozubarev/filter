@@ -10,9 +10,6 @@
 
     }
 
-    &__left {
-    }
-
     &__title {
 
         margin-bottom: 55px;
@@ -64,73 +61,23 @@
         z-index: 100;
         position: relative;
     }
-
-    //Круг YouTube Prewiew
-    &__img::before {
-
-
-    content: "";
-    position: absolute;
-    bottom: 194px;
-    right: -120px;
-    font-size: 180%;
-    width: 2.4em;
-    height: 2.4em;
-    border-radius: 100%;
-    background: linear-gradient(#ffdba9, #b49261);
-    box-shadow:
-     inset 0 1px 1px rgba(255,255,255,.5),
-     inset 0 -1px 1px rgba(0,0,0,.5),
-     0 1px 3px rgba(0,0,0,.5);
-     cursor: pointer;
-
-     transition: all 0.2s;
-     
-
-    }
-
-    //Треугольник Play
-    &__img::after {
-
-
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    top: 140px;
-    left: 434px;
-    border: solid;
-    border-color: transparent transparent transparent #fff;
-    border-width: 10px 10px 10px 17px;
-    cursor: pointer;
-
-    }
-
-    &__video {
-        position: absolute;
-        top: -50px;
-        left: 3px;
-        z-index: 1;
-    }
+    
 }
-
-.section-right__img:hover::before {
-    box-shadow:
-    inset 0 1px 1px rgba(255,255,255,.5),
-    inset 0 -1px 1px rgba(0,0,0,.5),
-    0 1px 20px rgba(0,0,0,.9);
-    cursor: pointer;
-}
-
 
 .section-video {
     &__title {
         text-align: center;
+        max-width: 110px;
 
         position: absolute;
-        top: 330px;
+        top: 280px;
         left: 400px;
         color: #898989;
+
+        @media (max-width: 1316px) {
+            top: 258px;
+            left: 391px;
+        }
     }
 
     &__title a {
@@ -152,22 +99,6 @@
     }
 }
 
-.section-right__video::before {
-    
-    content: "";
-    top: 75px;
-    left: 315px;
-    z-index: 3;
-
-    position: absolute;
-    width: 245px;
-    height: 245px;
-    border-radius: 50%;
-    overflow: hidden;
-    background: linear-gradient(#37c6bc, #13a89e);
-    transition: all 0.2s;
-    
-}
 
 .section-right__video:hover::before {
     box-shadow:
@@ -180,35 +111,66 @@
 
 .section-right__video::after {
     content: "";
-    top: 0;
-    left: 0;
+    top: -13%;
+    left: 6%;
     z-index: 2;
 
     position: absolute;
-    width: 385px;
-    height: 385px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
     background-color: #fff;
     opacity: 65%;
 }
 
+.img-youtube-prewiew--change {
+    display: none;
+}
+
 .img-bags {
     max-width: 350px;
+    margin-left: 20px;
 }
 
 .img-youtube-prewiew {
-    max-width: 175px;
-
+    max-width: 270px;
     position: absolute;
+
+    top: 0%;
+    left: 58%;
     z-index: 5;
-    top: 75px;
-    left: 350px;
+
+    @media (max-width: 1316px) {
+            max-width: 250px;
+            // top: 20%;
+            // left: 60%;        
+    }
+}
+
+.img-youtube-play {
+    position: absolute;
+
+    top: 24%;
+    left: 73%;
+    z-index: 10;
+
+    @media (max-width: 1316px) {
+        max-width: 95px;
+        top: 22%;
+        left: 72%;
+
+    }
 }
 
 @media (max-width: 1264px) {
     .section-top__container {
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .section-top__right {
+        margin-top: 78px;
+        margin-bottom: 38px;
     }
 
     .section-top__left {
@@ -239,48 +201,47 @@
 }
 
 @media (max-width: 650px) {
-    .img-bags {
-        max-width: 300px;
+   .img-bags,
+   .section-right__video::after {
+       display: none;
+   }
+
+   .section-right__video {
+       margin: 0 auto;
+   }
+
+   .img-youtube-prewiew,
+   .section-video__title  {
+       position: inherit;
+   }
+
+   .img-youtube-prewiew {
+       display: none;
+   }
+
+   .img-youtube-prewiew--change {
+       display: block;
+       max-width: 230px;
+   }
+
+   .section-top__right {
+    margin-top: 30px;
+
 }
 
-    .section-right__video::after {
+   .section-video__title {
+       max-width: 100%;
+       margin-top: 18px;
+   }
 
-        width: 350px;
-        height: 350px;
-
-    }
-    .section-right__video::before {
-
-        width: 200px;
-        height: 200px;
-
-}
-    .img-youtube-prewiew {
-
-        max-width: 143px;
-        top: 75px;
-        left: 343px;
-}
-     .section-right__img::before {
-
-         display: none;
-}
-     .section-right__img::after {
-
-         display: none;
-}
-    .section-video__title {
-
-        top: 295px;
-        left: 385px;
+   .img-youtube-play {
+       display: none;
     }
 }
 
 @media (max-width: 552px) {
 
-    .section-right__video::after, .section-right__video::before, .img-youtube-prewiew, .section-video__title, .img-bags   {
-        display: none;
-    }
+
 
     .section-top {
        height: auto;
@@ -311,5 +272,19 @@
     .section-top__title {
         font-size: 25px;
     }
-    
+}
+
+@media (max-width: 420px) {
+
+    .img-youtube-prewiew--change {
+        display: block;
+        max-width: 185px;
+    }
+ 
+    .section-top__right {
+     margin-top: 20px;
+     margin-bottom: 25px;
+ 
+ }
+
 }

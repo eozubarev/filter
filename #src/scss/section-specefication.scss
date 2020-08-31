@@ -1,0 +1,141 @@
+.section-specefication {
+
+    margin: 95px 0px 95px;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__right {
+        margin-right: 123px;
+    }
+
+    &__left {
+    }
+
+    &__block {
+        padding: 20px;
+        margin-top: 94px;
+        margin-bottom: 94px;
+    }
+
+    &__block:last-child {
+        margin-bottom: 0px;
+    }
+
+    &__img {
+        margin-left: 40px;
+    }
+
+    &__line {
+        right: -50px;
+    }
+}
+.container {
+}
+.c-section-specs {
+
+    &__info {
+        color: black;
+    }
+
+    &__inner {
+    }
+
+    &__left {
+    }
+
+    &__table {
+    }
+
+    &__table td {
+        padding-bottom: 35px;
+    }
+
+    &__cond {
+    }
+}
+.c-section {
+
+    &__head {
+    }
+
+    &__title {
+    }
+}
+.h1 {
+}
+.c-tabs {
+
+    &__nav {
+        margin-bottom: 40px;
+        font-weight: 600;
+        font-size: 17px;
+        color: #000;
+
+        text-decoration: none;
+        line-height: 1;
+
+    }
+
+    &__nav:active {
+        color: #000;
+    }
+
+    &__link span {
+        color: #13a89e;
+        border-bottom: 1px dashed;
+    }
+
+    &__content {
+    }
+
+    &__tab {
+    }
+}
+.js-tabs {
+
+}
+
+
+.c-tabs-loaded {
+}
+.is-active {
+}
+.c-table-wrapper {
+}
+.is-first {
+    padding-right: 160px;
+}
+.h-text-center {
+}
+.block-components {
+}
+.info-components {
+}
+
+.ul-item {
+    display: inline-flex;
+}
+
+.li-item {
+    margin-right: 45px;
+}
+
+.li-item:last-child {
+    margin-right: 0px;
+}
+
+td {
+    border-bottom: 1px solid #dbdbdb; /* Линия снизу */
+    padding: 17px 0px 17px;
+   }
+
+
+.section-right__title {
+    text-align: left;
+    padding: 0;
+    margin-bottom: 40px;
+}
