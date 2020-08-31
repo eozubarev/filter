@@ -1997,6 +1997,28 @@ td {
   margin-bottom: 40px;
 }
 
+.tabs-nav__item {
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 20px;
+}
+
+.tabs-nav__item.is-active {
+  border-color: #13a89e;
+}
+
+.tab {
+  display: none;
+  padding: 20px;
+}
+
+.tab.is-active {
+  display: block;
+}
+
 @media (min-width: 1800px) {
   .section-right__content {
     font-size: 25px;

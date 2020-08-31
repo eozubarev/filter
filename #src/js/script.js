@@ -1,1 +1,1 @@
-@@include('custom.js')
+@@include('custom.js');

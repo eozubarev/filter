@@ -139,3 +139,20 @@ td {
     padding: 0;
     margin-bottom: 40px;
 }
+
+.tabs-nav__item {
+	border-bottom: 1px solid transparent;
+	cursor: pointer;
+	flex: 1;
+	padding: 20px;
+}
+
+.tabs-nav__item.is-active {
+	border-color: #13a89e;
+}
+
+.tab {
+	display: none;
+	padding: 20px;
+}
+.tab.is-active { display: block; }
