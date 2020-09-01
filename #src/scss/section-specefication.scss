@@ -1,15 +1,15 @@
 .section-specefication {
 
-    margin: 95px 0px 95px;
+    margin: 65px 0px 95px;
 
     &__container {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
     }
 
     &__right {
-        margin-right: 123px;
+        margin-right: 85px;
     }
 
     &__left {
@@ -19,6 +19,8 @@
         padding: 20px;
         margin-top: 94px;
         margin-bottom: 94px;
+        
+        top: 155px;
     }
 
     &__block:last-child {
@@ -26,15 +28,16 @@
     }
 
     &__img {
+        margin-top: 80px;
         margin-left: 40px;
     }
 
     &__line {
         right: -50px;
     }
+    
 }
-.container {
-}
+
 .c-section-specs {
 
     &__info {
@@ -45,6 +48,7 @@
     }
 
     &__left {
+        position: relative;
     }
 
     &__table {
@@ -140,19 +144,22 @@ td {
     margin-bottom: 40px;
 }
 
+
+
 .tabs-nav__item {
-	border-bottom: 1px solid transparent;
-	cursor: pointer;
-	flex: 1;
-	padding: 20px;
+    border-bottom: 1px dashed;
+    cursor: pointer;
+    font-size: 19px;
+    transition: all 0.3s linear;
 }
 
 .tabs-nav__item.is-active {
-	border-color: #13a89e;
+    border-color: #13a89e;
+    color: #13a89e;
 }
 
 .tab {
-	display: none;
-	padding: 20px;
+    opacity: 0%;
+    transition: all 0.3s linear;
 }
-.tab.is-active { display: block; }
+.tab.is-active { opacity: 100%; position: absolute; top: 0; left: 0;}
