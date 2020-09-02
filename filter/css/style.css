@@ -2116,6 +2116,23 @@ td {
           align-items: center;
 }
 
+.section-build__right {
+  margin-left: 28%;
+}
+
+.section-sheme {
+  position: relative;
+}
+
+.c-section-build__scheme__dots {
+  list-style: none;
+  position: absolute;
+}
+
+.c-section-build__scheme__dots {
+  display: block;
+}
+
 @media (min-width: 1800px) {
   .section-right__content {
     font-size: 25px;

@@ -11,7 +11,6 @@ $(document).ready(function(){
 	});
 });
 
-
 $(document).ready(function(){
 	$('.content_toggle2').click(function(){
 		$('.content_block2').slideToggle(300, function(){
@@ -95,7 +94,6 @@ tab();
 // Dots dynamics end
 
 // Spoiler start
-
 
 $(document).ready(function() {
 	$('.block__title').click(function(event) {

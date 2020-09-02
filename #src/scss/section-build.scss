@@ -1,3 +1,4 @@
+
 .section-build {
 
     &__container {
@@ -6,13 +7,19 @@
         align-items: center;
     }
 
-    &__right {
-    }
-
     &__left {
     }
-}
 
+    &__right {
+        margin-left: 28%;
+    }
+}
+.container {
+}
+.page-title {
+}
+.page-subtitle {
+}
 .block {
 
     &__item {
@@ -26,16 +33,158 @@
 }
 .one {
 }
-.section-left {
+.section-sheme {
 
-    &__img {
-    }
+    position: relative;
 
-    &__img--scheme {
+    &__build {
     }
 }
-.sheme-build {
+.c-section-build {
+
+    &__scheme {
+    }
 }
 .is-active {
 }
 
+.c-section-build__scheme__dots {
+    list-style: none;
+    position: absolute;
+}
+
+.c-section-build__scheme__dots{
+    position: absolute;
+}
+
+
+///////////////////
+
+.c-section-build__scheme__dots li:nth-child(1) {
+    left: 100px;
+    top: 66px;
+}
+
+.c-section-build__scheme__dots li:nth-child(2) {
+    left: 172px;
+    top: 87px;
+}
+
+.c-section-build__scheme__dots li:nth-child(3) {
+    right: 139px;
+    bottom: 113px;
+}
+
+.c-section-build__scheme__dots li:nth-child(4) {
+    right: 159px;
+    top: 12px;
+}
+
+
+.c-section-build__scheme__dots li:nth-child(5) {
+    left: 99px;
+    bottom: 14px;
+}
+
+.c-section-build__scheme__dots li:nth-child(6) {
+    left: 213px;
+    top: -30px;
+}
+
+.c-section-build__scheme__dots li:before{
+    width: 37px;
+    height: 37px;
+    left: -5px;
+    top: -5px;
+}
+
+.c-section-build__scheme__dots li:after{
+    width: 48px;
+    height: 48px;
+    left: -11px;
+    top: -11px;
+}
+
+.c-section-build__scheme__dots li>span{
+    font-size: 16px;
+    min-width: 26px;
+    height: 26px;
+    line-height: 26px;
+}
+
+}
+
+.c-section-build{
+margin-top: 0;
+}
+
+.c-section-specs{
+margin-bottom: 0;
+}
+
+@media only screen and (max-width: 550px){
+.c-section-build__scheme__nav ol{
+    float: none;
+    margin-top: 20px;
+}
+}
+
+@media only screen and (max-width: 510px){
+
+.c-section-build__scheme__dots{
+
+}
+
+.c-section-build__scheme__dots li:nth-child(1) {
+    left: 21%;
+    top: 22%;
+}
+
+.c-section-build__scheme__dots li:nth-child(2) {
+    left: 38%;
+    top: 28%;
+}
+
+.c-section-build__scheme__dots li:nth-child(3) {
+    right: 30%;
+    bottom: 38%;
+}
+
+.c-section-build__scheme__dots li:nth-child(4) {
+    right: 34%;
+    top: 4%;
+}
+
+
+.c-section-build__scheme__dots li:nth-child(5) {
+    left: 21%;
+    bottom: 4%;
+}
+
+.c-section-build__scheme__dots li:nth-child(6) {
+    left: 46%;
+    top: -22px;
+}
+
+.c-section-build__scheme__dots li:before{
+    width: 22px;
+    height: 22px;
+    left: -4px;
+    top: -4px;
+}
+
+.c-section-build__scheme__dots li:after{
+    width: 29px;
+    height: 29px;
+    left: -7px;
+    top: -7px;
+}
+
+.c-section-build__scheme__dots li>span{
+    font-size: 10px;
+    min-width: 16px;
+    height: 16px;
+    line-height: 16px;
+}
+
+}

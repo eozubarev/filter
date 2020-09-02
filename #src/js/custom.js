@@ -95,7 +95,6 @@ tab();
 
 // Spoiler start
 
-
 $(document).ready(function() {
 	$('.block__title').click(function(event) {
 		if($('.block').hasClass('one')){
