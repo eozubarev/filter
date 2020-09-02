@@ -1026,6 +1026,12 @@ hr {
   margin: 11px auto 0px;
 }
 
+.separation {
+  background-color: #dbdbdb;
+  /* Цвет линии */
+  margin: 200px auto 0px;
+}
+
 /* btn start */
 
 .btn {
@@ -1422,65 +1428,39 @@ hr {
 
 /* Основные стили */
 
+.block {
+  max-width: 440px;
+  width: 100%;
+}
+
 .block__item {
   margin: 0px 0px 20px 0px;
 }
 
 .block__title {
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  font-family: "Roboto";
+  font-size: 18px;
+  font-weight: 500;
+  color: #13a89e;
   position: relative;
-  padding: 0px 0px 0px 30px;
   cursor: pointer;
 }
 
-.block__title:before,
-.block__title:after {
-  content: '';
-  width: 10px;
-  height: 1px;
-  background-color: #000;
-  position: absolute;
-  top: 8px;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-
-.block__title:before {
-  -webkit-transform: rotate(40deg);
-      -ms-transform: rotate(40deg);
-          transform: rotate(40deg);
-  left: 0;
-}
-
-.block__title:after {
-  -webkit-transform: rotate(-40deg);
-      -ms-transform: rotate(-40deg);
-          transform: rotate(-40deg);
-  left: 8px;
-}
-
-.block__title.active:before,
-.block__title.active:after {
-  background-color: red;
-}
-
-.block__title.active:before {
-  -webkit-transform: rotate(-40deg);
-      -ms-transform: rotate(-40deg);
-          transform: rotate(-40deg);
-}
-
-.block__title.active:after {
-  -webkit-transform: rotate(40deg);
-      -ms-transform: rotate(40deg);
-          transform: rotate(40deg);
+.block__title span {
+  border-bottom: 1px dashed;
 }
 
 .block__text {
   display: none;
   padding: 10px 0px 0px 0px;
+}
+
+.block__title.is-active {
+  color: #dbb680;
+}
+
+.block__title.is-active span {
+  border-bottom: none;
 }
 
 .section-top {
@@ -2118,10 +2098,25 @@ td {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: -14%;
 }
 
 .section-build__right {
-  margin-left: 2%;
+  margin-top: 30%;
+}
+
+.section-build__title {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  font-size: 30px;
+  text-align: left;
+}
+
+.section-build__subtitle {
+  margin-bottom: 15px;
+  text-align: left;
+  padding: 0;
 }
 
 .section-sheme__build {

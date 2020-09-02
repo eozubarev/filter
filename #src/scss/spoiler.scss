@@ -1,47 +1,37 @@
 /* Основные стили */
 
-.block {}
+.block {
+	max-width: 440px;
+	width: 100%;
+}
 .block__item {
 	margin: 0px 0px 20px 0px;
 }
 .block__title {
-	text-transform: uppercase;
-	letter-spacing: 2px;
+	font-family: $fontfamily;
+	font-size: 18px;
+	font-weight: 500;
+	color: #13a89e;
+
 	position: relative;
-	padding: 0px 0px 0px 30px;
 	cursor: pointer;
 }
-.block__title:before,
-.block__title:after{
-	content: '';
-	width: 10px;
-	height: 1px;
-	background-color: #000;
-	position: absolute;
-	top: 8px;
-	transition: all 0.3s ease 0s;
-}
-.block__title:before{
-	transform: rotate(40deg);
-	left: 0;
-}
-.block__title:after{
-	transform: rotate(-40deg);
-	left: 8px;
+
+.block__title span {
+	border-bottom: 1px dashed;
 }
 
-.block__title.active:before,
-.block__title.active:after{
-	background-color: red;
-}
-.block__title.active:before{
-	transform: rotate(-40deg);
-}
-.block__title.active:after{
-	transform: rotate(40deg);
-}
 
 .block__text {
 	display: none;
 	padding: 10px 0px 0px 0px;
 }
+
+.block__title.is-active {
+	color: #dbb680;
+}
+
+.block__title.is-active span {
+	border-bottom: none;
+}
+
