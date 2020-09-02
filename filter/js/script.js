@@ -11,6 +11,7 @@ $(document).ready(function(){
 	});
 });
 
+
 $(document).ready(function(){
 	$('.content_toggle2').click(function(){
 		$('.content_block2').slideToggle(300, function(){
@@ -107,3 +108,4 @@ $(document).ready(function() {
 });
 
 // Spoiler end
+;
