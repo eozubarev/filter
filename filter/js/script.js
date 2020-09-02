@@ -74,18 +74,23 @@ tab();
 (function () {
     var self = $('.section-build');
     var dots = self.find('.c-section-build__scheme__dots');
-	var nav = self.find('.block__title');
+	var nav = self.find('.block__item');
 
 	console.log(self);
 	console.log(dots);
 	console.log(nav);
 	
     function setActive(index) {
-        dots.find('li').eq(index).addClass('is-active').siblings().removeClass('is-active');
-        nav.find('li').eq(index).addClass('is-active').siblings().removeClass('is-active');
+		dots.find('li').eq(index).addClass('is-active').siblings().removeClass('is-active');
+		
+		nav.children(".block__title").addClass('is-active');
+
+		console.log(nav.prevUntil(".block__title").removeClass('is-active'));
+
+        // nav.find('li').eq(index).addClass('is-active').siblings().removeClass('is-active');
         $("#с-build__active-text").find('p').eq(index).addClass('is-active').siblings().removeClass('is-active');
     }
-
+	
     dots.find('li').on('click', function () {
         setActive($(this).index());
     });
