@@ -72,10 +72,14 @@ tab();
 // Dots dynamics start
 
 (function () {
-    var self = $('.c-section-build');
+    var self = $('.section-build');
     var dots = self.find('.c-section-build__scheme__dots');
-    var nav = self.find('.c-section-build__scheme__nav');
+	var nav = self.find('.block__title');
 
+	console.log(self);
+	console.log(dots);
+	console.log(nav);
+	
     function setActive(index) {
         dots.find('li').eq(index).addClass('is-active').siblings().removeClass('is-active');
         nav.find('li').eq(index).addClass('is-active').siblings().removeClass('is-active');
@@ -106,4 +110,6 @@ $(document).ready(function() {
 });
 
 // Spoiler end
+
+
 ;
