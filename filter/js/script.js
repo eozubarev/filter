@@ -82,14 +82,17 @@ tab();
 	
     function setActive(index) {
 		dots.find('li').eq(index).addClass('is-active').siblings().removeClass('is-active');
-		// nav.children().addClass('is-active').siblings().removeClass('is-active');
-		$("#с-build__active-text").find('li').eq(index).addClass('is-active').siblings().removeClass('is-active');
+		nav.children().eq(index).addClass('is-active').siblings().removeClass('is-active');
+		$("#с-build__active-text").find('p').eq(index).addClass('is-active').siblings().removeClass('is-active');
 
 		// nav.children(".block__title").addClass('is-active').siblings().removeClass('is-active');
-        // nav.find('li').eq(index).addClass('is-active').siblings().removeClass('is-active');
+		// nav.find('li').eq(index).addClass('is-active').siblings().removeClass('is-active');
+		
+		console.log(nav.find(".block__item").next().addClass('is-active').siblings().removeClass('is-active'));
 	}
 
-	console.log(nav.children(".block__text").addClass('is-active').siblings().removeClass('is-active'));
+	// console.log(nav.children(".block__title").addClass('is-active').siblings().removeClass('is-active'));
+
 
     dots.find('li').on('click', function () {
         setActive($(this).index());
