@@ -2,6 +2,10 @@
 
     margin: 65px 0px 95px;
 
+    @media(max-width: 748px) {
+        margin: 65px 0px 35px;
+    }
+
     &__container {
         display: flex;
         align-items: flex-start;
