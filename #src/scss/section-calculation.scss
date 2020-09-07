@@ -1,4 +1,4 @@
-
+//  Main styles START
 .section-calculation {
 
     margin: 60px 0px 60px;
@@ -7,8 +7,6 @@
     }
 
     &__title {
-        text-align: left;
-        padding: 0;
     }
 
     &__formula {
@@ -32,6 +30,76 @@
     }
 }
 
+// Main styles END
+
+// Info calculation START
+
+.section-calculation {
+
+    &__info {
+        margin-top: 30px;
+    }
+}
+
+.section-info {
+
+    &__text {
+        color: $black;
+        line-height: 22px;
+    }
+
+    &__text span {
+        font-weight: 700;
+        font-size: 15px;
+    }
+
+    &__title {
+        text-align: left;
+        padding: 0;
+    }
+}
+
+
+// Info calculation END
+
+//Info sertification START
+
+.sertification {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media(max-width: 992px) {
+        flex-wrap: wrap;
+        align-items: flex-end;
+    }
+
+}
+
+.sertification-img {
+}
+
+.sert-gost {
+
+    margin:  0px 30px 0px 50px;
+
+    @media(max-width: 992px) {
+        margin:  15px 15px 0px 0px;
+        text-align: center;
+    }
+
+    @media(max-width: 413px) {
+        margin:  0px 10px 0px 0px;
+    }
+    @media(max-width: 407px) {
+        margin:  0px 10px 15px 10px;
+    }
+}
+
+
+//Info sertification END
+
+// Formula START
 .section-formula {
 
     &__left {
@@ -62,10 +130,10 @@
         padding-top: 3px;
     }
 }
+// Formula END
 
 
-
-/* Table styles start */
+// Table styles START
 
 .table {
     width: 1280px;
@@ -272,4 +340,4 @@
     padding-right: 35%;
 }
 
-/* Table styles End */
+// Table styles END
