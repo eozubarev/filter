@@ -2388,6 +2388,58 @@ td {
   border-bottom: none;
 }
 
+.section-calculation {
+  margin: 60px 0px 60px;
+}
+
+.section-calculation__title {
+  text-align: left;
+  padding: 0;
+}
+
+.section-calculation__formula {
+  color: #202020;
+  max-width: 635px;
+  width: 100%;
+  margin-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.section-formula__left p:nth-child(1) {
+  padding-bottom: 3px;
+}
+
+.section-formula__left p:nth-child(2) {
+  padding-top: 3px;
+}
+
+.section-formula__equal {
+  margin: 0px 10px 0px 10px;
+}
+
+.section-formula__result {
+  text-align: center;
+}
+
+.section-formula__result p:nth-child(1) {
+  border-bottom: 1px solid #dbb680;
+  padding-bottom: 3px;
+}
+
+.section-formula__result p:nth-child(2) {
+  padding-top: 3px;
+}
+
+/* Table styles start */
+
 .table {
   width: 1280px;
   border-radius: 6px;
@@ -2397,16 +2449,13 @@ td {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: background-color .3s;
-  -o-transition: background-color .3s;
-  transition: background-color .3s;
+  -webkit-transition: font-weight .2s, background-color .3s;
+  -o-transition: font-weight .2s, background-color .3s;
+  transition: font-weight .2s, background-color .3s;
 }
 
 .table__row:hover {
-  background-color: #eaf2f3;
-}
-
-.table__row:first-child {
+  background-color: #fbf9f1;
   font-weight: 700;
 }
 
@@ -2429,13 +2478,17 @@ td {
       -ms-flex-align: center;
           align-items: center;
   width: calc(100% / 8);
+  -webkit-transition: font-weight .2s;
+  -o-transition: font-weight .2s;
+  transition: font-weight .2s;
 }
 
-.table__item:first-child {
+.table__item:first-child:hover {
   font-weight: 700;
 }
 
 .table__item span {
+  color: #202020;
   width: 100%;
   padding: 20px 0;
   text-align: left;
@@ -2581,6 +2634,8 @@ td {
 .margin-item {
   padding-right: 35%;
 }
+
+/* Table styles End */
 
 @media (min-width: 1800px) {
   .section-right__content {
@@ -3215,6 +3270,19 @@ td {
 @media (max-width: 620px) {
   .section-build__right {
     margin-right: 2%;
+  }
+
+  .section-calculation__formula {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 

@@ -1,18 +1,85 @@
+
+.section-calculation {
+
+    margin: 60px 0px 60px;
+
+    &__container {
+    }
+
+    &__title {
+        text-align: left;
+        padding: 0;
+    }
+
+    &__formula {
+        color: $black;
+
+        max-width: 635px;
+        width: 100%;
+        margin-bottom: 30px;
+    
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        @media(max-width: 620px) {
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+            flex-direction: column;
+
+        }
+    }
+}
+
+.section-formula {
+
+    &__left {
+    }
+
+    &__left p:nth-child(1) {
+        padding-bottom: 3px;
+    }
+
+    &__left p:nth-child(2) {
+        padding-top: 3px;
+    }
+
+    &__equal {
+        margin:  0px 10px 0px 10px;
+    }
+
+    &__result {
+        text-align: center;
+    }
+
+    &__result p:nth-child(1) {
+        border-bottom: 1px solid #dbb680;
+        padding-bottom: 3px;
+    }
+
+    &__result p:nth-child(2) {
+        padding-top: 3px;
+    }
+}
+
+
+
+/* Table styles start */
+
 .table {
     width: 1280px;
     border-radius: 6px;
     // border: 1px solid $grey;
     &__row {
       display: flex;
-      transition: background-color .3s;
+      transition: font-weight .2s, background-color .3s;
   
       &:hover {
-        background-color: $tableActive;
-      }
-      &:first-child {
+        background-color: #fbf9f1;
         font-weight: 700;
-        // background-color: $tableHead;
       }
+
       &:not(:last-child) {
         border-bottom: 1px solid #dbdbdb;
       }
@@ -23,8 +90,10 @@
       justify-content: center;
       align-items: center;
       width: calc(100% / 8);
+
+      transition: font-weight .2s;
   
-      &:first-child {
+      &:first-child:hover {
         font-weight: 700;
 
       }
@@ -34,6 +103,8 @@
       }
   
       & span {
+
+        color: $black;
         width: 100%;
         padding: 20px 0;
         text-align: left;
@@ -200,3 +271,5 @@
 .margin-item {
     padding-right: 35%;
 }
+
+/* Table styles End */
