@@ -2391,7 +2391,6 @@ td {
 .table {
   width: 1280px;
   border-radius: 6px;
-  border: 1px solid #aaa;
 }
 
 .table__row {
@@ -2412,7 +2411,7 @@ td {
 }
 
 .table__row:not(:last-child) {
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid #dbdbdb;
 }
 
 .table__item {
@@ -2436,14 +2435,10 @@ td {
   font-weight: 700;
 }
 
-.table__item:not(:last-child) {
-  border-right: 1px solid #aaa;
-}
-
 .table__item span {
   width: 100%;
   padding: 20px 0;
-  text-align: center;
+  text-align: left;
   font-size: 14px;
   line-height: 1;
   white-space: nowrap;
