@@ -1,0 +1,49 @@
+.table {
+    width: 1280px;
+    border-radius: 6px;
+    border: 1px solid $grey;
+    &__row {
+      display: flex;
+      transition: background-color .3s;
+  
+      &:hover {
+        background-color: $tableActive;
+      }
+      &:first-child {
+        font-weight: 700;
+        // background-color: $tableHead;
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid $grey;
+      }
+    }
+    &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: calc(100% / 8);
+  
+      &:first-child {
+        font-weight: 700;
+      }
+      
+      &:not(:last-child) {
+        border-right: 1px solid $grey;
+      }
+  
+      & span {
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 14px;
+        line-height: 1;
+        white-space: nowrap;
+        overflow: hidden;
+  
+        & + span {
+          border-top: 1px solid $grey;
+        }
+      }
+    }
+  }
