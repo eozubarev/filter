@@ -1,7 +1,6 @@
 
 @@include('mask.js');
 
-
 class Validation {
   constructor(form) {
     this.form = form;
