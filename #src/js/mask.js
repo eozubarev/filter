@@ -1,4 +1,4 @@
-export default class Mask {
+class Mask {
   constructor(element,options = {}){
     if (!element) return;
     var _this = this;

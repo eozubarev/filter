@@ -1968,6 +1968,20 @@ td {
   padding-right: 35%;
 }
 
+.section-callback {
+  padding: 60px 0 60px;
+  background-color: #fbf9f1;
+}
+
+.section-callback__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 @media (min-width: 1800px) {
   .section-right__content {
     font-size: 25px;
