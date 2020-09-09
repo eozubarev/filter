@@ -1,142 +1,40 @@
 //<МИКСИНЫ>===============================================================================================
-@import "mixins.scss";
+@import "./mixins/mixins.scss";
 //</МИКСИНЫ>===============================================================================================
 
-//<ШРИФТЫ>===============================================================================================
+//</ШРИФТЫ>=======================================================================================================
+@import "./fonts/fonts.scss";
 
-//<Подключаем шрифты>=======================================================================================
-//&display=swap&subset=cyrillic-ext
-//Плагин Google fonts >google fonts
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,regular,500,700&display=swap&subset=cyrillic-ext");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic");
-@import "fonts";
-//</Подключаем шрифты>=======================================================================================
-
-//<Иконочные шрифты>==========================================================================================
-
-//</Иконочные шрифты>==========================================================================================
-
-//<Шрифт по умолчанию>==========================================================================================
 $fontfamily: "Roboto";
 $fontDeputy: "Open Sans";
-//</Шрифт по умолчанию>==========================================================================================
-
 //</ШРИФТЫ>=======================================================================================================
 
-//<ПЕРЕМЕННЫЕ>===========================================================================================================
-
-$mainColor: #f4f0e3;
-
-$minwidth: 320px;
-$maxWidth: 100%;
-$maxWidthContainer: 1400;
-$md1: $maxWidthContainer + 12;
-$md2: 991.98;
-$md3: 767.98;
-$md4: 479.98;
-
-// Цвета
-$error: #ff0000;
-
-$active: #0c7f8b;
-$activeLight: #258c97;
-$active30: rgba(12, 127, 139, .3);
-$active50: rgba(12, 127, 139, .5);
-$border: #ccc;
-
-$white: #fff;
-$white20: rgba(255,255,255,.2);
-$white30: rgba(255,255,255,.3);
-$black: #202020;
-$priceBenefitIcon: #c7dbba;
-
-$tableHead: #e5f3db;
-$tableActive: #eaf2f3;
-
-$grey: #aaa;
-$greyDark: #43515f;
-$greyDark95: rgba(67, 81, 95,.95);
-
-$iconBg: #e4f5e5;
-
-$formBg: #eaf2f3;
-$formPlaceholder: #b4bdc5;
-$footerBg: #eaf2f3;
-
-//</ПЕРЕМЕННЫЕ>===========================================================================================================
-
-//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
-@import "null.scss";
-body {
-	color: #000;
-	font-size: 14px;
-	&.lock {
-		overflow: hidden;
-	}
-}
-//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
-
-//<ОБОЛОЧКА>===========================================================================================================
-.wrapper {
-	width: 100%;
-	min-height: 100%;
-	&.loaded {
-	}
-}
-//</ОБОЛОЧКА>===========================================================================================================
-
-//<ОСНОВНАЯ СЕТКА>===========================================================================================================
-// .container {
-// 	max-width: $maxWidthContainer + px;
-// 	@media (max-width: $md1+px) {
-// 		max-width: 970px;
-// 	}
-// 	@media (max-width: $md2+px) {
-// 		max-width: 750px;
-// 	}
-// 	@media (max-width: $md3+px) {
-// 		max-width: none;
-// 		padding: 0 10px;
-// 	}
-// }
-//</ОСНОВНАЯ СЕТКА>===========================================================================================================
-
-//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
-//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
-//@import "../../js/fancybox/jquery.fancybox.scss";
-//@import "datepicker.scss";
-//@import "fontawesome.scss";
-//@import "popover.min.scss";
-//@import "baguetteBox.scss";
-//@import "pagging.scss";
-//@import "icons.scss";
-@import "popup.scss";
+
+@import "./variables/variables.scss";
+
+@import "./null/null.scss";
+
+@import "./popup/popup.scss";
+
 @import "header.scss";
 @import "footer.scss";
-@import "home.scss";
-@import "modals.scss";
 @import "components.scss";
 @import "spoiler.scss";
-@import "section-top.scss";
-@import "section-about.scss";
-@import "section-complex.scss";
-@import "section-components.scss";
-@import "section-regeneration.scss";
-@import "section-prefits.scss";
-@import "section-types.scss";
-@import "section-specefication.scss";
-@import "section-build.scss";
-@import "section-example.scss";
-@import "section-calculation.scss";
-@import "section-callback.scss";
-@import "form.scss";
+
+@import "./sections/1-section-top.scss";
+@import "./sections/2-section-about.scss";
+@import "./sections/3-section-complex.scss";
+@import "./sections/4-section-components.scss";
+@import "./sections/5-section-regeneration.scss";
+@import "./sections/6-section-prefits.scss";
+@import "./sections/7-section-types.scss";
+@import "./sections/8-section-specefication.scss";
+@import "./sections/9-section-build.scss";
+@import "./sections/10-section-example.scss";
+@import "./sections/11-section-calculation.scss";
+@import "./sections/12-section-callback.scss";
 
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 
-//<ОСНОВНОЙ БЛОК>====================================================================================================
-
-//====================================================================================================
-
-//</ОСНОВНОЙ БЛОК>====================================================================================================
