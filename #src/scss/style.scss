@@ -5,8 +5,9 @@
 //</ШРИФТЫ>=======================================================================================================
 @import "fonts.scss";
 
-$fontfamily: "Roboto";
-$fontDeputy: "Open Sans";
+$roboto: "Roboto";
+$openSans: "Open Sans";
+$myriadPro: "Myriad Pro";
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 
@@ -17,12 +18,13 @@ $fontDeputy: "Open Sans";
 @import "./popup/popup.scss";
 
 @import "./form/form.scss";
+@import "./input/input.scss";
+@import "./checkNumber/checkNumber.scss";
 
 @import "header.scss";
 @import "footer.scss";
 @import "components.scss";
 @import "spoiler.scss";
-@import "checkNumber.scss";
 
 @import "./sections/1-section-top.scss";
 @import "./sections/2-section-about.scss";
@@ -35,7 +37,7 @@ $fontDeputy: "Open Sans";
 @import "./sections/9-section-build.scss";
 @import "./sections/10-section-example.scss";
 @import "./sections/11-section-calculation.scss";
-@import "./sections/12-section-callback.scss";
+// @import "./sections/12-section-callback.scss";
 
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 

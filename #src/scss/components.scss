@@ -1,7 +1,7 @@
 /* components start */
 
 body {
-	font-family: $fontfamily;
+	font-family: $roboto;
 	font-size: 14px;
 	color: #898989;
 }
@@ -33,7 +33,7 @@ hr {
     width: 240px;
     max-width: 100%;
     border-radius: 1px;
-    font-family: $fontfamily;
+    font-family: $roboto;
     font-size: 15px;
     border: 0;
     cursor: pointer;
@@ -145,7 +145,7 @@ hr {
     margin: 0 auto 30px;
     padding: 0px 15px;
 
-    font-family: $fontfamily;
+    font-family: $roboto;
     color: #000;
     font-size: 40px;
     font-weight: 900;    
@@ -171,7 +171,7 @@ hr {
     margin: 0 auto 30px;
     padding: 0px 15px;
 
-    font-family: $fontfamily;
+    font-family: $roboto;
     color: #000;
     font-size: 14px;
   }
@@ -184,6 +184,20 @@ hr {
 
     }
   }
+
+  .subtitle {
+    font-family: $roboto;
+    color: #dbb680;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 55px;
+ }
+
+ .subtitle span {
+    color: #000;
+ }
   /* page-subtitle end */
   
   /* socials start */
@@ -324,33 +338,6 @@ hr {
   }
   /* mobile-menu end */
   
-  /* form start */
-  .form__input {
-    display: block;
-    width: 100%;
-    padding: 17px 20px;
-    background: #fff;
-    border: 1px solid #eee7d1;
-    outline: none;
-  }
-  
-  .form__input:focus {
-    border-color: #35c4ba;
-  }
-  
-  .subtitle {
-     font-family: $fontfamily;
-     color: #dbb680;
-     font-size: 14px;
-     font-weight: 700;
-     text-transform: uppercase;
-     letter-spacing: 2px;
-     margin-bottom: 55px;
-  }
-
-  .subtitle span {
-     color: #000;
-  }
 
   /* Read More Btn start */
   
