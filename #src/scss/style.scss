@@ -3,12 +3,10 @@
 //</МИКСИНЫ>===============================================================================================
 
 //</ШРИФТЫ>=======================================================================================================
-@import "./fonts/fonts.scss";
+@import "fonts.scss";
 
 $fontfamily: "Roboto";
 $fontDeputy: "Open Sans";
-//</ШРИФТЫ>=======================================================================================================
-
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 
@@ -18,10 +16,13 @@ $fontDeputy: "Open Sans";
 
 @import "./popup/popup.scss";
 
+@import "./form/form.scss";
+
 @import "header.scss";
 @import "footer.scss";
 @import "components.scss";
 @import "spoiler.scss";
+@import "checkNumber.scss";
 
 @import "./sections/1-section-top.scss";
 @import "./sections/2-section-about.scss";

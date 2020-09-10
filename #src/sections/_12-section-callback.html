@@ -19,63 +19,63 @@
 </section>
 <!-- section-callback end -->
 
-<div class="form__container">
-    <form action="send.php" enctype="multipart/form-data" method="post">
-      <input type="hidden" name="form" value="dealer">
-      <input type="hidden" name="ymName" value="dealer">
-      <input type="hidden" name="location" value="">
-      <div class="form__title title">Стать дилером и&nbsp;получить максимально выгодные условия</div>
-      <div class="form__row">
-        <ul class="form__block">
-          <li class="form__input">
-                <label class="input input--name">
-                  <input class="input__element --name" type="text" name="name"><span class="input__placeholder">Ваше имя</span><span class="input__error-msg">Напишите имя</span>
-                </label>
-          </li>
-          <li class="form__input">           
-                <label class="input input--phone">
-                  <input class="input__element --phone" type="text" name="phone"><span class="input__placeholder">Номер телефона</span><span class="input__error-msg">Напишите телефон</span>
-                </label>
-          </li>
-          <li class="form__input">           
-                <label class="input input--email">
-                  <input class="input__element --email" type="text" name="email"><span class="input__placeholder">Ваш E-mail</span><span class="input__error-msg">Некорректный e-mail</span>
-                </label>
-          </li>
-        </ul>
-        <div class="form__block">
-          <div class="form__textarea">
-                <label class="input --textarea">
-                  <textarea class="input__element" name="comment"></textarea><span class="input__placeholder">Комментарии</span><span class="input__error-msg">Ссылки запрещены</span>
-                </label>
+
+<div class="form">
+    <div class="container">
+      <div class="form__container">
+        <form action="send.php" enctype="multipart/form-data" method="post">
+          <input type="hidden" name="form" value="dealer">
+          <input type="hidden" name="ymName" value="dealer">
+          <input type="hidden" name="location" value>
+          <div class="form__title page-title">Стать дилером и&nbsp;получить максимально выгодные условия</div>
+          <div class="form__row">
+            <ul class="form__block">
+              <li class="form__input">
+                    <label class="input input--name">
+                      <input class="input__element --name" type="text" name="name"><span class="input__placeholder">Ваше имя</span><span class="input__error-msg">Напишите имя</span>
+                    </label>
+              </li>
+              <li class="form__input">           
+                    <label class="input input--phone">
+                      <input class="input__element --phone" type="text" name="phone"><span class="input__placeholder">Номер телефона</span><span class="input__error-msg">Напишите телефон</span>
+                    </label>
+              </li>
+              <li class="form__input">           
+                    <label class="input input--email">
+                      <input class="input__element --email" type="text" name="email"><span class="input__placeholder">Ваш E-mail</span><span class="input__error-msg">Некорректный e-mail</span>
+                    </label>
+              </li>
+            </ul>
+            <div class="form__block">
+              <div class="form__textarea">
+                    <label class="input --textarea">
+                      <textarea class="input__element" name="comment"></textarea><span class="input__placeholder">Комментарии</span>
+                    </label>
+              </div>
+            </div>
           </div>
+          <div class="form__row">
+            <div class="form__block --links">
+              <div class="form__checkbox">
+                    <label class="checkbox">
+                      <input class="checkbox__input" type="checkbox" name="privacy" checked><span class="checkbox__element"></span><a class="checkbox__text link" href="./docs/privacy-policy-runxin.pdf" target="_blanc">Согласие на обработку данных</a>
+                    </label>
+              </div>
+            </div>
+            <div class="form__block --submit">
+              <button class="form__button button" type="submit">Отправить запрос</button>
+            </div>
+          </div>
+        </form>
+        <div class="form__thanks">
+          <div class="form__thanks-title">Спасибо за Ваше обращение!</div>
+          <p class="form__thanks-description">
+             Мы свяжемся с&nbsp;Вами в&nbsp;ближайшее время.
+            А&nbsp;если у Вас очень срочный&nbsp;вопрос и ждать&nbsp;нельзя, скорее звоните&nbsp;нам:
+            <a href="tel:+78004442412">8 800 444 24 12</a>
+            Звонок по России бесплатный
+          </p>
         </div>
       </div>
-      <div class="form__row">
-        <div class="form__block --links">
-          <div class="form__checkbox">
-                <label class="checkbox">
-                  <input class="checkbox__input" type="checkbox" name="privacy" checked=""><span class="checkbox__element"></span><a class="checkbox__text link" href="./docs/privacy-policy-runxin.pdf" target="_blanc">Согласие на обработку данных</a>
-                </label>
-          </div>
-          <div class="form__file">
-                <label class="input__file js-inputFile">
-                  <input type="file" multiple="" name="files[]"><span class="input__file-el input__file-icon"></span><span class="input__file-el input__file-text link">Прикрепить файл</span><span class="input__file-count js-inputFileCount"></span>
-                </label>
-          </div>
-        </div>
-        <div class="form__block --submit">
-          <button class="form__button button" type="submit">Отправить запрос</button>
-        </div>
-      </div>
-    </form>
-    <div class="form__thanks">
-      <div class="form__thanks-title">Спасибо за Ваше обращение!</div>
-      <p class="form__thanks-description">
-         Мы свяжемся с&nbsp;Вами в&nbsp;ближайшее время.
-        А&nbsp;если у Вас очень срочный&nbsp;вопрос и ждать&nbsp;нельзя, скорее звоните&nbsp;нам:
-        <a href="tel:+78004442412">8 800 444 24 12</a>
-        Звонок по России бесплатный
-      </p>
     </div>
   </div>
