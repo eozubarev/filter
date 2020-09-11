@@ -292,7 +292,12 @@ h6 {
 }
 
 .form__textarea {
+  width: 100%;
   height: 100%;
+}
+
+.form__input {
+  margin-right: 10px;
 }
 
 .form__button {
@@ -308,11 +313,11 @@ h6 {
   border: 0;
   cursor: pointer;
   text-align: center;
-  -webkit-transition: -webkit-filter .3s;
-  transition: -webkit-filter .3s;
-  -o-transition: filter .3s;
-  transition: filter .3s;
-  transition: filter .3s, -webkit-filter .3s;
+  -webkit-transition: opacity 0.2s, -webkit-filter .3s;
+  transition: opacity 0.2s, -webkit-filter .3s;
+  -o-transition: filter .3s, opacity 0.2s;
+  transition: filter .3s, opacity 0.2s;
+  transition: filter .3s, opacity 0.2s, -webkit-filter .3s;
 }
 
 .form__button[disabled] {
@@ -322,9 +327,16 @@ h6 {
 }
 
 .form__button:not([disabled]):hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#0b727d), to(#258c97));
-  background-image: -o-linear-gradient(top, #0b727d 0%, #258c97 100%);
-  background-image: linear-gradient(to bottom, #0b727d 0%, #258c97 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#30aca4), to(#0f8f87));
+  background: -o-linear-gradient(bottom, #30aca4, #0f8f87);
+  background: linear-gradient(to top, #30aca4, #0f8f87);
+}
+
+.form__button:active {
+  opacity: 0.8;
+  -webkit-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 .form__thanks {
@@ -367,7 +379,6 @@ h6 {
   position: relative;
   display: block;
   padding: 15px 20px 18px;
-  margin-right: 10px;
   border: 1px solid #eee7d1;
   background-color: #fff;
   -webkit-transition: border-color .3s;
@@ -2308,6 +2319,34 @@ td {
   padding-right: 35%;
 }
 
+.section-callback {
+  padding: 60px 0 60px;
+  background-color: #fbf9f1;
+}
+
+.section-callback__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.section-callback__input {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.section-callback__input:last-child {
+  margin-right: 0px;
+}
+
+.section-callback__label {
+  padding: 15px 20px 18px;
+  width: 100%;
+}
+
 @media (min-width: 1800px) {
   .section-right__content {
     font-size: 25px;
@@ -2455,6 +2494,10 @@ td {
 }
 
 @media (max-width: 1200px) {
+  .form__input:last-child {
+    margin-right: 0px;
+  }
+
   .form {
     padding: 0;
     background-color: transparent;
@@ -2511,7 +2554,7 @@ td {
   }
 
   .form__block.--submit {
-    margin-top: 30px;
+    margin-top: 10px;
   }
 
   .input.--textarea {
@@ -2891,6 +2934,16 @@ td {
 }
 
 @media (max-width: 767px) {
+  .form__button {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .form__button {
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+
   .form.--slim .container {
     width: auto;
     margin: 0px;
@@ -2936,6 +2989,10 @@ td {
 
   .form__thanks-description a {
     margin: 15px 0;
+  }
+
+  .input__element {
+    font-size: 15px;
   }
 
   .input {
@@ -3389,6 +3446,12 @@ td {
   }
 }
 
+@media (max-width: 400px) {
+  .input__element {
+    font-size: 13px;
+  }
+}
+
 @media (max-width: 380px) {
   .section-complex__item {
     width: 100%;
@@ -3404,6 +3467,17 @@ td {
   .form .container {
     margin: 0;
     border-radius: 0;
+  }
+}
+
+@media (max-width: 350px) {
+  .input__element {
+    font-size: 12px;
+  }
+
+  .input__error-msg,
+  .input__placeholder {
+    left: 10px;
   }
 }
 

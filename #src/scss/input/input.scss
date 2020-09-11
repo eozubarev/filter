@@ -2,7 +2,7 @@
     position: relative;
     display: block;
     padding: 15px 20px 18px;
-    margin-right: 10px;
+    // margin-right: 10px;
     border: 1px solid $border;
     background-color: $white;
     transition: border-color .3s;
@@ -11,6 +11,12 @@
     &:hover {
       border-color: $active;
     }
+
+  //   @media(max-width: 1200px) {
+  //   &:last-child {
+  //     margin-right: 0px;
+  //   }
+  // }
   
     &.--textarea {
       height: 100%;
@@ -92,6 +98,16 @@
       resize: none;
       opacity: 0;
       transition: opacity .3s;
+
+      @media(max-width: 767px) {
+        font-size: 15px;
+      }
+      @media(max-width: 400px) {
+        font-size: 13px;
+      }
+      @media(max-width: 350px) {
+        font-size: 12px;
+      }
   
       &:focus {
         opacity: 1;
@@ -163,3 +179,9 @@
     }
   }
   
+  .input__error-msg, 
+  .input__placeholder {
+    @media(max-width: 350px) {
+      left: 10px;
+    }
+  }

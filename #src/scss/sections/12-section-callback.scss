@@ -13,6 +13,20 @@
 
     &__right {
     }
+
+    &__input {
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    &__input:last-child {
+        margin-right: 0px;
+    }
+
+    &__label {
+        padding: 15px 20px 18px;
+        width: 100%;
+    }
 }
 .container {
 }
