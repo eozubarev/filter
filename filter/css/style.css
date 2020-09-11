@@ -250,10 +250,12 @@ h6 {
 
 .form__title {
   position: relative;
-  margin-bottom: 80px;
-  font-size: 36px;
+  margin-bottom: 30px;
+  font-size: 28px;
   text-align: center;
-  line-height: 1.2;
+  font-family: "Roboto";
+  color: #000;
+  font-weight: 700;
 }
 
 .form__title span {
@@ -294,6 +296,7 @@ h6 {
 .form__textarea {
   width: 100%;
   height: 100%;
+  margin-bottom: 20px;
 }
 
 .form__input {
@@ -349,7 +352,6 @@ h6 {
   margin-bottom: 30px;
   font-size: 36px;
   text-align: center;
-  line-height: 1.2;
 }
 
 .form__thanks-description {
@@ -2333,6 +2335,10 @@ td {
           justify-content: center;
 }
 
+.section-callback__left {
+  margin-right: 80px;
+}
+
 .section-callback__input {
   margin-right: 20px;
   margin-bottom: 20px;
@@ -2343,8 +2349,13 @@ td {
 }
 
 .section-callback__label {
-  padding: 15px 20px 18px;
+  padding: 15px 94px 19px 18px;
   width: 100%;
+}
+
+.section-left__subtitle {
+  margin-bottom: 0;
+  margin-top: 70px;
 }
 
 @media (min-width: 1800px) {
@@ -2529,7 +2540,7 @@ td {
   }
 
   .form:not(.--slim) .form__title {
-    width: 500px;
+    width: 488px;
     margin-left: -40px;
     margin-bottom: 40px;
   }
@@ -2547,10 +2558,6 @@ td {
 
   .form__block {
     width: 100%;
-  }
-
-  .form__block + .form__block {
-    margin-top: 20px;
   }
 
   .form__block.--submit {
@@ -3231,6 +3238,10 @@ td {
 }
 
 @media (max-width: 567px) {
+  .form__textarea {
+    margin-bottom: 10px;
+  }
+
   .content_toggle {
     text-align: center;
     display: block;
