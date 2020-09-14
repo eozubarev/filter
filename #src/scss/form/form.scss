@@ -2,7 +2,6 @@
 
 	.form {
 		position: relative;
-		overflow: hidden;
 	  
 		&.--thanks {
 		  & form {
@@ -256,6 +255,7 @@
 		}
 	  }
 	  
+
 	  @media (max-width: 1200px) {
 		.form {
 		  &__container {
@@ -263,8 +263,8 @@
 		  }
 		  &:not(.--slim) {
 			& .form__title {
-			  width: 488px;
-			  margin-left: -40px;
+			  width: 100%;
+			  font-size: 22px;
 			  margin-bottom: 40px;
 			}
 		  }
@@ -285,7 +285,43 @@
 		  }
 		}
 	  }
-	  
+
+	  @media (max-width: 1130px) {
+		.form {
+
+		  &:not(.--slim) {
+			& .form__title {
+			  font-size: 30px;
+			}
+		  }
+		}
+	  }
+
+	  @media (max-width: 767px) {
+		.form {
+
+		  &:not(.--slim) {
+			& .form__title {
+			  font-size: 26px;
+			}
+		  }
+		}
+	  }
+
+	  @media (max-width: 460px) {
+		.form {
+
+		  &:not(.--slim) {
+			& .form__title {
+			  font-size: 24px;
+			  margin-bottom: 20px;
+			}
+		  }
+		}
+	  }
+	
+
+
 	  @media (max-width: 1000px) {
 		.form {
 		  & .container {
