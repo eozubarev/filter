@@ -1,21 +1,13 @@
 .section-about {
     padding: 100px 0px 100px;
-    background: linear-gradient(to right, white 27%, #fbf9f1 19%);
-    position: relative;
 
+    
     &__container {
         display: flex;
         justify-content: center;
+        background: linear-gradient(to right, white 12%, #fbf9f1 0%);
+        position: relative;
     }
-
-    // &__container::before {
-    //     content: '';
-    //     position: absolute; top: 0; left: 0;
-    //     width: 50%;
-    //     height: 100%;
-    //     background: #69F0AE;
-    //     z-index: -1;
-    // }
 
     &__left {
         z-index: 2;
