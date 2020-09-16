@@ -609,7 +609,7 @@ h6 {
 
 .footer {
   background-color: #f4f0e3;
-  padding: 60px 0px 60px;
+  padding: 15px 0px 25px;
 }
 
 .footer-container {
@@ -632,17 +632,28 @@ h6 {
 
 .footer-callback {
   line-height: 18px;
+  margin-right: 10px;
 }
 
 .footer-callback__phone {
   font-size: 16px;
   color: #202020;
   font-weight: 700;
-  line-height: 2;
 }
 
 .footer-city {
   line-height: 18px;
+  margin-right: 10px;
+}
+
+.footer-city:last-child {
+  margin-right: 0px;
+}
+
+.select-city,
+.logo-footer,
+.footer-callback__phone {
+  line-height: 2;
 }
 
 /* components start */
@@ -3064,6 +3075,34 @@ td {
   .header-page__end {
     position: absolute;
     right: 95px;
+  }
+
+  .footer-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .footer-logo {
+    margin-right: 0%;
+  }
+
+  .footer-callback {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .footer-city {
+    margin-right: 0px;
+    text-align: center;
+    margin-bottom: 15px;
   }
 
   .section-complex__item {

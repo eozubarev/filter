@@ -1,11 +1,20 @@
 .footer {
     background-color: #f4f0e3;
-    padding: 60px 0px 60px;
+    padding: 15px 0px 25px;
+
+    @media(max-width: 992px) {
+
+    }
 
     &-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media(max-width: 992px) {
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }
 
@@ -19,18 +28,27 @@
     @media(max-width: 1150px) {
         margin-right: 4%;
     }
+    @media(max-width: 992px) {
+        margin-right: 0%;
+    }
 }
 .footer-callback {
     line-height: 18px;
+    margin-right: 10px;
 
     &__phone {
         font-size: 16px;
         color: $black;
         font-weight: 700;
-        line-height: 2;
+    }
+
+    @media(max-width: 992px) {
+        text-align: center;
+        margin-bottom: 15px;
     }
 }
 .phone {
+    
 		&__item {
 		}
 }
@@ -41,4 +59,19 @@
 }
 .footer-city {
     line-height: 18px;
+    margin-right: 10px;
+    @media(max-width: 992px) {
+        margin-right: 0px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
+.footer-city:last-child {
+    margin-right: 0px;
+}
+
+.select-city,
+.logo-footer,
+.footer-callback__phone {
+    line-height: 2;
 }
