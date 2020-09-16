@@ -1,5 +1,44 @@
-footer{}
-//====================================================================================================
+.footer {
+    background-color: #f4f0e3;
+    padding: 60px 0px 60px;
 
-//====================================================================================================
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
 
+.footer-logo {
+    text-align: center;
+    color: $black;
+    margin-right: 10%;
+    @media(max-width: 1256px) {
+        margin-right: 7%;
+    }
+    @media(max-width: 1150px) {
+        margin-right: 4%;
+    }
+}
+.footer-callback {
+    line-height: 18px;
+
+    &__phone {
+        font-size: 16px;
+        color: $black;
+        font-weight: 700;
+        line-height: 2;
+    }
+}
+.phone {
+		&__item {
+		}
+}
+.header-page {
+
+		&__phone {
+		}
+}
+.footer-city {
+    line-height: 18px;
+}
