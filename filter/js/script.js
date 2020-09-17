@@ -23,7 +23,7 @@ $(window).scroll(function() {
 
 // Dots dynamics start
 
-(function () {
+(function  () {
     var self = $('.section-build');
     var dots = self.find('.c-section-build__scheme__dots');
 	var nav = self.find('.block__item');

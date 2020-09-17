@@ -2025,9 +2025,8 @@ hr {
 }
 
 td {
-  border-bottom: 1px solid #dbdbdb;
-  /* Линия снизу */
   padding: 17px 0px 17px;
+  border-bottom: 1px solid #dbdbdb;
 }
 
 .section-right__title {
