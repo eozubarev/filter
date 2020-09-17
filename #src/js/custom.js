@@ -83,7 +83,10 @@ tab();
 
 		nav.find('li').eq(index).addClass('is-active').siblings().removeClass('is-active');
 		
-		console.log(nav.children(".block__title").eq(index).addClass('is-active'));
+		// console.log(nav.children(".block__title").eq(index).addClass('is-active'));
+
+		console.log( nav.find('.block__title').eq(index).addClass('is-active') );
+
 	}
 
     dots.find('li').on('click', function () {

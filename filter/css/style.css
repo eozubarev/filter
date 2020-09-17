@@ -522,6 +522,9 @@ h6 {
 
 .header-page {
   padding: 30px 0;
+  background-color: #fff;
+  position: fixed;
+  z-index: 200;
 }
 
 .header-page__container {
