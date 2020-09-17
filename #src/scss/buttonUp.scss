@@ -20,6 +20,7 @@
     &.--active {
       opacity: 1;
       transform: none;
+      z-index: 5;
     }
   
     &:hover {
