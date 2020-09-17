@@ -40,4 +40,21 @@ $footerBg: #eaf2f3;
 
 $mainGradient: linear-gradient(to top, #13a89e, #37c6bc);
 
+
+$buttonBgImage: linear-gradient( 0deg, rgba(0,0,0,.1) 0%, rgba(255,255,255,.1) 100%);
+$buttonBgImageHover: linear-gradient( 180deg, rgba(0,0,0,.05) 100%, rgba(255,255,255,.05) 0%);
+
+$titleBg: linear-gradient(45deg, rgb(200,220,184) 0%, rgb(185,208,204) 50%, rgb(200,206,218) 100%);
+
+// Тень
+$shadow: 0 4px 15px rgba(0, 0, 0, .4);
+$shadow2: 0 1px 10px rgba(0, 0, 0, .35);
+
+
 //<ПЕРЕМЕННЫЕ>===========================================================================================================
+
+// Шрифты
+$firasans: 'Fira-sans', Arial, sans-serif;
+$roboto: 'Roboto', Arial, sans-serif;
+$robotoSlab: 'Roboto-slab', Arial, sans-serif;
+

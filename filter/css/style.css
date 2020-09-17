@@ -48,7 +48,7 @@ body {
 
 body {
   line-height: 1;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -57,7 +57,7 @@ body {
 input,
 button,
 textarea {
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 input::-ms-clear {
@@ -181,7 +181,7 @@ h6 {
   margin-bottom: 30px;
   font-size: 28px;
   text-align: center;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   color: #000;
   font-weight: 700;
 }
@@ -191,7 +191,7 @@ h6 {
   left: 0;
   right: 0;
   bottom: -20px;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 13px;
   color: #aaa;
 }
@@ -239,7 +239,7 @@ h6 {
   background: linear-gradient(to top, #13a89e, #37c6bc);
   color: #fff;
   padding: 19px 17px;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 15px;
   border: 0;
   cursor: pointer;
@@ -327,7 +327,7 @@ h6 {
 
 .input.--textarea .input__element {
   height: 100%;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
 }
 
@@ -492,39 +492,24 @@ h6 {
           filter: grayscale(1);
 }
 
-/*
-	Стиль иконки бургера
-	.icon-menu{
-		display: block;
-		position: absolute;
-		top: 18px;
-		right: 10px;
-		width:30px;
-		height: 18px;
-		cursor: pointer;
-		z-index: 5;
-		span{@include anim(0.3s,0s);top: 8px;left: 0px;position: absolute;width: 100%;height: 2px;background-color: #000;
-			&:first-child{top: 0px;}
-			&:last-child{top: auto;bottom: 0px;}
-		}
-		&.active{
-			span{@include scale(0);
-				&:first-child{@include rotate(-45deg);top: 8px;}
-				&:last-child{@include rotate(45deg);bottom: 8px;}
-			}
-		}
-	}
-*/
-
-#modal-city {
-  display: none;
-}
-
 .header-page {
   padding: 30px 0;
   background-color: #fff;
-  position: fixed;
   z-index: 200;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.header-page.--scrolled-header {
+  padding: 10px 0;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .header-page__container {
@@ -549,7 +534,7 @@ h6 {
 }
 
 .header-page__nav {
-  margin: 0px 110px;
+  margin: 0px 85px;
 }
 
 .header-page__ul {
@@ -575,7 +560,7 @@ h6 {
   text-decoration: none;
   display: block;
   padding: 10px;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 900;
   font-size: 14px;
 }
@@ -592,10 +577,10 @@ h6 {
 }
 
 .header-page__phone {
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   color: #1f1f1f;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .header-page__hamburger {
@@ -605,7 +590,7 @@ h6 {
 
 .city {
   font-size: 14px;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 /* header-page end */
@@ -662,7 +647,7 @@ h6 {
 /* components start */
 
 body {
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 14px;
   color: #898989;
 }
@@ -697,7 +682,7 @@ hr {
   width: 240px;
   max-width: 100%;
   border-radius: 1px;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 15px;
   border: 0;
   cursor: pointer;
@@ -800,7 +785,7 @@ hr {
   text-align: center;
   margin: 0 auto 30px;
   padding: 0px 15px;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   color: #000;
   font-size: 40px;
   font-weight: 900;
@@ -820,13 +805,13 @@ hr {
   line-height: 24px;
   margin: 0 auto 30px;
   padding: 0px 15px;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   color: #000;
   font-size: 14px;
 }
 
 .subtitle {
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   color: #dbb680;
   font-size: 14px;
   font-weight: 700;
@@ -1080,7 +1065,7 @@ hr {
 }
 
 .block__title {
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 18px;
   font-weight: 500;
   color: #13a89e;
@@ -1105,9 +1090,64 @@ hr {
   border-bottom: none;
 }
 
+.buttonUp {
+  position: fixed;
+  right: 20px;
+  bottom: 55px;
+  z-index: 15;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+  -webkit-transition: opacity .3s, -webkit-transform .3s, -webkit-box-shadow .3s;
+  transition: opacity .3s, -webkit-transform .3s, -webkit-box-shadow .3s;
+  -o-transition: transform .3s, opacity .3s, box-shadow .3s;
+  transition: transform .3s, opacity .3s, box-shadow .3s;
+  transition: transform .3s, opacity .3s, box-shadow .3s, -webkit-transform .3s, -webkit-box-shadow .3s;
+}
+
+.buttonUp.--active {
+  opacity: 1;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+}
+
+.buttonUp:hover {
+  -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.buttonUp__icon {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.buttonUp__icon svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  fill: #25b7ad;
+}
+
 .section-top {
   background: #f4f0e3;
   min-height: 625px;
+  margin-top: 110px;
 }
 
 .section-top__container {
@@ -1125,7 +1165,7 @@ hr {
   text-align: left;
   max-width: 675px;
   width: 100%;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 46px;
   font-weight: 700;
   color: #2d2d2d;
@@ -1357,7 +1397,7 @@ hr {
   width: 100%;
   font-weight: 500;
   margin-bottom: 5px;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 20px;
   color: #000;
 }
@@ -2240,7 +2280,7 @@ td {
 }
 
 .show-composition {
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 14px;
   color: #000;
   border-bottom: 1px dashed;
@@ -2614,12 +2654,6 @@ td {
   }
 }
 
-@media (max-width: 1387px) {
-  .header-page__nav {
-    margin: 0px 45px;
-  }
-}
-
 @media (max-width: 1378px) {
   .section-about__right {
     max-width: 715px;
@@ -2700,6 +2734,12 @@ td {
   }
 }
 
+@media (max-width: 1300px) {
+  .header-page__nav {
+    margin: 0px 42px;
+  }
+}
+
 @media (max-width: 1289px) {
   .section-callback__label {
     padding: 15px 19px 19px 18px;
@@ -2751,6 +2791,16 @@ td {
 @media (max-width: 1225px) {
   .section-regeneration___title {
     padding-top: 20px;
+  }
+}
+
+@media (max-width: 1208px) {
+  .header-page__nav {
+    margin: 0px 23px;
+  }
+
+  .header-page__li {
+    margin: 0px 5px;
   }
 }
 
@@ -2832,16 +2882,6 @@ td {
   }
 }
 
-@media (max-width: 1171px) {
-  .header-page__nav {
-    margin: 0px 25px;
-  }
-
-  .header-page__li {
-    margin: 0px 5px;
-  }
-}
-
 @media (max-width: 1150px) {
   .footer-logo {
     margin-right: 4%;
@@ -2851,6 +2891,16 @@ td {
 @media (max-width: 1140px) {
   .section-callback__label {
     padding: 15px 15px 19px 18px;
+  }
+}
+
+@media (max-width: 1135px) {
+  .header-page__nav {
+    margin: 0px 4px;
+  }
+
+  .header-page__li {
+    margin: 0px 5px;
   }
 }
 
@@ -3058,7 +3108,7 @@ td {
 
 @media (max-width: 992px) {
   .header-page {
-    padding: 10px 0px 0px 0px;
+    padding: 25px 0px 0px 0px;
   }
 
   .header-page__nav {
@@ -3330,6 +3380,13 @@ td {
 
   .mobile-menu__link {
     font-size: 20px;
+  }
+
+  .buttonUp {
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
   }
 
   .section-components__title {

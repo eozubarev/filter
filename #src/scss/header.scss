@@ -1,40 +1,21 @@
-//====================================================================================================
-
-//====================================================================================================
-/*
-	Стиль иконки бургера
-	.icon-menu{
-		display: block;
-		position: absolute;
-		top: 18px;
-		right: 10px;
-		width:30px;
-		height: 18px;
-		cursor: pointer;
-		z-index: 5;
-		span{@include anim(0.3s,0s);top: 8px;left: 0px;position: absolute;width: 100%;height: 2px;background-color: #000;
-			&:first-child{top: 0px;}
-			&:last-child{top: auto;bottom: 0px;}
-		}
-		&.active{
-			span{@include scale(0);
-				&:first-child{@include rotate(-45deg);top: 8px;}
-				&:last-child{@include rotate(45deg);bottom: 8px;}
-			}
-		}
-	}
-*/
-
-
-#modal-city {
-	display: none;
-}
 
 .header-page {
 	padding: 30px 0;
 	background-color: $white;
-	position: fixed;
 	z-index: 200;
+
+	position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+	width: 100%;
+
+	transition: all 0.2s linear;
+	
+	&.--scrolled-header {
+		padding: 10px 0;
+		box-shadow: 0 0 10px rgba(0,0,0,0.3);
+	}
 
 	&__container {
 		display: flex;
@@ -55,7 +36,7 @@
 	}
 
 	&__nav {
-		 margin: 0px 110px;
+		margin: 0px 85px;
 	}
 
 	&__ul {
@@ -97,7 +78,7 @@
 		font-family: $roboto;
 		color: #1f1f1f;
 		font-weight: 600;
-		font-size: 14px;
+		font-size: 20px;
 	}
 
 	&__hamburger {
@@ -111,15 +92,24 @@
 	font-family: $roboto;
 }
 
-@media (max-width: 1387px) {
+@media (max-width: 1300px) {
 	.header-page__nav {
-		margin:0px 45px;
+		margin:0px 42px;
 	}
 }
 
-@media (max-width: 1171px) {
+@media (max-width: 1208px) {
 	.header-page__nav {
-		margin:0px 25px;
+		margin:0px 23px;
+	}
+	.header-page__li {
+		margin:0px 5px;
+	}
+}
+
+@media (max-width: 1135px) {
+	.header-page__nav {
+		margin:0px 4px;
 	}
 	.header-page__li {
 		margin:0px 5px;
@@ -142,7 +132,7 @@
   @media (max-width: 992px) {
 
 	.header-page {
-		padding: 10px 0px 0px 0px;
+		padding: 25px 0px 0px 0px;
 	}
 
 	.header-page__nav {
