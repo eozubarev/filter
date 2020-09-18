@@ -1206,9 +1206,10 @@ hr {
   text-decoration: none;
   padding: 20px 0;
   display: block;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 24px;
-  color: inherit;
+  color: #202020;
+  text-transform: uppercase;
   font-weight: 900;
   text-align: center;
   -webkit-transition: background .2s, color .2s, opacity .2s;
@@ -1217,7 +1218,7 @@ hr {
 }
 
 .mobile-menu__link:hover {
-  background: #ffa650;
+  background: #25b7ad;
   color: #fff;
 }
 

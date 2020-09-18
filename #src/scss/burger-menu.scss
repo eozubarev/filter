@@ -103,16 +103,17 @@
     text-decoration: none;
     padding: 20px 0;
     display: block;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $roboto;
     font-size: 24px;
-    color: inherit;
+    color: $black;
+    text-transform: uppercase;
     font-weight: 900;
     text-align: center;
     transition: background .2s, color .2s, opacity .2s;
   }
   
   .mobile-menu__link:hover {
-    background: #ffa650;
+    background: $active;
     color: #fff;
   }
   
