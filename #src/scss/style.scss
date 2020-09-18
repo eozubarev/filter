@@ -11,23 +11,46 @@ $myriadPro: "Myriad Pro";
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 
+
+//<VARIABLES>=============================
 @import "./variables/variables.scss";
+//<VARIABLES>=============================
 
+//<NULL STYLES>===========================
 @import "./null/null.scss";
+//<NULL STYLES>===========================
 
+//<ОБЩИЕ СТИЛИ>===========================
+@import "components.scss";
+//<ОБЩИЕ СТИЛИ>===========================
+
+//<FORMS>=================================
 @import "./form/form.scss";
 @import "./input/input.scss";
 @import "./checkNumber/checkNumber.scss";
+//<FORMS>=================================
 
+//<HEADER>===============================
 @import "header.scss";
-@import "footer.scss";
-@import "components.scss";
-@import "spoiler.scss";
+//<HEADER>===============================
+
+//<BUTTON SCROLL UP>======================
 @import "buttonUp.scss";
+//<BUTTON SCROLL UP>======================
 
+@import "spoiler.scss";
+
+//<BURGER-MENU>============================
 @import "burger-menu.scss";
-@import "popup.scss";
+//<BURGER-MENU>============================
 
+//<POPUP>==================================
+@import "./popup/popup.scss";
+@import "./popup/popup-cards.scss";
+@import "popup-city.scss";
+//<POPUP>==================================
+
+//<SECTIONS>===============================
 @import "./sections/1-section-top.scss";
 @import "./sections/2-section-about.scss";
 @import "./sections/3-section-complex.scss";
@@ -40,6 +63,12 @@ $myriadPro: "Myriad Pro";
 @import "./sections/10-section-example.scss";
 @import "./sections/11-section-calculation.scss";
 @import "./sections/12-section-callback.scss";
+//<SECTIONS>======================================
+
+//<FOOTER>============================
+@import "footer.scss";
+//<FOOTER>============================
+
 
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 

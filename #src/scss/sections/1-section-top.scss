@@ -140,18 +140,16 @@
 .img-youtube-prewiew {
     max-width: 270px;
     position: absolute;
+    transition: all 0.1s linear;
 
     top: 0%;
     left: 58%;
     z-index: 5;
 
     @media (max-width: 1316px) {
-            max-width: 250px;
-            // top: 20%;
-            // left: 60%;        
+            max-width: 250px;  
     }
 }
-
 .img-youtube-play {
     position: absolute;
 

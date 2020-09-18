@@ -7,4 +7,6 @@
 @@include('popup.js');
 @@include('myLib.js');
 @@include('scrollTo.js');
+
 @@include('modal-card.js');
+@@include('modal-city.js');
