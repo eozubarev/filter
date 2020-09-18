@@ -1,11 +1,10 @@
 .section-about {
     padding: 100px 0px 100px;
-
+    background: linear-gradient(to right, white 12%, #fbf9f1 0%);
     
     &__container {
         display: flex;
         justify-content: center;
-        background: linear-gradient(to right, white 12%, #fbf9f1 0%);
         position: relative;
     }
 
