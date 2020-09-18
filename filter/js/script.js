@@ -409,9 +409,20 @@ $('.button').click(function(){
     var buttonId = $(this).attr('id');
     $('#modal-container').removeAttr('class').addClass(buttonId);
     $('body').addClass('modal-active');
+
+    window.myLib.toggleScroll = function() {
+      myLib.body.classList.toggle("no-scroll");
+    };
   })
   
   $('#modal-container').click(function(){
     $(this).addClass('out');
     $('body').removeClass('modal-active');
-  });;
+
+    window.myLib.toggleScroll = function() {
+      myLib.body.classList.toggle("no-scroll");
+    };
+  });
+
+  
+;

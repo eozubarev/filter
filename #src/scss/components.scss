@@ -24,6 +24,11 @@ hr {
    }
  }
 
+ .no-scroll {
+  overflow: hidden;
+}
+
+
 /* btn start */
 .btn {
     background: linear-gradient(to top, #13a89e, #37c6bc);
