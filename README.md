@@ -1,10 +1,9 @@
-```php
-//php code 
+### Upload node_modules
+```
 npm i
 ```
-
-```php
-//php code 
+### Start gulp
+```
 gulp
 ```
  https://eozubarev.github.io/filter/filter
