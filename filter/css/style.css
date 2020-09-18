@@ -2268,6 +2268,7 @@ td {
 
 .section-build {
   margin-bottom: 40px;
+  margin-top: -200px;
   display: block;
 }
 
