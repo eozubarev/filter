@@ -82,6 +82,16 @@
 
     &__description {
         color: #000;
+        line-height: 24px;
+    }
+
+    &__description span {
+        color: #000;
+        @media (max-width: 567px) {
+            .item-text span {
+                display: none;
+            }
+        }
     }
 }
 
@@ -155,8 +165,6 @@
     }
 }
 
-.item-text {
-    line-height: 24px;
-}
+
 
 //SECOND BLOCK End
