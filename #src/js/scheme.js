@@ -1,44 +1,88 @@
+ new class PromixScheme {
+    constructor() {
+        this.tabs = [...document.querySelectorAll('.promix__scheme-tab')];
+        this.dots = [...document.querySelectorAll('.promix__scheme-dot')];
 
-// Dots dynamics start
+        this.paddingTab = 15;
+        this.schemeTabActive = 'promix__scheme-tab--active';
+        this.schemeDotActive = 'promix__scheme-dot--active';
 
-(function  () {
-    var self = $('.section-build');
-    var dots = self.find('.c-section-build__scheme__dots');
-	var nav = self.find('.block__item');
-	
-    function setActive(index) {
-		dots.find('li').eq(index).addClass('is-active').siblings().removeClass('is-active');
-		nav.find('li').eq(index).addClass('is-active').siblings().removeClass('is-active');
-		
-		// console.log(nav.children(".block__title").eq(index).addClass('is-active'));
+        this.listeners();
+    }
 
-		// console.log( nav.find('.block__title').eq(index).addClass('is-active') );
+    listeners() {
+        this.tabs.forEach((tab, i) => {
+            i === 0 ? this.activeTab(tab) : '';
+            tab.addEventListener('click', event => {
+                event.preventDefault();
+                if (!tab.classList.contains(this.schemeTabActive)) {
+                    this.activeTab(tab);
+                    this.changeDot(tab);
+                }
+            });
+        });
 
-	}
+        this.dots.forEach((dot, i) => {
+            i === 0 ? this.activeDot(dot) : '';
+            dot.addEventListener('click', event => {
+                event.preventDefault();
+                if (!dot.classList.contains(this.schemeDotActive)) {
+                    this.activeDot(dot);
+                    this.changeTab(dot);
+                }
+            });
+        });
+    }
 
-    dots.find('li').on('click', function () {
-        setActive($(this).index());
-    });
-    nav.on('click', function () {
-        setActive($(this).index());
-	});
+    activeTab(tab) {
+        let content = tab.querySelector('.promix__scheme-tab-content');
+        let contentInner = tab.querySelector('.promix__scheme-tab-info');
+        let padding = this.paddingTab + 'px';
+        let height = contentInner.getBoundingClientRect().height + this.paddingTab + 'px';
 
-})();
+        this.closeTabs();
+        content.style.maxHeight = height;
+        content.style.paddingTop = padding;
+        tab.classList.add(this.schemeTabActive);
+    }
 
+    changeTab(dot) {
+        let currentDot = dot.dataset.schemeDot;
+        this.tabs.forEach(tab => {
+            let currentTab = tab.dataset.schemeTab;
+            if (currentTab === currentDot) {
+                this.activeTab(tab);
+            }
+        });
+    }
 
-// Dots dynamics end
+    closeTabs() {
+        this.tabs.forEach(tab => {
+            let content = tab.querySelector('.promix__scheme-tab-content');
+            tab.classList.remove(this.schemeTabActive);
+            content.style.maxHeight = 0;
+            content.style.paddingTop = 0;
+        });
+    }
 
-// Spoiler start
+    activeDot(dot) {
+        this.closeDots();
+        dot.classList.add(this.schemeDotActive);
+    }
 
-$(document).ready(function() {
-	$('.block__title').click(function(event) {
-		if($('.block').hasClass('one')){
-			$('.block__title').not($(this)).removeClass('active');
-			$('.block__text').not($(this).next()).slideUp(300);
-		}
-		$(this).toggleClass('active').next().slideToggle(300);
-	});
-});
+    changeDot(tab) {
+        let currentTab = tab.dataset.schemeTab;
+        this.dots.forEach(dot => {
+            let currentDot = dot.dataset.schemeDot;
+            if (currentTab === currentDot) {
+                this.activeDot(dot);
+            }
+        });
+    }
 
-// Spoiler end
-
+    closeDots() {
+        this.dots.forEach(dot => {
+            dot.classList.remove(this.schemeDotActive);
+        });
+    }
+}
