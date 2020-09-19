@@ -411,7 +411,7 @@
           font-weight: 700;
           border-radius: 50%;
           background-image: $gradient_green_count;
-          transition: filter $transition;
+          transition: $transition;
           &:after {
             counter-increment: scheme-dots;
             content: counter(scheme-dots);
@@ -426,7 +426,10 @@
             z-index: -1;
           }
           &--active {
-
+            filter: grayscale(1);
+            &:before {
+              animation: pulse 1.5s ease-in-out infinite backwards;
+            }
           }
           &:hover:not(.promix__scheme-dot--active) {
             &:before {

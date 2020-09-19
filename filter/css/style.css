@@ -2388,11 +2388,9 @@ td {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#37c6bc), to(#13a89e));
   background-image: -o-linear-gradient(#37c6bc, #13a89e);
   background-image: linear-gradient(#37c6bc, #13a89e);
-  -webkit-transition: -webkit-filter 0.3s ease;
-  transition: -webkit-filter 0.3s ease;
-  -o-transition: filter 0.3s ease;
-  transition: filter 0.3s ease;
-  transition: filter 0.3s ease, -webkit-filter 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .promix__scheme-dot:after {
@@ -2408,6 +2406,16 @@ td {
   border-radius: 50%;
   background-image: inherit;
   z-index: -1;
+}
+
+.promix__scheme-dot--active {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.promix__scheme-dot--active:before {
+  -webkit-animation: pulse 1.5s ease-in-out infinite backwards;
+          animation: pulse 1.5s ease-in-out infinite backwards;
 }
 
 .promix__scheme-dot:hover:not(.promix__scheme-dot--active):before {
