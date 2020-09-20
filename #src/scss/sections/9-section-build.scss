@@ -276,21 +276,46 @@
 
 .promix {
 
+  @media(max-width: 745px) {
+    margin-top: 20px;
+  }
+
     &__scheme {
         &-title {
+          text-align: left;
           margin-bottom: 30px;
+          @media(max-width: 992px) {
+            text-align: center;
+          }
+        }
+        &-subtitle {
+          text-align: left;
+          margin: 0;
+          @media(max-width: 992px) {
+            text-align: center;
+          }
         }
         &-container {
           display: flex;
           justify-content: space-between;
           margin: 15px 0 0;
+
+          @media(max-width: 992px) {
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+          }
         }
         &-block {
           width: calc(50% - 40px);
+          @media(max-width: 992px) {
+            width: 100%;
+          }
           &--image {
             display: flex;
             align-items: center;
             justify-content: center;
+            
           }
         }
         &-tabs {
@@ -303,8 +328,8 @@
           }
           &:hover {
             & .promix__scheme-tab-header {
-              color: $black;
-              border-color: $black;
+              color: #dbb680;
+              border-color: #dbb680;
             }
           }
           &:not(.promix__scheme-tab--active) {
@@ -312,7 +337,7 @@
           }
           &--active {
             & .promix__scheme-tab-header {
-              color: $black;
+              color: #dbb680;
               border-color: transparent !important;
             }
             & .promix__scheme-tab-content {
@@ -321,7 +346,9 @@
           }
           &-header {
             display: inline-block;
-            color: $text_link;
+            color: $active;
+            font-weight: 700;
+            font-size: 16px;
             border-bottom: 1px dashed $text_link;
             transition: color $transition, border-color $transition;
             &:before {
@@ -330,6 +357,7 @@
             }
           }
           &-content {
+            color: $black;
             position: relative;
             max-width: 450px;
             max-height: 0;
@@ -345,12 +373,22 @@
               height: 3px;
               background-image: linear-gradient(0deg, #fff, transparent);
             }
+            @media(max-width: 992px) {
+              display: block;
+              text-align: center;
+              margin: 0 auto;
+            }
           }
         }
         &-object {
           position: relative;
           counter-reset: scheme-dots;
+          @media(max-width: 992px) {
+            margin-top: 60px;
+            max-width: 100%;
+          }
         }
+
         &-dot {
           display: flex;
           align-items: center;
@@ -364,6 +402,17 @@
           border-radius: 50%;
           background-image: $gradient_green_count;
           transition: filter $transition;
+
+          @media(max-width: 615px) {
+            width: 30px;
+            height: 30px;
+            font-size: 15px;
+          }
+          @media(max-width: 420px) {
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+          }
           &:after {
             counter-increment: scheme-dots;
             content: counter(scheme-dots);
@@ -393,28 +442,32 @@
             cursor: pointer;
           }
           &[data-scheme-dot="1"] {
-            top: 85px;
-            left: 132px;
+            top: 27%;
+            left: 18%;
           }
           &[data-scheme-dot="2"] {
-            top: 105px;
-            left: 225px;
+            top: 25%;
+            left: 40%;
           }
           &[data-scheme-dot="3"] {
-            top: 230px;
-            left: 390px;
+            top: 53%;
+            left: 72%;
           }
           &[data-scheme-dot="4"] {
-            top: 16px;
-            left: 362px;
+            top: 3%;
+            left: 66%;
           }
           &[data-scheme-dot="5"] {
-            top: 360px;
-            left: 135px;
+            top: 85%;
+            left: 25%;
           }
           &[data-scheme-dot="6"] {
-            top: -45px;
-            left: 277px;
+            top: -10%;
+            left: 51%;
+            @media(max-width: 452px) {
+              top: -13%;
+              left: 50%;
+            }
           }
         }
       }
@@ -470,4 +523,8 @@
       -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
       box-shadow: 0 0 0 0 rgba(204,169,44, 0);
   }
+}
+
+.scheme-img {
+    max-width: 100%;
 }
