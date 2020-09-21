@@ -1463,9 +1463,9 @@ hr {
 
 .section-about {
   padding: 100px 0px 100px;
-  background: -webkit-gradient(linear, left top, right top, color-stop(21%, white), color-stop(0%, #fbf9f1));
-  background: -o-linear-gradient(left, white 21%, #fbf9f1 0%);
-  background: linear-gradient(to right, white 21%, #fbf9f1 0%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, white), color-stop(0%, #fbf9f1));
+  background: -o-linear-gradient(left, white 20%, #fbf9f1 0%);
+  background: linear-gradient(to right, white 20%, #fbf9f1 0%);
 }
 
 .section-about__container {
@@ -2774,6 +2774,10 @@ td {
 .logo-footer,
 .footer-callback__phone {
   line-height: 2;
+}
+
+.copyright {
+  margin-top: 5px;
 }
 
 @media (min-width: 1800px) {

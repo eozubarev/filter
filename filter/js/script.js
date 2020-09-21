@@ -278,73 +278,80 @@ $(document).ready(function(){
   })();
   
   /* myLib */;
-/* scrollTo */
-(function() {
-    var linear = function(t, b, c, d) {
-      return (c * t) / d + b;
-    };
+  new class Nav {
+    constructor() {
+      this.header = document.querySelector('header.header-page');
+      this.headerHeight = this.header.getBoundingClientRect().height;
+      this.links = [...document.querySelectorAll('[href*="#"]')];
+      this.navItems = [...document.querySelectorAll('.mobile-menu__li')];
   
-    var isAnimatedScroll = false;
+      this.listeners();
+      this.scrollToEl(this.links);
+    }
   
-    var smoothScroll = function(target, duration) {
-      isAnimatedScroll = true;
+    listeners() {
+      this.navItems.forEach(item => {
+        item.addEventListener('click', event => {
+          this.toggleActiveClass(this.navItems, item, '--active');
+        });
+      });
+    }
   
-      var startPosition = window.pageYOffset;
-      var targetPosition = startPosition + target.getBoundingClientRect().top;
-      var distance = targetPosition - startPosition;
-      var startTime = null;
+    toggleActiveClass(items, item, activeClass) {
+      if (!item.classList.contains(activeClass)) {
   
-      var animation = function(currentTime) {
-        if (startTime === null) {
-          startTime = currentTime;
-        }
+        items.forEach(another => {
+          another.classList.remove(activeClass);
+        })
   
-        var timeElapsed = currentTime - startTime;
-        var scrollY = distance * (timeElapsed / duration) + startPosition -70; // linear
-  
-        window.scrollTo(0, scrollY);
-  
-        // console.log(
-        //   "Distance: " +
-        //     distance +
-        //     ". TimeElapsed: " +
-        //     timeElapsed +
-        //     ". duration: " +
-        //     duration +
-        //     ". StartPosition: " +
-        //     startPosition +
-        //     ". ScrollY: " +
-        //     scrollY
-        // );
-  
-        if (timeElapsed < duration) {
-          requestAnimationFrame(animation);
-        } else {
-          isAnimatedScroll = false;
-        }
-      };
-  
-      requestAnimationFrame(animation);
-    };
-  
-    myLib.body.addEventListener("click", function(e) {
-      var target = e.target;
-      var scrollToItemClass = myLib.closestAttr(target, "data-scroll-to");
-  
-      if (scrollToItemClass === null || isAnimatedScroll) {
-        return;
+        item.classList.add(activeClass);
       }
+    }
   
-      e.preventDefault();
-      var scrollToItem = document.querySelector("." + scrollToItemClass);
+    scrollToEl(links) {
+      links.forEach(link => {
   
-      if (scrollToItem) {
-        smoothScroll(scrollToItem, 500);
-      }
-    });
-  })();
-  
-  /* scrollTo */;
+        try {
+          let href = link.getAttribute('href');
+    
+          if (href !== '#' && href !== '') {
+            link.addEventListener('click', event => {
+              event.preventDefault();
+      
+              if (document.querySelector(href)) {
+                let target = document.querySelector(href);
+                // Величина верхнего отступа, к которой скролить, вместе с посчитанной высотой фикс. шапки
+                let destination = target.getBoundingClientRect().top - this.headerHeight;
+                let currentPosition = pageYOffset;
+                let speed = 0.10;
+                let start = null;
+          
+                function scrolling(time) {
+                  if (start === null) {
+                    start = time;
+                  }
+            
+                  let progress = time - start;
+                  let nowScroll = null;
+            
+                  destination < 0 ? nowScroll = Math.max(currentPosition - progress / speed, currentPosition + destination) :
+                                    nowScroll = Math.min(currentPosition + progress / speed, currentPosition + destination);
+            
+                  window.scrollTo(0, nowScroll);
+                  if (nowScroll != currentPosition + destination) {
+                    requestAnimationFrame(scrolling);
+                  }
+                }
+                requestAnimationFrame(scrolling);
+              }
+            });
+          }
+        } catch {
+          console.error('Ошибка анимации скролла');
+        }
+      });
+    }
+  };
 
 (function() {
     var showPopup = function(target) {
@@ -403,73 +410,80 @@ $(document).ready(function(){
   /* popup */;
 
 // Скролл к секциям из главного и из бургер меню
-/* scrollTo */
-(function() {
-    var linear = function(t, b, c, d) {
-      return (c * t) / d + b;
-    };
+  new class Nav {
+    constructor() {
+      this.header = document.querySelector('header.header-page');
+      this.headerHeight = this.header.getBoundingClientRect().height;
+      this.links = [...document.querySelectorAll('[href*="#"]')];
+      this.navItems = [...document.querySelectorAll('.mobile-menu__li')];
   
-    var isAnimatedScroll = false;
+      this.listeners();
+      this.scrollToEl(this.links);
+    }
   
-    var smoothScroll = function(target, duration) {
-      isAnimatedScroll = true;
+    listeners() {
+      this.navItems.forEach(item => {
+        item.addEventListener('click', event => {
+          this.toggleActiveClass(this.navItems, item, '--active');
+        });
+      });
+    }
   
-      var startPosition = window.pageYOffset;
-      var targetPosition = startPosition + target.getBoundingClientRect().top;
-      var distance = targetPosition - startPosition;
-      var startTime = null;
+    toggleActiveClass(items, item, activeClass) {
+      if (!item.classList.contains(activeClass)) {
   
-      var animation = function(currentTime) {
-        if (startTime === null) {
-          startTime = currentTime;
-        }
+        items.forEach(another => {
+          another.classList.remove(activeClass);
+        })
   
-        var timeElapsed = currentTime - startTime;
-        var scrollY = distance * (timeElapsed / duration) + startPosition -70; // linear
-  
-        window.scrollTo(0, scrollY);
-  
-        // console.log(
-        //   "Distance: " +
-        //     distance +
-        //     ". TimeElapsed: " +
-        //     timeElapsed +
-        //     ". duration: " +
-        //     duration +
-        //     ". StartPosition: " +
-        //     startPosition +
-        //     ". ScrollY: " +
-        //     scrollY
-        // );
-  
-        if (timeElapsed < duration) {
-          requestAnimationFrame(animation);
-        } else {
-          isAnimatedScroll = false;
-        }
-      };
-  
-      requestAnimationFrame(animation);
-    };
-  
-    myLib.body.addEventListener("click", function(e) {
-      var target = e.target;
-      var scrollToItemClass = myLib.closestAttr(target, "data-scroll-to");
-  
-      if (scrollToItemClass === null || isAnimatedScroll) {
-        return;
+        item.classList.add(activeClass);
       }
+    }
   
-      e.preventDefault();
-      var scrollToItem = document.querySelector("." + scrollToItemClass);
+    scrollToEl(links) {
+      links.forEach(link => {
   
-      if (scrollToItem) {
-        smoothScroll(scrollToItem, 500);
-      }
-    });
-  })();
-  
-  /* scrollTo */;
+        try {
+          let href = link.getAttribute('href');
+    
+          if (href !== '#' && href !== '') {
+            link.addEventListener('click', event => {
+              event.preventDefault();
+      
+              if (document.querySelector(href)) {
+                let target = document.querySelector(href);
+                // Величина верхнего отступа, к которой скролить, вместе с посчитанной высотой фикс. шапки
+                let destination = target.getBoundingClientRect().top - this.headerHeight;
+                let currentPosition = pageYOffset;
+                let speed = 0.10;
+                let start = null;
+          
+                function scrolling(time) {
+                  if (start === null) {
+                    start = time;
+                  }
+            
+                  let progress = time - start;
+                  let nowScroll = null;
+            
+                  destination < 0 ? nowScroll = Math.max(currentPosition - progress / speed, currentPosition + destination) :
+                                    nowScroll = Math.min(currentPosition + progress / speed, currentPosition + destination);
+            
+                  window.scrollTo(0, nowScroll);
+                  if (nowScroll != currentPosition + destination) {
+                    requestAnimationFrame(scrolling);
+                  }
+                }
+                requestAnimationFrame(scrolling);
+              }
+            });
+          }
+        } catch {
+          console.error('Ошибка анимации скролла');
+        }
+      });
+    }
+  };
 
 // Бибилиотека с формами
 !(function (e) {
