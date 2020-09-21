@@ -51,25 +51,24 @@ $myriadPro: "Myriad Pro";
 //<POPUP>==================================
 
 //<SECTIONS>===============================
-@import "./sections/1-section-top.scss";
-@import "./sections/2-section-about.scss";
-@import "./sections/3-section-complex.scss";
-@import "./sections/4-section-components.scss";
-@import "./sections/5-section-regeneration.scss";
-@import "./sections/6-section-prefits.scss";
-@import "./sections/7-section-types.scss";
-@import "./sections/8-section-specifications.scss";
-@import "./sections/9-section-build.scss";
-@import "./sections/10-section-example.scss";
-@import "./sections/11-section-calculation.scss";
-@import "./sections/12-section-callback.scss";
+@import "./sections/section-about/section-about.scss";
+@import "./sections/section-about/section-about.scss";
+@import "./sections/section-complex/section-complex.scss";
+@import "./sections/section-components/section-components.scss";
+@import "./sections/section-regeneration/section-regeneration.scss";
+@import "./sections/section-prefits/section-prefits.scss";
+@import "./sections/section-types/section-types.scss";
+@import "./sections/section-specefication/section-specifications.scss";
+@import "./sections/section-build/section-build.scss";
+@import "./sections/section-example/section-example.scss";
+@import "./sections/section-calculation/section-calculation.scss";
+@import "./sections/section-callback/section-callback.scss";
 //<SECTIONS>======================================
 
 //<FOOTER>============================
 @import "footer.scss";
 //<FOOTER>============================
 
-// @import "scheme.scss";
 
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 
