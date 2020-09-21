@@ -3348,7 +3348,7 @@ td {
   }
 
   .section-top__left {
-    margin-top: 40px;
+    margin-top: 80px;
   }
 
   .section-about {
@@ -3647,6 +3647,20 @@ td {
   .section-down__second {
     margin-right: 0px;
     margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 780px) {
+  .cities-list__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .region_list {
+    font-size: 21px;
+    text-align: center;
   }
 }
 

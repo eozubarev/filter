@@ -300,7 +300,7 @@ $(document).ready(function(){
         }
   
         var timeElapsed = currentTime - startTime;
-        var scrollY = distance * (timeElapsed / duration) + startPosition; // linear
+        var scrollY = distance * (timeElapsed / duration) + startPosition -70; // linear
   
         window.scrollTo(0, scrollY);
   
@@ -425,7 +425,7 @@ $(document).ready(function(){
         }
   
         var timeElapsed = currentTime - startTime;
-        var scrollY = distance * (timeElapsed / duration) + startPosition; // linear
+        var scrollY = distance * (timeElapsed / duration) + startPosition -70; // linear
   
         window.scrollTo(0, scrollY);
   
