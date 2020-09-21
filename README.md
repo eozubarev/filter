@@ -6,10 +6,10 @@ npm i
 ```
 gulp
 ```
- https://eozubarev.github.io/filter/filter
+Ссылка на GitHub Pages:  https://eozubarev.github.io/filter/filter
 
-Проект разделён на 3 отдела:
+#### Проект разделён на 3 отдела:
 
-SCSS - хранятся стили scss для отдельных компонентов
-HTML - хранится код для отдельных компонентов
-SECTION - хранится SCSS+HTML код для всех секций
+1. SCSS - хранятся стили scss для отдельных компонентов
+2. HTML - хранится код для отдельных компонентов
+3. SECTION - хранится SCSS+HTML код для всех секций
