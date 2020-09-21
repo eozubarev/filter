@@ -3,7 +3,7 @@
 //</МИКСИНЫ>===============================================================================================
 
 //</ШРИФТЫ>=======================================================================================================
-@import "fonts.scss";
+@import "./fonts/fonts.scss";
 
 $roboto: "Roboto";
 $openSans: "Open Sans";
@@ -20,8 +20,8 @@ $myriadPro: "Myriad Pro";
 @import "./null/null.scss";
 //<NULL STYLES>===========================
 
-//<ОБЩИЕ СТИЛИ>===========================
-@import "components.scss";
+//<ОБЩИЕ СТИЛИ (page-title, btn, btn-close, mobile-menu, select-city)>===========================
+@import "./components/components.scss";
 //<ОБЩИЕ СТИЛИ>===========================
 
 //<FORMS>=================================
@@ -31,17 +31,15 @@ $myriadPro: "Myriad Pro";
 //<FORMS>=================================
 
 //<HEADER>===============================
-@import "header.scss";
+@import "header/header.scss";
 //<HEADER>===============================
 
 //<BUTTON SCROLL UP>======================
-@import "buttonUp.scss";
+@import "./buttonUp/buttonUp.scss";
 //<BUTTON SCROLL UP>======================
 
-@import "spoiler.scss";
-
 //<BURGER-MENU>============================
-@import "burger-menu.scss";
+@import "./burger-menu/burger-menu.scss";
 //<BURGER-MENU>============================
 
 //<POPUP>==================================
@@ -51,22 +49,22 @@ $myriadPro: "Myriad Pro";
 //<POPUP>==================================
 
 //<SECTIONS>===============================
-@import "./sections/section-about/section-about.scss";
-@import "./sections/section-about/section-about.scss";
-@import "./sections/section-complex/section-complex.scss";
-@import "./sections/section-components/section-components.scss";
-@import "./sections/section-regeneration/section-regeneration.scss";
-@import "./sections/section-prefits/section-prefits.scss";
-@import "./sections/section-types/section-types.scss";
-@import "./sections/section-specefication/section-specifications.scss";
-@import "./sections/section-build/section-build.scss";
-@import "./sections/section-example/section-example.scss";
-@import "./sections/section-calculation/section-calculation.scss";
-@import "./sections/section-callback/section-callback.scss";
+@import "../sections/section-top/section-top.scss";
+@import "../sections/section-about/section-about.scss";
+@import "../sections/section-complex/section-complex.scss";
+@import "../sections/section-components/section-components.scss";
+@import "../sections/section-regeneration/section-regeneration.scss";
+@import "../sections/section-prefits/section-prefits.scss";
+@import "../sections/section-types/section-types.scss";
+@import "../sections/section-specefication/section-specifications.scss";
+@import "../sections/section-build/section-build.scss";
+@import "../sections/section-example/section-example.scss";
+@import "../sections/section-calculation/section-calculation.scss";
+@import "../sections/section-callback/section-callback.scss";
 //<SECTIONS>======================================
 
 //<FOOTER>============================
-@import "footer.scss";
+@import "./footer-page/footer.scss";
 //<FOOTER>============================
 
 

@@ -1,36 +1,32 @@
 <!DOCTYPE html>
 <html lang="ru"> 
-	@@include('_head.html' , {
+	@@include('./html/_head.html' , {
 		"title": "Главная"
 	})
+<img src="./sections/section-specefication/_section-specifications.html" alt="">
 	<body>
-
-			@@include('_header.html' , {})
+			@@include('./html/_header.html' , {})
 			<main class="page">
-				@@include('_popup-cards.html' , {})
-				@@include('_popup-city.html' , {})
+				@@include('./html/_popup-cards.html' , {})
+				@@include('./html/_popup-city.html' , {})
 
-				@@include('_button-up.html' , {})
+				@@include('./html/_button-up.html' , {})
 			
-				@@include('./sections/_1-section-top.html' , {})
-				@@include('./sections/_2-section-about.html' , {})
-				@@include('./sections/_3-section-complex.html' , {})
-				@@include('./sections/_4-section-components.html' , {})
-				@@include('./sections/_5-section-regeneration.html' , {})
-
-				@@include('./sections/_10-section-example.html' , {})
-				@@include('./sections/_7-section-types.html' , {})
-				@@include('./sections/_8-section-specifications.html' , {})
-
-				@@include('./sections/_9-section-build.html' , {})
-				@@include('./sections/_6-section-prefits.html' , {})
-
-
-				@@include('./sections/_11-section-calculation.html' , {})
-				@@include('./sections/_12-section-callback.html' , {})
+				@@include('./sections/section-top/_section-top.html' , {})
+				@@include('./sections/section-about/_section-about.html' , {})
+				@@include('./sections/section-complex/_section-complex.html' , {})
+				@@include('./sections/section-components/_section-components.html' , {})
+				@@include('./sections/section-regeneration/_section-regeneration.html' , {})
+				@@include('./sections/section-example/_section-example.html' , {})
+				@@include('./sections/section-types/_section-types.html' , {})
+				@@include('./sections/section-specefication/_section-specifications.html' , {})
+				@@include('./sections/section-build/_section-build.html' , {})
+				@@include('./sections/section-prefits/_section-prefits.html' , {})
+				@@include('./sections/section-calculation/_section-calculation.html' , {})
+				@@include('./sections/section-callback/_section-callback.html' , {})
 			</main>
-			@@include('_footer.html' , {})
+			@@include('./html/_footer.html' , {})
 
-		@@include('_js.html' , {})
+		@@include('./html/_js.html' , {})
 	</body>
 </html>
