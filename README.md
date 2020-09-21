@@ -1,4 +1,4 @@
-Для запуска сборки на GULP потребуется node js версии не ниже 8.0
+Для запуска моей сборки на GULP потребуется node js версии не ниже 8.0
 To run a build on GULP, you need node js version at least 8.0
 
 ###  Выгружаем сборку с node_modules / Upload node_modules
