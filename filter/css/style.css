@@ -3518,6 +3518,10 @@ td {
     padding: 0;
   }
 
+  .city {
+    margin-right: 15px;
+  }
+
   .header-page {
     padding: 0;
   }
@@ -3550,7 +3554,7 @@ td {
   }
 
   .section-top {
-    margin-top: 0;
+    padding-top: 0;
   }
 
   .section-complex {
