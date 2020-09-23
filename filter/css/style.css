@@ -1324,7 +1324,7 @@ hr {
 .section-top {
   background: #f4f0e3;
   min-height: 625px;
-  margin-top: 110px;
+  padding-top: 110px;
 }
 
 .section-top__container {
@@ -3983,7 +3983,7 @@ td {
 
   .video__poster {
     max-width: 150px;
-    max-height: 175px;
+    max-height: 180px;
     left: 9%;
   }
 
