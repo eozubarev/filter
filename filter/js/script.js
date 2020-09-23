@@ -323,7 +323,7 @@ $(document).ready(function(){
                 // Величина верхнего отступа, к которой скролить, вместе с посчитанной высотой фикс. шапки
                 let destination = target.getBoundingClientRect().top - this.headerHeight;
                 let currentPosition = pageYOffset;
-                let speed = 0.10;
+                let speed = 0.15;
                 let start = null;
           
                 function scrolling(time) {
@@ -455,7 +455,7 @@ $(document).ready(function(){
                 // Величина верхнего отступа, к которой скролить, вместе с посчитанной высотой фикс. шапки
                 let destination = target.getBoundingClientRect().top - this.headerHeight;
                 let currentPosition = pageYOffset;
-                let speed = 0.10;
+                let speed = 0.15;
                 let start = null;
           
                 function scrolling(time) {
