@@ -1437,6 +1437,8 @@ hr {
   height: 100%;
   border-radius: inherit;
   overflow: hidden;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
 }
 
 .video__link {
@@ -3992,10 +3994,6 @@ td {
   .video__button {
     width: 50px;
     height: 50px;
-  }
-
-  .inner__aside-block--video {
-    position: inherit;
   }
 }
 
