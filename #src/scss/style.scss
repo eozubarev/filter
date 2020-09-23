@@ -25,6 +25,7 @@ $myriadPro: "Myriad Pro";
 
 .wrapper {
     overflow: hidden;
+
 }
 
 //<VARIABLES>=============================
@@ -64,18 +65,18 @@ $myriadPro: "Myriad Pro";
 //<POPUP>==================================
 
 //<SECTIONS>===============================
-@import "./section-top.scss";
-@import "../sections/section-about/section-about.scss";
-@import "../sections/section-complex/section-complex.scss";
-@import "../sections/section-components/section-components.scss";
-@import "../sections/section-regeneration/section-regeneration.scss";
-@import "../sections/section-prefits/section-prefits.scss";
-@import "../sections/section-types/section-types.scss";
-@import "../sections/section-specefication/section-specifications.scss";
-@import "../sections/section-build/section-build.scss";
-@import "../sections/section-example/section-example.scss";
-@import "../sections/section-calculation/section-calculation.scss";
-@import "../sections/section-callback/section-callback.scss";
+@import "./sections/section-top.scss";
+@import "./sections/section-about.scss";
+@import "./sections/section-complex.scss";
+@import "./sections/section-components.scss";
+@import "./sections/section-regeneration.scss";
+@import "./sections/section-prefits.scss";
+@import "./sections/section-types.scss";
+@import "./sections/section-specifications.scss";
+@import "./sections/section-build.scss";
+@import "./sections/section-example.scss";
+@import "./sections/section-calculation.scss";
+@import "./sections/section-callback.scss";
 //<SECTIONS>======================================
 
 //<FOOTER>============================
