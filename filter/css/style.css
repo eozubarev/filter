@@ -1540,6 +1540,10 @@ hr {
           transform: translateX(1px);
 }
 
+.inner {
+  overflow: hidden;
+}
+
 .inner--apv .inner__container {
   margin-bottom: 0;
 }
@@ -1577,6 +1581,7 @@ hr {
 }
 
 .inner__aside-block--video {
+  overflow: hidden;
   position: absolute;
   top: 6%;
   left: 60%;
