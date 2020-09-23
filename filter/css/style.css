@@ -1462,6 +1462,7 @@ hr {
 }
 
 .video__link:after {
+  overflow: hidden;
   content: '';
   display: block;
   position: absolute;
