@@ -1433,7 +1433,6 @@ hr {
 }
 
 .video {
-  max-width: 400px;
   width: 100%;
   height: 100%;
   border-radius: inherit;
@@ -1462,7 +1461,6 @@ hr {
 }
 
 .video__link:after {
-  overflow: hidden;
   content: '';
   display: block;
   position: absolute;
@@ -1480,7 +1478,6 @@ hr {
 }
 
 .video__poster {
-  overflow: hidden;
   max-width: 200px;
   max-height: 245px;
   left: 10%;
@@ -1542,10 +1539,6 @@ hr {
           transform: translateX(1px);
 }
 
-.inner {
-  overflow: hidden;
-}
-
 .inner--apv .inner__container {
   margin-bottom: 0;
 }
@@ -1583,7 +1576,6 @@ hr {
 }
 
 .inner__aside-block--video {
-  overflow: hidden;
   position: absolute;
   top: 6%;
   left: 60%;
@@ -1600,7 +1592,6 @@ hr {
   -webkit-box-shadow: 0px 10px 40px 0px rgba(63, 126, 202, 0.15);
           box-shadow: 0px 10px 40px 0px rgba(63, 126, 202, 0.15);
   background-color: #fff;
-  overflow: hidden;
 }
 
 .inner__aside-block--form,
