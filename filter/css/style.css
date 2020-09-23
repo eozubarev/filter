@@ -1470,7 +1470,7 @@ hr {
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: .6;
+  opacity: .4;
   background-image: -o-radial-gradient(transparent, #36475a);
   background-image: radial-gradient(transparent, #36475a);
   -webkit-transition: opacity 0.3s ease;
