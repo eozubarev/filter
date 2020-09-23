@@ -1480,6 +1480,7 @@ hr {
 }
 
 .video__poster {
+  overflow: hidden;
   max-width: 200px;
   max-height: 245px;
   left: 10%;
