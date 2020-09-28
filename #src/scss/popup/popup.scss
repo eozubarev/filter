@@ -35,7 +35,7 @@
   
   .popup__content {
     background: #fff;
-    padding: 70px 20px;
+    padding: 60px 55px 60px 55px;
     max-width: 730px;
     margin: 0 auto;
     position: relative;
@@ -51,12 +51,7 @@
     max-width: 970px;
     padding: 30px 15px 30px 15px;
   }
-  
-  .popup__content--fluid {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  
+    
   .popup__content--centered {
     display: flex;
     flex-direction: column;
