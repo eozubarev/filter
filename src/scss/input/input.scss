@@ -1,0 +1,187 @@
+.input {
+    position: relative;
+    display: block;
+    padding: 15px 20px 18px;
+    // margin-right: 10px;
+    border: 1px solid $border;
+    background-color: $white;
+    transition: border-color .3s;
+    cursor: text;
+  
+    &:hover {
+      border-color: $active;
+    }
+
+  //   @media(max-width: 1200px) {
+  //   &:last-child {
+  //     margin-right: 0px;
+  //   }
+  // }
+  
+    &.--textarea {
+      height: 100%;
+      & .input__element {
+        height: 100%;
+        font-family: $roboto;
+        font-size: 16px;
+      }
+    }
+  
+    &__file {
+      position: relative;
+      display: block;
+      width: 100%;
+      & input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+      }
+      &-el {
+        display: inline-block;
+        vertical-align: middle;
+        & + & {
+          margin-left: 15px;
+        }
+      }
+      &-icon {
+        width: 20px;
+        height: 20px;
+        background: url('./images/icon-clip.svg') 50% 50% no-repeat;
+      }
+      &-text {
+        line-height: 1.2;
+      }
+      &-count {
+        display: block;
+        margin: 10px 0 0 35px;
+        width: 100%;
+        color: $grey;
+        font-size: 13px;
+        transition: color .3s;
+        &.--error {
+          color: $error;
+        }
+      }
+    }
+  
+    &.--hasError {
+      border-color: $error !important;
+  
+      & .input__error-msg {
+        opacity: 1;
+      }
+  
+      & .input__placeholder {
+        opacity: 0;
+      }
+    }
+  
+    &.--focused,
+    &.--hasValue {
+      border-color: $active;
+  
+      & .input__element {
+        opacity: 1;
+      }
+  
+      & .input__error-msg,
+      & .input__placeholder {
+        font-size: 12px;
+        transform: translateY(-17px);
+      }
+    }
+  
+    &__element {
+      width: 100%;
+      font-size: 18px;
+      resize: none;
+      opacity: 0;
+      transition: opacity .3s;
+
+      @media(max-width: 767px) {
+        font-size: 15px;
+      }
+      @media(max-width: 400px) {
+        font-size: 13px;
+      }
+      @media(max-width: 350px) {
+        font-size: 12px;
+      }
+  
+      &:focus {
+        opacity: 1;
+      }
+    }
+  
+    &__placeholder,
+    &__error-msg {
+      position: absolute;
+      top: 19px;
+      left: 24px;
+      will-change: transform;
+      transition: font-size .3s, transform .3s, opacity .3s;
+    }
+  
+    &__placeholder {
+      color: $formPlaceholder;
+    }
+  
+    &__error-msg {
+      opacity: 0;
+      color: $error;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .input {
+      &.--textarea {
+        height: 120px;
+      }
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .input {
+      padding-top: 9px;
+      padding-bottom: 9px;
+  
+      &__error-msg,
+      &__placeholder {
+        top: 12px;
+        font-size: 12px;
+      }
+      &__file {
+        &-text {
+          font-size: 14px;
+        }
+        &-count {
+          bottom: -1px;
+        }
+      }
+  
+      &.--focused,
+      &.--hasValue {
+        & .input__error-msg,
+        & .input__placeholder {
+          opacity: 0;
+          transform: none;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 450px) {
+    .input {
+      &.--textarea {
+        height: 100px;
+      }
+    }
+  }
+  
+  .input__error-msg, 
+  .input__placeholder {
+    @media(max-width: 350px) {
+      left: 10px;
+    }
+  }
