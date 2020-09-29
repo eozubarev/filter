@@ -1116,9 +1116,11 @@ hr {
   list-style: none;
   margin: 0;
   padding: 0;
+  outline: none;
 }
 
 .mobile-menu__link {
+  outline: none;
   text-decoration: none;
   padding: 20px 0;
   display: block;
@@ -1128,12 +1130,14 @@ hr {
   text-transform: uppercase;
   font-weight: 900;
   text-align: center;
-  -webkit-transition: color .2s, opacity .2s;
-  -o-transition: color .2s, opacity .2s;
-  transition: color .2s, opacity .2s;
+  -webkit-transition: background .2s, color .2s, opacity .2s;
+  -o-transition: background .2s, color .2s, opacity .2s;
+  transition: background .2s, color .2s, opacity .2s;
 }
 
 .mobile-menu__link:hover {
+  outline: none;
+  background: inherit;
   color: #25b7ad;
 }
 
