@@ -2038,10 +2038,10 @@ hr {
 }
 
 .section-components {
-  scroll-margin: 50px;
+  scroll-margin: 80px;
   font-family: "Open Sans";
   background-color: #fbf9f1;
-  padding: 60px 0px 100px;
+  padding: 80px 0px 100px;
 }
 
 .section-components__title {
@@ -2289,7 +2289,7 @@ hr {
 
 .section-specifications {
   scroll-margin: 80px;
-  padding: 65px 0px 95px;
+  padding: 75px 0px 95px;
 }
 
 .section-specifications__container {
