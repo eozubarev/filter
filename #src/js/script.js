@@ -20,7 +20,6 @@
 @@include('popup.js');
 
 // Скролл к секциям из главного и из бургер меню
-@@include('myScrollTo.js');
 
 // Бибилиотека с формами
 @@include('common.js');
