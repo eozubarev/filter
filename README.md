@@ -15,4 +15,4 @@ gulp
 
 1. SCSS - хранятся стили scss для отдельных компонентов / scss styles for individual components are stored
 2. HTML - хранится код для отдельных компонентов / stores code for individual components
-3. SECTION - хранится SCSS+HTML код для всех секций / stored SCSS + HTML code for all sections
+3. SECTION - хранится SCSS,HTML код для всех секций / stored SCSS,HTML code for all sections
