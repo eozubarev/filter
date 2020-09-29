@@ -1,0 +1,343 @@
+//  Main styles START
+.section-calculation {
+
+    margin: 60px 0px 60px;
+
+    &__container {
+    }
+
+    &__title {
+    }
+
+    &__formula {
+        color: $black;
+
+        max-width: 635px;
+        width: 100%;
+        margin-bottom: 30px;
+    
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        @media(max-width: 620px) {
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+            flex-direction: column;
+
+        }
+    }
+}
+
+// Main styles END
+
+// Info calculation START
+
+.section-calculation {
+
+    &__info {
+        margin-top: 30px;
+    }
+}
+
+.section-info {
+
+    &__text {
+        color: $black;
+        line-height: 22px;
+    }
+
+    &__text span {
+        font-weight: 700;
+        font-size: 15px;
+    }
+
+    &__title {
+        text-align: left;
+        padding: 0;
+    }
+}
+
+
+// Info calculation END
+
+//Info sertification START
+
+.sertification {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media(max-width: 992px) {
+        flex-wrap: wrap;
+        align-items: flex-end;
+    }
+
+}
+
+.sertification-img {
+}
+
+.sert-gost {
+
+    margin:  0px 30px 0px 50px;
+
+    @media(max-width: 992px) {
+        margin:  15px 15px 0px 0px;
+        text-align: center;
+    }
+
+    @media(max-width: 413px) {
+        margin:  0px 10px 0px 0px;
+    }
+    @media(max-width: 407px) {
+        margin:  0px 10px 15px 10px;
+    }
+}
+
+
+//Info sertification END
+
+// Formula START
+.section-formula {
+
+    &__left {
+    }
+
+    &__left p:nth-child(1) {
+        padding-bottom: 3px;
+    }
+
+    &__left p:nth-child(2) {
+        padding-top: 3px;
+    }
+
+    &__equal {
+        margin:  0px 10px 0px 10px;
+    }
+
+    &__result {
+        text-align: center;
+    }
+
+    &__result p:nth-child(1) {
+        border-bottom: 1px solid #dbb680;
+        padding-bottom: 3px;
+    }
+
+    &__result p:nth-child(2) {
+        padding-top: 3px;
+    }
+}
+// Formula END
+
+
+// Table styles START
+
+.table {
+    width: 1280px;
+    border-radius: 6px;
+    // border: 1px solid $grey;
+    &__row {
+      display: flex;
+      transition: font-weight .2s, background-color .3s;
+  
+      &:hover {
+        background-color: #fbf9f1;
+        font-weight: 700;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #dbdbdb;
+      }
+    }
+    &__item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: calc(100% / 8);
+
+      transition: font-weight .2s;
+  
+      &:first-child:hover {
+        font-weight: 700;
+
+      }
+      
+      &:not(:last-child) {
+        // border-right: 1px solid $grey;
+      }
+  
+      & span {
+
+        color: $black;
+        width: 100%;
+        padding: 20px 0;
+        text-align: left;
+        font-size: 14px;
+        line-height: 1;
+        white-space: nowrap;
+        // overflow: hidden;
+  
+        & + span {
+          border-top: 1px solid $grey;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1366px) {
+   
+    .models__tech {
+      overflow-x: scroll; }
+      .models__tech-scroll {
+        display: block; } 
+    }
+
+    .models__tech-scroll {
+        display: none;
+        margin-top: 25px;
+     }
+
+
+     .models {
+        &__content {
+          padding: 60px 0 70px;
+        }
+        &__list {
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: -30px;
+          margin-left: -15px;
+          margin-right: -15px;
+          margin-bottom: 60px;
+        }
+        &__item {
+          width: calc(100% / 4 - (120px / 4));
+          margin-top: 30px;
+          margin-left: 15px;
+          margin-right: 15px;
+          & > * {
+            height: 100%;
+          }
+        }
+        &__tech {
+          &-title {
+            margin-bottom: 30px;
+            font-size: 26px;
+          }
+          &-scroll {
+            display: none;
+            margin-top: 25px;
+          }
+        }
+      }
+      
+      @keyframes pseudoScroll {
+        0% {
+          opacity: 0;
+          left: 30px;
+        }
+        50% {
+          opacity: 1;
+          left: 60px;
+        }
+        100% {
+          opacity: 0;
+          left: 90px;
+        }
+      }
+      
+      .pseudo-scroll {
+        position: relative;
+        padding: 0 25px;
+        
+        &__line,
+        &__line-active {
+          height: 4px;
+          border-radius: 3px;
+        }
+        &__line {
+          position: relative;
+          background-color: #dde3eb;
+          &-active {
+            position: absolute;
+            top: 0;
+            left: 30px;
+            width: 70px;
+            background-color: $active;
+            animation-name: pseudoScroll;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-fill-mode: forwards;
+          }
+        }
+        &__arrow {
+          & svg {
+            position: absolute;
+            top: 50%;
+            fill: #b2bdcc;
+          }
+      
+          &.--prev svg {
+            left: 0;
+            transform: translateY(-50%) rotate(180deg);
+          }
+          &.--next svg {
+            right: 0;
+            transform: translateY(-50%);
+          }
+        }
+      }
+      
+      @media (max-width: 1366px) {
+          .models {
+          &__item {
+            width: calc(100% / 3 - (120px / 4));
+          }
+          &__tech {
+            overflow-x: scroll;
+            
+            &-scroll {
+              display: block;
+            }
+          }
+        }
+      }
+      
+      @media (max-width: 992px) {
+          .models {
+          &__item {
+            width: calc(100% / 2 - (120px / 4));
+          }
+          }
+      }
+      
+      @media (max-width: 767px) {
+          .models {
+          &__list,
+          &__item {
+            margin-left: 0;
+            margin-right: 0;
+          }
+          &__list {
+            align-items: center;
+            flex-direction: column;
+          }
+          &__item {
+            width: 100%;
+            max-width: 350px;
+            margin-left: 0;
+            margin-right: 0;
+          }
+          }
+      }
+      
+.margin-item {
+    padding-right: 35%;
+}
+
+// Table styles END

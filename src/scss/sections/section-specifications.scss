@@ -1,0 +1,191 @@
+.section-specifications {
+
+    margin: 65px 0px 95px;
+
+    @media(max-width: 997px) {
+      margin: 10px 0px 95px;
+    }
+    @media(max-width: 750px) {
+      margin: 10px 0px 24px;
+    }
+
+    &__container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+
+        @media (max-width: 749px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__right {
+        margin-right: 20%;
+
+        @media (max-width: 1350px) {
+            margin-right: 12%;
+        }
+        @media (max-width: 992px) {
+            margin-right: 4%;
+        }
+        @media (max-width: 749px) {
+            margin-right: 0%;
+        }
+    }
+
+    &__left {
+    }
+
+    &__block {
+        padding: 20px;
+        margin-top: 94px;
+        margin-bottom: 94px;
+        
+        top: 155px;
+
+        @media (max-width: 992px) {
+            display: none;
+        }
+    }
+
+    &__block:last-child {
+        margin-bottom: 0px;
+    }
+
+    &__img {
+        margin-top: 80px;
+        margin-left: 40px;
+        @media (max-width: 749px) {
+            margin-top: 45px;
+            margin-left: 0px;
+        }
+    }
+
+    &__line {
+        right: -50px;
+    }
+    
+
+    &__table {
+      // max-width: 520px;
+    }
+
+    &__row {
+
+    }
+
+    &__item {
+
+    }
+}
+
+.specifications-img {
+    @media (max-width: 440px) {
+        max-width: 130px;
+       }
+}
+
+.c-section-specs {
+
+    &__info {
+        color: black;
+    }
+
+    &__left {
+        position: relative;
+
+    }
+
+    &__table td {
+        padding-bottom: 15px;
+    }
+
+}
+
+
+
+.c-tabs {
+
+    &__nav {
+        margin-bottom: 40px;
+        font-weight: 600;
+        font-size: 17px;
+        color: #000;
+
+        text-decoration: none;
+        line-height: 1;
+
+    }
+
+    &__nav:active {
+        color: #000;
+    }
+
+    &__link span {
+        color: #13a89e;
+        border-bottom: 1px dashed;
+    }
+
+}
+
+
+.ul-item {
+    display: inline-flex;
+}
+
+.li-item {
+    margin-right: 45px;
+}
+
+.li-item:last-child {
+    margin-right: 0px;
+}
+
+td {
+    padding: 17px 0px 17px;
+    border-bottom: 1px solid #dbdbdb; 
+   }
+
+
+.section-right__title {
+    text-align: left;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.is-first {
+    padding-right: 40px;
+}
+
+.c-section-specs, 
+.c-section-specs__table th {
+    color: #19aaa1;
+    font-weight: 500;
+    padding-right: 5px;
+}
+
+// Tabs start
+
+.tabs-nav__item {
+    border-bottom: 1px dashed;
+    cursor: pointer;
+    font-size: 19px;
+    transition: all 0.3s linear;
+}
+
+.tabs-nav__item.is-active {
+    border-color: #13a89e;
+    color: #13a89e;
+}
+
+.tab {
+    display: none;
+    transition: all 0.3s ;
+
+
+}
+.tab.is-active { 
+   display: block; 
+}
+
+// Tabs end
