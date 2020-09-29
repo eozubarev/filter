@@ -1,3 +1,6 @@
+//Прелоадер для сайта
+@@include('preLoader.js');
+
 // в myLib лежат кастомные скрипты
 @@include('myLib.js');
 
