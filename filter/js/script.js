@@ -278,132 +278,17 @@ $(document).ready(function(){
   })();
   
   /* myLib */;
-;(function() {
-	'use strict';
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
 
-	// обеспечиваем короссбраузерноть для использования встроенного
-	// в браузеры API requestAnimationFrame
-	var requestAnimationFrame = window.requestAnimationFrame ||
-								window.mozRequestAnimationFrame ||
-								window.webkitRequestAnimationFrame ||
-								window.msRequestAnimationFrame;
-	window.requestAnimationFrame = requestAnimationFrame;
-
-		// получаем объект menu
-	var menu = document.querySelector('.header-page__ul'),
-		// коллекция объектов SPAN, которые используются, как
-		// управляющие элементы для прокручивания страницы
-		items = menu.querySelectorAll('header-page__link'),
-		// коллекция объектов DIV, которые будем прокручивать
-		// к верхнему краю экрана
-		containers = document.querySelectorAll('.wrap > div');
-
-		// высота документа (страницы)
-		//определить размер страницы с учетом прокрутки можно, взяв максимум из нескольких свойств
-		var pageHeight = Math.max(
-				document.body.scrollHeight, document.documentElement.scrollHeight,
-				document.body.offsetHeight, document.documentElement.offsetHeight,
-				document.body.clientHeight, document.documentElement.clientHeight
-			);
-
-	menu.onclick = function(e) {
-		// используя делегирование основанное на всплытии событий,
-		// находим элемент SPAN по которому был сделан клик
-		if (e.target.tagName != 'SPAN') return;
-		// переключаем элемент SPAN в активное состояние и
-		// получаем его индекс в составе коллекции 'items'
-		var current = switchLinks(e.target);
-		// на основании полученного индекса находим DIV из 
-		// коллекции 'containers', который и будем прокручивать
-		// до верхнего края экрана
-		// из этой же функции запускаем сколл страницы
-		selectContainer(current);
-	}
-
-	// изменяем стиль отображения элемента SPAN, по которому
-	// был сделан клик
-	function switchLinks(el) {
-		var current;
-		// перебираем коллекцию элементов SPAN
-		[].forEach.call(items, function(item, index) {
-			// у каждого элемента удаляем класс 'active',
-			// если он был прописан
-			item.classList.remove('active');
-			// если элемент в текущей итерации совпадает с
-			// элементом, по которому был сделан клик, то
-			// добавляем ему класс 'active'
-			if (item === el) {
-				item.classList.add('active');
-				// запоминаем индекс этого элемента
-				// по этому индексу будет найден DIV из коллекции
-				// containers, к которому применим анимацию
-				current = index;
-			}
-		});
-		return current;
-	}
-
-	// по полученному ранее индексу, находим DIV, который будет прокручиваться
-	// к верхней части экрана
-	function selectContainer(current) {
-		// перебираем коллекцию элементов DIV
-		[].forEach.call(containers, function(container, index) {
-			// индекс элемента в текущей итерации совпадает
-			// с полученным ранее индексом элемента меню, по
-			// которому был сделан клик
-			if (index == current) {
-					// Y-координата верхней границы выбранного элемента относительно
-					// верхнего края окна браузера с учётом высоты шапки
-				var startY		= container.getBoundingClientRect().top - 96,
-					// направление скролла зависит от положения верхней границы контейнера
-					// относительно верхней границы окна браузера
-					// нужный нам контейнер может находится выше или ниже окна браузера,
-					// соответственно, страницу нужно скроллить вверх или вниз
-					direction	= (startY < 0) ? -1 : (startY > 0) ? 1 : 0;
-				// верхняя граница контейнера, к которому собираемся перейти, находится
-				// сразу под шапкой - нет необходимости прокручивать страницу
-				if (direction == 0) return;
-				// запускаем функцию прокручивания страницы до выбранного контейнера
-				scroll(container, direction);
-			}
-		});
-	}
-
-	function scroll(el, direction) {
-			// длительность прокручивания страницы
-		var duration = 2000,
-			// старт анимации прокручивания страницы
-			start = new Date().getTime();
-
-		var fn = function() {
-				// текущее положение верхней границы контейнера с учётом высоты шапки с меню
-				// при прокрутке контейнер не должен заходить под шапку
-			var top = el.getBoundingClientRect().top - 96,
-				// время прошедшее от начала прокрутки страницы
-				now = new Date().getTime() - start,
-				// на сколько должна быть прокручена страница
-				result = Math.round(top * now / duration);
-
-			// корректируем значение 'result', чтобы контейнер остановился
-			// точно по нижней границе шапки
-			result = (result > direction * top) ? top : (result == 0) ? direction : result;
-
-			// определяем есть необходимость прокручивать страницу дальше или нет
-			// применение этого условия необходимо, когда высота последнего контейнера
-			// меньше высоты экрана и верхняя граница контейнера физически не может
-			// достигнуть верхней границы экрана, в нашей вёрстке - это container 6
-			// window.pageYOffset - текущая прокрутка страницы
-			// document.documentElement.clientHeigh - размер видимой части окна
-			if (direction * top > 0 && (pageHeight - window.pageYOffset) > direction * document.documentElement.clientHeight) {
-				window.scrollBy(0,result);
-				// рекурсивно запускаем функцию анимации прокрутки страницы
-				requestAnimationFrame(fn);
-			}
-		}
-		// старт прокрутки страницы
-		requestAnimationFrame(fn);
-	}
-})();;
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            alignToTop: true,
+            behavior: 'smooth'
+        });
+    });
+});
+;
 
 (function() {
     var showPopup = function(target) {
@@ -461,7 +346,452 @@ $(document).ready(function(){
   
   /* popup */;
 
-// Скролл к секциям из главного и из бургер меню
+// Скролл к секциям
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            alignToTop: true,
+            behavior: 'smooth'
+        });
+    });
+});
+;
+
+// Полфилл для кроссбраузерности скролла
+
+
+'use strict';
+
+// polyfill
+function polyfill() {
+  // aliases
+  var w = window;
+  var d = document;
+
+  // return if scroll behavior is supported and polyfill is not forced
+  if (
+    'scrollBehavior' in d.documentElement.style &&
+    w.__forceSmoothScrollPolyfill__ !== true
+  ) {
+    return;
+  }
+
+  // globals
+  var Element = w.HTMLElement || w.Element;
+  var SCROLL_TIME = 468;
+
+  // object gathering original scroll methods
+  var original = {
+    scroll: w.scroll || w.scrollTo,
+    scrollBy: w.scrollBy,
+    elementScroll: Element.prototype.scroll || scrollElement,
+    scrollIntoView: Element.prototype.scrollIntoView
+  };
+
+  // define timing method
+  var now =
+    w.performance && w.performance.now
+      ? w.performance.now.bind(w.performance)
+      : Date.now;
+
+  /**
+   * indicates if a the current browser is made by Microsoft
+   * @method isMicrosoftBrowser
+   * @param {String} userAgent
+   * @returns {Boolean}
+   */
+  function isMicrosoftBrowser(userAgent) {
+    var userAgentPatterns = ['MSIE ', 'Trident/', 'Edge/'];
+
+    return new RegExp(userAgentPatterns.join('|')).test(userAgent);
+  }
+
+  /*
+   * IE has rounding bug rounding down clientHeight and clientWidth and
+   * rounding up scrollHeight and scrollWidth causing false positives
+   * on hasScrollableSpace
+   */
+  var ROUNDING_TOLERANCE = isMicrosoftBrowser(w.navigator.userAgent) ? 1 : 0;
+
+  /**
+   * changes scroll position inside an element
+   * @method scrollElement
+   * @param {Number} x
+   * @param {Number} y
+   * @returns {undefined}
+   */
+  function scrollElement(x, y) {
+    this.scrollLeft = x;
+    this.scrollTop = y;
+  }
+
+  /**
+   * returns result of applying ease math function to a number
+   * @method ease
+   * @param {Number} k
+   * @returns {Number}
+   */
+  function ease(k) {
+    return 0.5 * (1 - Math.cos(Math.PI * k));
+  }
+
+  /**
+   * indicates if a smooth behavior should be applied
+   * @method shouldBailOut
+   * @param {Number|Object} firstArg
+   * @returns {Boolean}
+   */
+  function shouldBailOut(firstArg) {
+    if (
+      firstArg === null ||
+      typeof firstArg !== 'object' ||
+      firstArg.behavior === undefined ||
+      firstArg.behavior === 'auto' ||
+      firstArg.behavior === 'instant'
+    ) {
+      // first argument is not an object/null
+      // or behavior is auto, instant or undefined
+      return true;
+    }
+
+    if (typeof firstArg === 'object' && firstArg.behavior === 'smooth') {
+      // first argument is an object and behavior is smooth
+      return false;
+    }
+
+    // throw error when behavior is not supported
+    throw new TypeError(
+      'behavior member of ScrollOptions ' +
+        firstArg.behavior +
+        ' is not a valid value for enumeration ScrollBehavior.'
+    );
+  }
+
+  /**
+   * indicates if an element has scrollable space in the provided axis
+   * @method hasScrollableSpace
+   * @param {Node} el
+   * @param {String} axis
+   * @returns {Boolean}
+   */
+  function hasScrollableSpace(el, axis) {
+    if (axis === 'Y') {
+      return el.clientHeight + ROUNDING_TOLERANCE < el.scrollHeight;
+    }
+
+    if (axis === 'X') {
+      return el.clientWidth + ROUNDING_TOLERANCE < el.scrollWidth;
+    }
+  }
+
+  /**
+   * indicates if an element has a scrollable overflow property in the axis
+   * @method canOverflow
+   * @param {Node} el
+   * @param {String} axis
+   * @returns {Boolean}
+   */
+  function canOverflow(el, axis) {
+    var overflowValue = w.getComputedStyle(el, null)['overflow' + axis];
+
+    return overflowValue === 'auto' || overflowValue === 'scroll';
+  }
+
+  /**
+   * indicates if an element can be scrolled in either axis
+   * @method isScrollable
+   * @param {Node} el
+   * @param {String} axis
+   * @returns {Boolean}
+   */
+  function isScrollable(el) {
+    var isScrollableY = hasScrollableSpace(el, 'Y') && canOverflow(el, 'Y');
+    var isScrollableX = hasScrollableSpace(el, 'X') && canOverflow(el, 'X');
+
+    return isScrollableY || isScrollableX;
+  }
+
+  /**
+   * finds scrollable parent of an element
+   * @method findScrollableParent
+   * @param {Node} el
+   * @returns {Node} el
+   */
+  function findScrollableParent(el) {
+    while (el !== d.body && isScrollable(el) === false) {
+      el = el.parentNode || el.host;
+    }
+
+    return el;
+  }
+
+  /**
+   * self invoked function that, given a context, steps through scrolling
+   * @method step
+   * @param {Object} context
+   * @returns {undefined}
+   */
+  function step(context) {
+    var time = now();
+    var value;
+    var currentX;
+    var currentY;
+    var elapsed = (time - context.startTime) / SCROLL_TIME;
+
+    // avoid elapsed times higher than one
+    elapsed = elapsed > 1 ? 1 : elapsed;
+
+    // apply easing to elapsed time
+    value = ease(elapsed);
+
+    currentX = context.startX + (context.x - context.startX) * value;
+    currentY = context.startY + (context.y - context.startY) * value;
+
+    context.method.call(context.scrollable, currentX, currentY);
+
+    // scroll more if we have not reached our destination
+    if (currentX !== context.x || currentY !== context.y) {
+      w.requestAnimationFrame(step.bind(w, context));
+    }
+  }
+
+  /**
+   * scrolls window or element with a smooth behavior
+   * @method smoothScroll
+   * @param {Object|Node} el
+   * @param {Number} x
+   * @param {Number} y
+   * @returns {undefined}
+   */
+  function smoothScroll(el, x, y) {
+    var scrollable;
+    var startX;
+    var startY;
+    var method;
+    var startTime = now();
+
+    // define scroll context
+    if (el === d.body) {
+      scrollable = w;
+      startX = w.scrollX || w.pageXOffset;
+      startY = w.scrollY || w.pageYOffset;
+      method = original.scroll;
+    } else {
+      scrollable = el;
+      startX = el.scrollLeft;
+      startY = el.scrollTop;
+      method = scrollElement;
+    }
+
+    // scroll looping over a frame
+    step({
+      scrollable: scrollable,
+      method: method,
+      startTime: startTime,
+      startX: startX,
+      startY: startY,
+      x: x,
+      y: y
+    });
+  }
+
+  // ORIGINAL METHODS OVERRIDES
+  // w.scroll and w.scrollTo
+  w.scroll = w.scrollTo = function() {
+    // avoid action when no arguments are passed
+    if (arguments[0] === undefined) {
+      return;
+    }
+
+    // avoid smooth behavior if not required
+    if (shouldBailOut(arguments[0]) === true) {
+      original.scroll.call(
+        w,
+        arguments[0].left !== undefined
+          ? arguments[0].left
+          : typeof arguments[0] !== 'object'
+            ? arguments[0]
+            : w.scrollX || w.pageXOffset,
+        // use top prop, second argument if present or fallback to scrollY
+        arguments[0].top !== undefined
+          ? arguments[0].top
+          : arguments[1] !== undefined
+            ? arguments[1]
+            : w.scrollY || w.pageYOffset
+      );
+
+      return;
+    }
+
+    // LET THE SMOOTHNESS BEGIN!
+    smoothScroll.call(
+      w,
+      d.body,
+      arguments[0].left !== undefined
+        ? ~~arguments[0].left
+        : w.scrollX || w.pageXOffset,
+      arguments[0].top !== undefined
+        ? ~~arguments[0].top
+        : w.scrollY || w.pageYOffset
+    );
+  };
+
+  // w.scrollBy
+  w.scrollBy = function() {
+    // avoid action when no arguments are passed
+    if (arguments[0] === undefined) {
+      return;
+    }
+
+    // avoid smooth behavior if not required
+    if (shouldBailOut(arguments[0])) {
+      original.scrollBy.call(
+        w,
+        arguments[0].left !== undefined
+          ? arguments[0].left
+          : typeof arguments[0] !== 'object' ? arguments[0] : 0,
+        arguments[0].top !== undefined
+          ? arguments[0].top
+          : arguments[1] !== undefined ? arguments[1] : 0
+      );
+
+      return;
+    }
+
+    // LET THE SMOOTHNESS BEGIN!
+    smoothScroll.call(
+      w,
+      d.body,
+      ~~arguments[0].left + (w.scrollX || w.pageXOffset),
+      ~~arguments[0].top + (w.scrollY || w.pageYOffset)
+    );
+  };
+
+  // Element.prototype.scroll and Element.prototype.scrollTo
+  Element.prototype.scroll = Element.prototype.scrollTo = function() {
+    // avoid action when no arguments are passed
+    if (arguments[0] === undefined) {
+      return;
+    }
+
+    // avoid smooth behavior if not required
+    if (shouldBailOut(arguments[0]) === true) {
+      // if one number is passed, throw error to match Firefox implementation
+      if (typeof arguments[0] === 'number' && arguments[1] === undefined) {
+        throw new SyntaxError('Value could not be converted');
+      }
+
+      original.elementScroll.call(
+        this,
+        // use left prop, first number argument or fallback to scrollLeft
+        arguments[0].left !== undefined
+          ? ~~arguments[0].left
+          : typeof arguments[0] !== 'object' ? ~~arguments[0] : this.scrollLeft,
+        // use top prop, second argument or fallback to scrollTop
+        arguments[0].top !== undefined
+          ? ~~arguments[0].top
+          : arguments[1] !== undefined ? ~~arguments[1] : this.scrollTop
+      );
+
+      return;
+    }
+
+    var left = arguments[0].left;
+    var top = arguments[0].top;
+
+    // LET THE SMOOTHNESS BEGIN!
+    smoothScroll.call(
+      this,
+      this,
+      typeof left === 'undefined' ? this.scrollLeft : ~~left,
+      typeof top === 'undefined' ? this.scrollTop : ~~top
+    );
+  };
+
+  // Element.prototype.scrollBy
+  Element.prototype.scrollBy = function() {
+    // avoid action when no arguments are passed
+    if (arguments[0] === undefined) {
+      return;
+    }
+
+    // avoid smooth behavior if not required
+    if (shouldBailOut(arguments[0]) === true) {
+      original.elementScroll.call(
+        this,
+        arguments[0].left !== undefined
+          ? ~~arguments[0].left + this.scrollLeft
+          : ~~arguments[0] + this.scrollLeft,
+        arguments[0].top !== undefined
+          ? ~~arguments[0].top + this.scrollTop
+          : ~~arguments[1] + this.scrollTop
+      );
+
+      return;
+    }
+
+    this.scroll({
+      left: ~~arguments[0].left + this.scrollLeft,
+      top: ~~arguments[0].top + this.scrollTop,
+      behavior: arguments[0].behavior
+    });
+  };
+
+  // Element.prototype.scrollIntoView
+  Element.prototype.scrollIntoView = function() {
+    // avoid smooth behavior if not required
+    if (shouldBailOut(arguments[0]) === true) {
+      original.scrollIntoView.call(
+        this,
+        arguments[0] === undefined ? true : arguments[0]
+      );
+
+      return;
+    }
+
+    // LET THE SMOOTHNESS BEGIN!
+    var scrollableParent = findScrollableParent(this);
+    var parentRects = scrollableParent.getBoundingClientRect();
+    var clientRects = this.getBoundingClientRect();
+
+    if (scrollableParent !== d.body) {
+      // reveal element inside parent
+      smoothScroll.call(
+        this,
+        scrollableParent,
+        scrollableParent.scrollLeft + clientRects.left - parentRects.left,
+        scrollableParent.scrollTop + clientRects.top - parentRects.top
+      );
+
+      // reveal parent in viewport unless is fixed
+      if (w.getComputedStyle(scrollableParent).position !== 'fixed') {
+        w.scrollBy({
+          left: parentRects.left,
+          top: parentRects.top,
+          behavior: 'smooth'
+        });
+      }
+    } else {
+      // reveal element in viewport
+      w.scrollBy({
+        left: clientRects.left,
+        top: clientRects.top,
+        behavior: 'smooth'
+      });
+    }
+  };
+}
+
+if (typeof exports === 'object' && typeof module !== 'undefined') {
+  // commonjs
+  module.exports = { polyfill: polyfill };
+} else {
+  // global
+  polyfill();
+};
+
 
 // Бибилиотека с формами
 !(function (e) {

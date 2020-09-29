@@ -1128,14 +1128,13 @@ hr {
   text-transform: uppercase;
   font-weight: 900;
   text-align: center;
-  -webkit-transition: background .2s, color .2s, opacity .2s;
-  -o-transition: background .2s, color .2s, opacity .2s;
-  transition: background .2s, color .2s, opacity .2s;
+  -webkit-transition: color .2s, opacity .2s;
+  -o-transition: color .2s, opacity .2s;
+  transition: color .2s, opacity .2s;
 }
 
 .mobile-menu__link:hover {
-  background: #25b7ad;
-  color: #fff;
+  color: #25b7ad;
 }
 
 .mobile-menu__link:active {
@@ -1709,6 +1708,7 @@ hr {
 }
 
 .section-about {
+  scroll-margin: 50px;
   padding: 75px 0px 60px;
   background: -webkit-gradient(linear, left top, right top, color-stop(20%, white), color-stop(0%, #fbf9f1));
   background: -o-linear-gradient(left, white 20%, #fbf9f1 0%);
@@ -1862,6 +1862,7 @@ hr {
 }
 
 .section-components {
+  scroll-margin: 50px;
   font-family: "Open Sans";
   background-color: #fbf9f1;
   padding: 60px 0px 100px;
@@ -1930,7 +1931,8 @@ hr {
 }
 
 .section-prefits {
-  margin: 100px 0px 100px;
+  scroll-margin: 60px;
+  padding: 100px 0px 100px;
 }
 
 .section-prefits__block {
@@ -2110,7 +2112,8 @@ hr {
 }
 
 .section-specifications {
-  margin: 65px 0px 95px;
+  scroll-margin: 80px;
+  padding: 65px 0px 95px;
 }
 
 .section-specifications__container {
@@ -2897,6 +2900,7 @@ td {
 }
 
 .section-callback {
+  scroll-margin: 50px;
   padding: 60px 0 85px;
   background-color: #fbf9f1;
 }
@@ -3427,7 +3431,7 @@ td {
   }
 
   .section-components {
-    padding: 0px 0px 45px;
+    padding: 20px 0px 45px;
   }
 
   .section-components__container {
@@ -3464,7 +3468,7 @@ td {
   }
 
   .section-prefits {
-    margin: 35px 0px 20px;
+    margin: 0px 0px 20px;
   }
 
   .section-prefits__item {
@@ -3504,7 +3508,7 @@ td {
   }
 
   .section-specifications {
-    margin: 10px 0px 95px;
+    padding: 10px 0px 95px;
   }
 
   .section-example__separation {
@@ -3923,7 +3927,7 @@ td {
   }
 
   .section-callback {
-    padding: 40px 0 85px;
+    padding: 70px 0 85px;
   }
 
   .section-callback__right {
@@ -3947,7 +3951,7 @@ td {
   }
 
   .section-specifications {
-    margin: 10px 0px 24px;
+    padding: 20px 0px 24px;
   }
 
   .section-example__separation {
@@ -4181,10 +4185,6 @@ td {
     font-size: 24px;
     margin-bottom: 20px;
   }
-
-  .section-callback {
-    padding: 20px 0 85px;
-  }
 }
 
 @media (max-width: 460) {
@@ -4237,7 +4237,7 @@ td {
 
 @media (max-width: 414px) {
   .section-about {
-    padding: 5px 0px 30px;
+    padding: 0px 0px 30px;
   }
 
   .section-top {
