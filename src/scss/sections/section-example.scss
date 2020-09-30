@@ -1,0 +1,202 @@
+.section-example {
+
+    margin: 60px 0px 60px;
+
+    @media(max-width: 992) {
+        margin: 30px 0px 30px;
+    }
+    @media(max-width: 767) {
+        margin: 20px 0px 20px;
+    }
+    @media(max-width: 550) {
+        margin: 15px 0px 15px;
+    }
+    @media(max-width: 460) {
+        margin: 10px 0px 10px;
+    }
+
+    &__separation {
+        margin: 193px auto 0px;
+
+        @media(max-width: 997px) {
+            margin: 40px auto 15px;
+        }
+    }
+
+    &__titile {
+
+        text-align: left;
+    }
+
+    &__up {
+
+        display: flex;
+        justify-content: center;
+
+        margin-bottom: 20px;
+
+        @media(max-width: 992px) {
+
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+
+        }
+    }
+
+    &__down {
+
+        display: flex;
+        justify-content: center;
+
+        @media(max-width: 992px) {
+
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+
+        }
+    }
+
+    &__separation {
+        @media(max-width: 750px) {
+            margin: 15px 0px 0px;
+        }
+    }
+}
+
+    // SECTION UP Start ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+
+.section-up {
+
+    &__left,
+    &__right,
+    &__middle {
+        padding: 40px 50px 40px 50px;
+
+        @media(max-width: 992px) {
+            padding: 60px 75px 60px 75px;
+        }
+        @media(max-width: 414px) {
+            padding: 20px 50px 20px 50px;
+        }
+     }
+
+    &__left,
+    &__middle {
+        margin-right: 20px;
+
+        @media(max-width: 992px) {
+
+            margin-right: 0px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__img {
+        max-width: 100%;
+    }
+}
+
+     // Section UP end ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+
+// Общие стили start ============================================================================================================
+
+// = Subtitle styles start
+
+.section-left__subtitle,
+.section-middle__subtitle,
+.section-right__subtitle,
+.section-first__subtitle,
+.section-second__subtitle,
+.section-third__subtitle {
+
+    margin-bottom: 28px;
+
+}
+
+// = Subtitle styles end
+
+// = = Box-shadow start
+
+.section-up__left,
+.section-up__middle,
+.section-up__right,
+.section-down__first,
+.section-down__second,
+.section-down__third {
+
+    cursor: pointer;
+    transition: all 0.4s linear;
+    
+}
+
+
+.section-up__left:hover,
+.section-up__right:hover,
+.section-up__middle:hover,
+.section-down__first:hover,
+.section-down__second:hover,
+.section-down__third:hover {
+
+    box-shadow: 0px 3px 28.8px 3.2px rgba(0, 0, 0, 0.18);
+
+}
+
+@media (max-width: 992px) {
+
+    .section-up__left,
+    .section-up__right,
+    .section-up__middle,
+    .section-down__first,
+    .section-down__second,
+    .section-down__third {
+
+        box-shadow: 0px 1px 15px 1.2px rgba(10, 0, 0, 0.10);
+    }
+
+}
+
+// = = Box-shadow start
+
+
+.section-up__left,
+.section-up__right,
+.section-up__middle,
+.section-down__first,
+.section-down__second,
+.section-down__third {
+    
+    background-color: #fbf9f1;
+    border-radius: 6px;
+
+}
+
+
+// Общие стили end ============================================================================================================
+
+// Links style start
+
+.link-system {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.show-composition {
+    font-family: $roboto;
+    font-size: 14px;
+
+    color: #000;
+    border-bottom: 1px dashed;
+
+    transition: all 0.2s linear;
+
+}
+
+.show-composition:hover,
+.show-composition:active,
+.show-composition:focus {
+    color: #1aaea4;
+    border-bottom:  none;
+}
+
+
+// Links end start
