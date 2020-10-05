@@ -13,178 +13,6 @@
   overflow: hidden;
 }
 
-#cube-loader {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  width: 100%;
-  z-index: 999;
-  position: fixed;
-  background: #fff;
-}
-
-#cube-loader .caption {
-  margin: 0 auto;
-}
-
-#cube-loader .cube-loader {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: -webkit-gradient(linear, left top, left bottom, from(#00FF00), color-stop(#00FF00), to(#00FF00));
-  background: -o-linear-gradient(#00FF00, #00FF00, #00FF00);
-  background: linear-gradient(#00FF00, #00FF00, #00FF00);
-  -webkit-animation: animate 1s linear infinite;
-          animation: animate 1s linear infinite;
-}
-
-@-webkit-keyframes animate {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes animate {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-#cube-loader .cube-loader span {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: -webkit-gradient(linear, left top, left bottom, from(#35C4BB), color-stop(#41f1e5), to(#14a99f));
-  background: -o-linear-gradient(#35C4BB, #41f1e5, #14a99f);
-  background: linear-gradient(#35C4BB, #41f1e5, #14a99f);
-}
-
-#cube-loader .cube-loader span:nth-child(1) {
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
-}
-
-#cube-loader .cube-loader span:nth-child(2) {
-  -webkit-filter: blur(10px);
-          filter: blur(10px);
-}
-
-#cube-loader .cube-loader::after {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  background: white;
-  border-radius: 50%;
-}
-
-.visible {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transition: opacity 2s linear;
-  -o-transition: opacity 2s linear;
-  transition: opacity 2s linear;
-}
-
-.hidden {
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: visibility 0s 2s, opacity 2s linear;
-  -o-transition: visibility 0s 2s, opacity 2s linear;
-  transition: visibility 0s 2s, opacity 2s linear;
-}
-
-.loader-container {
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 100vh;
-  background: fff;
-}
-
-.loader {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: -webkit-gradient(linear, left top, left bottom, from(#00FF00), color-stop(#00FF00), to(#00FF00));
-  background: -o-linear-gradient(#00FF00, #00FF00, #00FF00);
-  background: linear-gradient(#00FF00, #00FF00, #00FF00);
-  -webkit-animation: animate 1s linear infinite;
-          animation: animate 1s linear infinite;
-}
-
-@keyframes animate {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-.loader span {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: -webkit-gradient(linear, left top, left bottom, from(#35C4BB), color-stop(#00ffbb), to(#14a99f));
-  background: -o-linear-gradient(#35C4BB, #00ffbb, #14a99f);
-  background: linear-gradient(#35C4BB, #00ffbb, #14a99f);
-}
-
-.loader span:nth-child(1) {
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
-}
-
-.loader span:nth-child(2) {
-  -webkit-filter: blur(10px);
-          filter: blur(10px);
-}
-
-.loader::after {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  background: white;
-  border-radius: 50%;
-}
-
 * {
   padding: 0px;
   margin: 0px;
@@ -753,9 +581,7 @@ hr {
 }
 
 .form__thanks {
-  width: 0;
-  height: 0;
-  visibility: hidden;
+  display: none;
 }
 
 .form__thanks-title {
@@ -3090,23 +2916,18 @@ td {
   margin-right: 80px;
 }
 
-.section-callback__right {
-  position: relative;
-  z-index: 3;
-}
-
 .section-callback__input {
   margin-right: 20px;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .section-callback__input:last-child {
   margin-right: 0px;
 }
 
-.section-callback__label {
-  padding: 15px 94px 19px 18px;
-  width: 100%;
+.section-callback__map {
+  max-width: 100%;
 }
 
 .section-left__subtitle {
@@ -3324,12 +3145,6 @@ td {
   }
 }
 
-@media (max-width: 1289px) {
-  .section-callback__label {
-    padding: 15px 19px 19px 18px;
-  }
-}
-
 @media (max-width: 1264px) {
   .section-top__container {
     -ms-flex-wrap: wrap;
@@ -3490,12 +3305,6 @@ td {
   }
 }
 
-@media (max-width: 1140px) {
-  .section-callback__label {
-    padding: 15px 15px 19px 18px;
-  }
-}
-
 @media (max-width: 1135px) {
   .header-page__nav {
     margin: 0px 4px;
@@ -3526,20 +3335,22 @@ td {
     width: 100%;
   }
 
+  .section-callback__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+
   .section-callback__left {
-    margin-right: 0px;
-    position: absolute;
-    z-index: 2;
+    margin: 0 auto;
+    max-width: 100%;
   }
 
   .section-callback__right {
-    max-width: 465px;
     width: 100%;
-  }
-
-  .section-callback__map {
-    width: 790px;
-    max-width: 100%;
+    max-width: 695px;
+    margin: 0 auto;
   }
 
   .section-left__subtitle {
@@ -3605,6 +3416,14 @@ td {
 
   .section-top__left {
     margin-top: 80px;
+  }
+
+  .section-about__left-garant {
+    display: none;
+  }
+
+  .section-about__right::after {
+    display: none;
   }
 
   .section-about {
@@ -3680,7 +3499,7 @@ td {
   }
 
   .section-prefits {
-    margin: 0px 0px 20px;
+    padding: 0px 0px 0px;
   }
 
   .section-prefits__item {
@@ -4143,7 +3962,7 @@ td {
   }
 
   .section-callback__right {
-    max-width: 375px;
+    max-width: 475px;
   }
 }
 

@@ -1,18 +1,4 @@
 //Прелоадер для сайта
-function loadData() {
-    return new Promise((resolve, reject) => {
-      // setTimeout не является частью решения
-      // Код ниже должен быть заменен на логику подходящую для решения вашей задачи
-      setTimeout(resolve, 700);
-    })
-  }
-  
-  loadData()
-    .then(() => {
-      let preloaderEl = document.getElementById('cube-loader');
-      preloaderEl.classList.add('hidden');
-      preloaderEl.classList.remove('visible');
-    });;
 
 // в myLib лежат кастомные скрипты
   /* myLib */
@@ -5809,23 +5795,3 @@ if (typeof exports === 'object' && typeof module !== 'undefined') {
 //# sourceMappingURL=common.js.map
 ;
 
-// Lazy Load Lib
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const imageObserver = new IntersectionObserver((entries, imgObserver) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const lazyImage = entry.target
-                        console.log("lazy loading ", lazyImage)
-                        lazyImage.src = lazyImage.dataset.src
-                        lazyImage.classList.remove("lzy_img");
-                        imgObserver.unobserve(lazyImage);
-                    }
-                })
-            });
-            const arr = document.querySelectorAll('img.lzy_img')
-            arr.forEach((v) => {
-                imageObserver.observe(v);
-            })
-        })
-;

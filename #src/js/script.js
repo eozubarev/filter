@@ -1,5 +1,4 @@
 //Прелоадер для сайта
-@@include('preLoader.js');
 
 // в myLib лежат кастомные скрипты
 @@include('myLib.js');
@@ -31,5 +30,3 @@
 // Бибилиотека с формами
 @@include('common.js');
 
-// Lazy Load Lib
-@@include('lazyLoad.js');
