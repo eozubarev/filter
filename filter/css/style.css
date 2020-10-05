@@ -562,35 +562,6 @@ hr {
   -webkit-transition: all 0.1s linear;
   -o-transition: all 0.1s linear;
   transition: all 0.1s linear;
-  position: relative;
-}
-
-.select-city::before {
-  content: '';
-  width: 6px;
-  height: 2px;
-  background-color: #2a2a2a;
-  position: absolute;
-  z-index: 10;
-  top: 8px;
-  left: 55px;
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.select-city::after {
-  content: '';
-  width: 6px;
-  height: 2px;
-  background-color: #2a2a2a;
-  position: absolute;
-  z-index: 10;
-  top: 8px;
-  left: 58px;
-  -webkit-transform: rotate(135deg);
-      -ms-transform: rotate(135deg);
-          transform: rotate(135deg);
 }
 
 .select-city:hover {

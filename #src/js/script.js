@@ -28,7 +28,8 @@
 // Полфилл для кроссбраузерности скролла
 @@include('scrollPolyfill.js');
 
-
 // Бибилиотека с формами
 @@include('common.js');
 
+// Lazy Load Lib
+@@include('lazyLoad.js');
