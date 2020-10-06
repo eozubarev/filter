@@ -2942,9 +2942,9 @@ td {
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
-  -webkit-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
+  -webkit-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
 }
 
 .section-callback__location:hover {
@@ -2973,7 +2973,7 @@ td {
   left: 3%;
 }
 
-.--tym {
+.--tyum {
   top: 70%;
   left: 30%;
 }
@@ -4405,7 +4405,7 @@ td {
     width: 100%;
   }
 
-  .--tym {
+  .--tyum {
     left: 33%;
   }
 }
