@@ -5845,8 +5845,8 @@ let companyAdressTyumen =
 let certificatesMap = new Map();
 certificatesMap.set("city-spb", companyAdressSpb)
 certificatesMap.set("city-msc", companyAdressMsc)
-certificatesMap.set("city-krs", companyAdressTyumen)
-certificatesMap.set("city-tyum", companyAdressKrasnodar)
+certificatesMap.set("city-krs", companyAdressKrasnodar)
+certificatesMap.set("city-tyum", companyAdressTyumen)
 
 /* Создаём цикл где перебираем коллекцию и подставляем к нужному id нужный ключ и значение
    где ключ это "cert+number", значение, переменная с нужным текстом вызывая при это плагин tippy */
