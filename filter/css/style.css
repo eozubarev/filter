@@ -2113,6 +2113,11 @@ hr {
   left: -112px;
 }
 
+.filter-component {
+  max-width: 100%;
+  width: 295px;
+}
+
 .section-regeneration {
   background-color: #f4f0e3;
   padding: 0px 0px 40px;
@@ -3852,6 +3857,10 @@ td {
     padding-bottom: 30px;
   }
 
+  .filter-component {
+    width: 123px;
+  }
+
   .section-prefits {
     padding: 0px 0px 0px;
   }
@@ -4423,7 +4432,6 @@ td {
   }
 
   .filter-component {
-    max-width: 100%;
     width: 90px;
   }
 }
