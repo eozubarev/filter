@@ -5841,6 +5841,7 @@ certificatesMap.set("city-tyum", companyAdressTyumen)
     tippy('#'+ key, {
         content: value,
         animation: 'scale',
+        trigger:'click',
       });
   }
 
