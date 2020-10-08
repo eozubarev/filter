@@ -294,16 +294,16 @@ $(document).ready(function(){
   })();
   
   /* myLib */;
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            alignToTop: true,
-            behavior: 'smooth'
-        });
-    });
+$('a[href^="#"]').on('click', function(event) {
+  var target = $(this.getAttribute('href'));
+  if( target.length ) {
+      event.preventDefault();
+      $('html, body').stop().animate({
+          scrollTop: target.offset().top
+      }, 1000);
+  }
 });
+
 ;
 
 (function() {
@@ -363,450 +363,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   /* popup */;
 
 // Скролл к секциям
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            alignToTop: true,
-            behavior: 'smooth'
-        });
-    });
+$('a[href^="#"]').on('click', function(event) {
+  var target = $(this.getAttribute('href'));
+  if( target.length ) {
+      event.preventDefault();
+      $('html, body').stop().animate({
+          scrollTop: target.offset().top
+      }, 1000);
+  }
 });
+
 ;
 
 // Полфилл для кроссбраузерности скролла
-
-
-'use strict';
-
-// polyfill
-function polyfill() {
-  // aliases
-  var w = window;
-  var d = document;
-
-  // return if scroll behavior is supported and polyfill is not forced
-  if (
-    'scrollBehavior' in d.documentElement.style &&
-    w.__forceSmoothScrollPolyfill__ !== true
-  ) {
-    return;
-  }
-
-  // globals
-  var Element = w.HTMLElement || w.Element;
-  var SCROLL_TIME = 468;
-
-  // object gathering original scroll methods
-  var original = {
-    scroll: w.scroll || w.scrollTo,
-    scrollBy: w.scrollBy,
-    elementScroll: Element.prototype.scroll || scrollElement,
-    scrollIntoView: Element.prototype.scrollIntoView
-  };
-
-  // define timing method
-  var now =
-    w.performance && w.performance.now
-      ? w.performance.now.bind(w.performance)
-      : Date.now;
-
-  /**
-   * indicates if a the current browser is made by Microsoft
-   * @method isMicrosoftBrowser
-   * @param {String} userAgent
-   * @returns {Boolean}
-   */
-  function isMicrosoftBrowser(userAgent) {
-    var userAgentPatterns = ['MSIE ', 'Trident/', 'Edge/'];
-
-    return new RegExp(userAgentPatterns.join('|')).test(userAgent);
-  }
-
-  /*
-   * IE has rounding bug rounding down clientHeight and clientWidth and
-   * rounding up scrollHeight and scrollWidth causing false positives
-   * on hasScrollableSpace
-   */
-  var ROUNDING_TOLERANCE = isMicrosoftBrowser(w.navigator.userAgent) ? 1 : 0;
-
-  /**
-   * changes scroll position inside an element
-   * @method scrollElement
-   * @param {Number} x
-   * @param {Number} y
-   * @returns {undefined}
-   */
-  function scrollElement(x, y) {
-    this.scrollLeft = x;
-    this.scrollTop = y;
-  }
-
-  /**
-   * returns result of applying ease math function to a number
-   * @method ease
-   * @param {Number} k
-   * @returns {Number}
-   */
-  function ease(k) {
-    return 0.5 * (1 - Math.cos(Math.PI * k));
-  }
-
-  /**
-   * indicates if a smooth behavior should be applied
-   * @method shouldBailOut
-   * @param {Number|Object} firstArg
-   * @returns {Boolean}
-   */
-  function shouldBailOut(firstArg) {
-    if (
-      firstArg === null ||
-      typeof firstArg !== 'object' ||
-      firstArg.behavior === undefined ||
-      firstArg.behavior === 'auto' ||
-      firstArg.behavior === 'instant'
-    ) {
-      // first argument is not an object/null
-      // or behavior is auto, instant or undefined
-      return true;
-    }
-
-    if (typeof firstArg === 'object' && firstArg.behavior === 'smooth') {
-      // first argument is an object and behavior is smooth
-      return false;
-    }
-
-    // throw error when behavior is not supported
-    throw new TypeError(
-      'behavior member of ScrollOptions ' +
-        firstArg.behavior +
-        ' is not a valid value for enumeration ScrollBehavior.'
-    );
-  }
-
-  /**
-   * indicates if an element has scrollable space in the provided axis
-   * @method hasScrollableSpace
-   * @param {Node} el
-   * @param {String} axis
-   * @returns {Boolean}
-   */
-  function hasScrollableSpace(el, axis) {
-    if (axis === 'Y') {
-      return el.clientHeight + ROUNDING_TOLERANCE < el.scrollHeight;
-    }
-
-    if (axis === 'X') {
-      return el.clientWidth + ROUNDING_TOLERANCE < el.scrollWidth;
-    }
-  }
-
-  /**
-   * indicates if an element has a scrollable overflow property in the axis
-   * @method canOverflow
-   * @param {Node} el
-   * @param {String} axis
-   * @returns {Boolean}
-   */
-  function canOverflow(el, axis) {
-    var overflowValue = w.getComputedStyle(el, null)['overflow' + axis];
-
-    return overflowValue === 'auto' || overflowValue === 'scroll';
-  }
-
-  /**
-   * indicates if an element can be scrolled in either axis
-   * @method isScrollable
-   * @param {Node} el
-   * @param {String} axis
-   * @returns {Boolean}
-   */
-  function isScrollable(el) {
-    var isScrollableY = hasScrollableSpace(el, 'Y') && canOverflow(el, 'Y');
-    var isScrollableX = hasScrollableSpace(el, 'X') && canOverflow(el, 'X');
-
-    return isScrollableY || isScrollableX;
-  }
-
-  /**
-   * finds scrollable parent of an element
-   * @method findScrollableParent
-   * @param {Node} el
-   * @returns {Node} el
-   */
-  function findScrollableParent(el) {
-    while (el !== d.body && isScrollable(el) === false) {
-      el = el.parentNode || el.host;
-    }
-
-    return el;
-  }
-
-  /**
-   * self invoked function that, given a context, steps through scrolling
-   * @method step
-   * @param {Object} context
-   * @returns {undefined}
-   */
-  function step(context) {
-    var time = now();
-    var value;
-    var currentX;
-    var currentY;
-    var elapsed = (time - context.startTime) / SCROLL_TIME;
-
-    // avoid elapsed times higher than one
-    elapsed = elapsed > 1 ? 1 : elapsed;
-
-    // apply easing to elapsed time
-    value = ease(elapsed);
-
-    currentX = context.startX + (context.x - context.startX) * value;
-    currentY = context.startY + (context.y - context.startY) * value;
-
-    context.method.call(context.scrollable, currentX, currentY);
-
-    // scroll more if we have not reached our destination
-    if (currentX !== context.x || currentY !== context.y) {
-      w.requestAnimationFrame(step.bind(w, context));
-    }
-  }
-
-  /**
-   * scrolls window or element with a smooth behavior
-   * @method smoothScroll
-   * @param {Object|Node} el
-   * @param {Number} x
-   * @param {Number} y
-   * @returns {undefined}
-   */
-  function smoothScroll(el, x, y) {
-    var scrollable;
-    var startX;
-    var startY;
-    var method;
-    var startTime = now();
-
-    // define scroll context
-    if (el === d.body) {
-      scrollable = w;
-      startX = w.scrollX || w.pageXOffset;
-      startY = w.scrollY || w.pageYOffset;
-      method = original.scroll;
-    } else {
-      scrollable = el;
-      startX = el.scrollLeft;
-      startY = el.scrollTop;
-      method = scrollElement;
-    }
-
-    // scroll looping over a frame
-    step({
-      scrollable: scrollable,
-      method: method,
-      startTime: startTime,
-      startX: startX,
-      startY: startY,
-      x: x,
-      y: y
-    });
-  }
-
-  // ORIGINAL METHODS OVERRIDES
-  // w.scroll and w.scrollTo
-  w.scroll = w.scrollTo = function() {
-    // avoid action when no arguments are passed
-    if (arguments[0] === undefined) {
-      return;
-    }
-
-    // avoid smooth behavior if not required
-    if (shouldBailOut(arguments[0]) === true) {
-      original.scroll.call(
-        w,
-        arguments[0].left !== undefined
-          ? arguments[0].left
-          : typeof arguments[0] !== 'object'
-            ? arguments[0]
-            : w.scrollX || w.pageXOffset,
-        // use top prop, second argument if present or fallback to scrollY
-        arguments[0].top !== undefined
-          ? arguments[0].top
-          : arguments[1] !== undefined
-            ? arguments[1]
-            : w.scrollY || w.pageYOffset
-      );
-
-      return;
-    }
-
-    // LET THE SMOOTHNESS BEGIN!
-    smoothScroll.call(
-      w,
-      d.body,
-      arguments[0].left !== undefined
-        ? ~~arguments[0].left
-        : w.scrollX || w.pageXOffset,
-      arguments[0].top !== undefined
-        ? ~~arguments[0].top
-        : w.scrollY || w.pageYOffset
-    );
-  };
-
-  // w.scrollBy
-  w.scrollBy = function() {
-    // avoid action when no arguments are passed
-    if (arguments[0] === undefined) {
-      return;
-    }
-
-    // avoid smooth behavior if not required
-    if (shouldBailOut(arguments[0])) {
-      original.scrollBy.call(
-        w,
-        arguments[0].left !== undefined
-          ? arguments[0].left
-          : typeof arguments[0] !== 'object' ? arguments[0] : 0,
-        arguments[0].top !== undefined
-          ? arguments[0].top
-          : arguments[1] !== undefined ? arguments[1] : 0
-      );
-
-      return;
-    }
-
-    // LET THE SMOOTHNESS BEGIN!
-    smoothScroll.call(
-      w,
-      d.body,
-      ~~arguments[0].left + (w.scrollX || w.pageXOffset),
-      ~~arguments[0].top + (w.scrollY || w.pageYOffset)
-    );
-  };
-
-  // Element.prototype.scroll and Element.prototype.scrollTo
-  Element.prototype.scroll = Element.prototype.scrollTo = function() {
-    // avoid action when no arguments are passed
-    if (arguments[0] === undefined) {
-      return;
-    }
-
-    // avoid smooth behavior if not required
-    if (shouldBailOut(arguments[0]) === true) {
-      // if one number is passed, throw error to match Firefox implementation
-      if (typeof arguments[0] === 'number' && arguments[1] === undefined) {
-        throw new SyntaxError('Value could not be converted');
-      }
-
-      original.elementScroll.call(
-        this,
-        // use left prop, first number argument or fallback to scrollLeft
-        arguments[0].left !== undefined
-          ? ~~arguments[0].left
-          : typeof arguments[0] !== 'object' ? ~~arguments[0] : this.scrollLeft,
-        // use top prop, second argument or fallback to scrollTop
-        arguments[0].top !== undefined
-          ? ~~arguments[0].top
-          : arguments[1] !== undefined ? ~~arguments[1] : this.scrollTop
-      );
-
-      return;
-    }
-
-    var left = arguments[0].left;
-    var top = arguments[0].top;
-
-    // LET THE SMOOTHNESS BEGIN!
-    smoothScroll.call(
-      this,
-      this,
-      typeof left === 'undefined' ? this.scrollLeft : ~~left,
-      typeof top === 'undefined' ? this.scrollTop : ~~top
-    );
-  };
-
-  // Element.prototype.scrollBy
-  Element.prototype.scrollBy = function() {
-    // avoid action when no arguments are passed
-    if (arguments[0] === undefined) {
-      return;
-    }
-
-    // avoid smooth behavior if not required
-    if (shouldBailOut(arguments[0]) === true) {
-      original.elementScroll.call(
-        this,
-        arguments[0].left !== undefined
-          ? ~~arguments[0].left + this.scrollLeft
-          : ~~arguments[0] + this.scrollLeft,
-        arguments[0].top !== undefined
-          ? ~~arguments[0].top + this.scrollTop
-          : ~~arguments[1] + this.scrollTop
-      );
-
-      return;
-    }
-
-    this.scroll({
-      left: ~~arguments[0].left + this.scrollLeft,
-      top: ~~arguments[0].top + this.scrollTop,
-      behavior: arguments[0].behavior
-    });
-  };
-
-  // Element.prototype.scrollIntoView
-  Element.prototype.scrollIntoView = function() {
-    // avoid smooth behavior if not required
-    if (shouldBailOut(arguments[0]) === true) {
-      original.scrollIntoView.call(
-        this,
-        arguments[0] === undefined ? true : arguments[0]
-      );
-
-      return;
-    }
-
-    // LET THE SMOOTHNESS BEGIN!
-    var scrollableParent = findScrollableParent(this);
-    var parentRects = scrollableParent.getBoundingClientRect();
-    var clientRects = this.getBoundingClientRect();
-
-    if (scrollableParent !== d.body) {
-      // reveal element inside parent
-      smoothScroll.call(
-        this,
-        scrollableParent,
-        scrollableParent.scrollLeft + clientRects.left - parentRects.left,
-        scrollableParent.scrollTop + clientRects.top - parentRects.top
-      );
-
-      // reveal parent in viewport unless is fixed
-      if (w.getComputedStyle(scrollableParent).position !== 'fixed') {
-        w.scrollBy({
-          left: parentRects.left,
-          top: parentRects.top,
-          behavior: 'smooth'
-        });
-      }
-    } else {
-      // reveal element in viewport
-      w.scrollBy({
-        left: clientRects.left,
-        top: clientRects.top,
-        behavior: 'smooth'
-      });
-    }
-  };
-}
-
-if (typeof exports === 'object' && typeof module !== 'undefined') {
-  // commonjs
-  module.exports = { polyfill: polyfill };
-} else {
-  // global
-  polyfill();
-};
 
 // Бибилиотека с формами
 !(function (e) {
@@ -5861,4 +5430,223 @@ certificatesMap.set("city-tyum", companyAdressTyumen)
 
 // Далее компонентом можно пользоваться по примеру конструкции, которую я составил выше;
 
+// Подключаем scrollTo
+/*!
+ * jQuery.scrollTo
+ * Copyright (c) 2007-2015 Ariel Flesler - aflesler<a>gmail<d>com | http://flesler.blogspot.com
+ * Licensed under MIT
+ * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
+ * @projectDescription Lightweight, cross-browser and highly customizable animated scrolling with jQuery
+ * @author Ariel Flesler
+ * @version 2.1.2
+ */
+;(function(factory) {
+	'use strict';
+	if (typeof define === 'function' && define.amd) {
+		// AMD
+		define(['jquery'], factory);
+	} else if (typeof module !== 'undefined' && module.exports) {
+		// CommonJS
+		module.exports = factory(require('jquery'));
+	} else {
+		// Global
+		factory(jQuery);
+	}
+})(function($) {
+	'use strict';
+
+	var $scrollTo = $.scrollTo = function(target, duration, settings) {
+		return $(window).scrollTo(target, duration, settings);
+	};
+
+	$scrollTo.defaults = {
+		axis:'xy',
+		duration: 0,
+		limit:true
+	};
+
+	function isWin(elem) {
+		return !elem.nodeName ||
+			$.inArray(elem.nodeName.toLowerCase(), ['iframe','#document','html','body']) !== -1;
+	}		
+
+	$.fn.scrollTo = function(target, duration, settings) {
+		if (typeof duration === 'object') {
+			settings = duration;
+			duration = 0;
+		}
+		if (typeof settings === 'function') {
+			settings = { onAfter:settings };
+		}
+		if (target === 'max') {
+			target = 9e9;
+		}
+
+		settings = $.extend({}, $scrollTo.defaults, settings);
+		// Speed is still recognized for backwards compatibility
+		duration = duration || settings.duration;
+		// Make sure the settings are given right
+		var queue = settings.queue && settings.axis.length > 1;
+		if (queue) {
+			// Let's keep the overall duration
+			duration /= 2;
+		}
+		settings.offset = both(settings.offset);
+		settings.over = both(settings.over);
+
+		return this.each(function() {
+			// Null target yields nothing, just like jQuery does
+			if (target === null) return;
+
+			var win = isWin(this),
+				elem = win ? this.contentWindow || window : this,
+				$elem = $(elem),
+				targ = target, 
+				attr = {},
+				toff;
+
+			switch (typeof targ) {
+				// A number will pass the regex
+				case 'number':
+				case 'string':
+					if (/^([+-]=?)?\d+(\.\d+)?(px|%)?$/.test(targ)) {
+						targ = both(targ);
+						// We are done
+						break;
+					}
+					// Relative/Absolute selector
+					targ = win ? $(targ) : $(targ, elem);
+					/* falls through */
+				case 'object':
+					if (targ.length === 0) return;
+					// DOMElement / jQuery
+					if (targ.is || targ.style) {
+						// Get the real position of the target
+						toff = (targ = $(targ)).offset();
+					}
+			}
+
+			var offset = $.isFunction(settings.offset) && settings.offset(elem, targ) || settings.offset;
+
+			$.each(settings.axis.split(''), function(i, axis) {
+				var Pos	= axis === 'x' ? 'Left' : 'Top',
+					pos = Pos.toLowerCase(),
+					key = 'scroll' + Pos,
+					prev = $elem[key](),
+					max = $scrollTo.max(elem, axis);
+
+				if (toff) {// jQuery / DOMElement
+					attr[key] = toff[pos] + (win ? 0 : prev - $elem.offset()[pos]);
+
+					// If it's a dom element, reduce the margin
+					if (settings.margin) {
+						attr[key] -= parseInt(targ.css('margin'+Pos), 10) || 0;
+						attr[key] -= parseInt(targ.css('border'+Pos+'Width'), 10) || 0;
+					}
+
+					attr[key] += offset[pos] || 0;
+
+					if (settings.over[pos]) {
+						// Scroll to a fraction of its width/height
+						attr[key] += targ[axis === 'x'?'width':'height']() * settings.over[pos];
+					}
+				} else {
+					var val = targ[pos];
+					// Handle percentage values
+					attr[key] = val.slice && val.slice(-1) === '%' ?
+						parseFloat(val) / 100 * max
+						: val;
+				}
+
+				// Number or 'number'
+				if (settings.limit && /^\d+$/.test(attr[key])) {
+					// Check the limits
+					attr[key] = attr[key] <= 0 ? 0 : Math.min(attr[key], max);
+				}
+
+				// Don't waste time animating, if there's no need.
+				if (!i && settings.axis.length > 1) {
+					if (prev === attr[key]) {
+						// No animation needed
+						attr = {};
+					} else if (queue) {
+						// Intermediate animation
+						animate(settings.onAfterFirst);
+						// Don't animate this axis again in the next iteration.
+						attr = {};
+					}
+				}
+			});
+
+			animate(settings.onAfter);
+
+			function animate(callback) {
+				var opts = $.extend({}, settings, {
+					// The queue setting conflicts with animate()
+					// Force it to always be true
+					queue: true,
+					duration: duration,
+					complete: callback && function() {
+						callback.call(elem, targ, settings);
+					}
+				});
+				$elem.animate(attr, opts);
+			}
+		});
+	};
+
+	// Max scrolling position, works on quirks mode
+	// It only fails (not too badly) on IE, quirks mode.
+	$scrollTo.max = function(elem, axis) {
+		var Dim = axis === 'x' ? 'Width' : 'Height',
+			scroll = 'scroll'+Dim;
+
+		if (!isWin(elem))
+			return elem[scroll] - $(elem)[Dim.toLowerCase()]();
+
+		var size = 'client' + Dim,
+			doc = elem.ownerDocument || elem.document,
+			html = doc.documentElement,
+			body = doc.body;
+
+		return Math.max(html[scroll], body[scroll]) - Math.min(html[size], body[size]);
+	};
+
+	function both(val) {
+		return $.isFunction(val) || $.isPlainObject(val) ? val : { top:val, left:val };
+	}
+
+	// Add special hooks so that window scroll properties can be animated
+	$.Tween.propHooks.scrollLeft = 
+	$.Tween.propHooks.scrollTop = {
+		get: function(t) {
+			return $(t.elem)[t.prop]();
+		},
+		set: function(t) {
+			var curr = this.get(t);
+			// If interrupt is true and user scrolled, stop animating
+			if (t.options.interrupt && t._last && t._last !== curr) {
+				return $(t.elem).stop();
+			}
+			var next = Math.round(t.now);
+			// Don't waste CPU
+			// Browsers don't render floating point scroll
+			if (curr !== next) {
+				$(t.elem)[t.prop](next);
+				t._last = this.get(t);
+			}
+		}
+	};
+
+	// AMD requirement
+	return $scrollTo;
+});
+;
+/**
+ * Copyright (c) 2007-2015 Ariel Flesler - aflesler<a>gmail<d>com | http://flesler.blogspot.com
+ * Licensed under MIT
+ * @author Ariel Flesler
+ * @version 2.1.2
+ */
+;(function(f){"use strict";"function"===typeof define&&define.amd?define(["jquery"],f):"undefined"!==typeof module&&module.exports?module.exports=f(require("jquery")):f(jQuery)})(function($){"use strict";function n(a){return!a.nodeName||-1!==$.inArray(a.nodeName.toLowerCase(),["iframe","#document","html","body"])}function h(a){return $.isFunction(a)||$.isPlainObject(a)?a:{top:a,left:a}}var p=$.scrollTo=function(a,d,b){return $(window).scrollTo(a,d,b)};p.defaults={axis:"xy",duration:0,limit:!0};$.fn.scrollTo=function(a,d,b){"object"=== typeof d&&(b=d,d=0);"function"===typeof b&&(b={onAfter:b});"max"===a&&(a=9E9);b=$.extend({},p.defaults,b);d=d||b.duration;var u=b.queue&&1<b.axis.length;u&&(d/=2);b.offset=h(b.offset);b.over=h(b.over);return this.each(function(){function k(a){var k=$.extend({},b,{queue:!0,duration:d,complete:a&&function(){a.call(q,e,b)}});r.animate(f,k)}if(null!==a){var l=n(this),q=l?this.contentWindow||window:this,r=$(q),e=a,f={},t;switch(typeof e){case "number":case "string":if(/^([+-]=?)?\d+(\.\d+)?(px|%)?$/.test(e)){e= h(e);break}e=l?$(e):$(e,q);case "object":if(e.length===0)return;if(e.is||e.style)t=(e=$(e)).offset()}var v=$.isFunction(b.offset)&&b.offset(q,e)||b.offset;$.each(b.axis.split(""),function(a,c){var d="x"===c?"Left":"Top",m=d.toLowerCase(),g="scroll"+d,h=r[g](),n=p.max(q,c);t?(f[g]=t[m]+(l?0:h-r.offset()[m]),b.margin&&(f[g]-=parseInt(e.css("margin"+d),10)||0,f[g]-=parseInt(e.css("border"+d+"Width"),10)||0),f[g]+=v[m]||0,b.over[m]&&(f[g]+=e["x"===c?"width":"height"]()*b.over[m])):(d=e[m],f[g]=d.slice&& "%"===d.slice(-1)?parseFloat(d)/100*n:d);b.limit&&/^\d+$/.test(f[g])&&(f[g]=0>=f[g]?0:Math.min(f[g],n));!a&&1<b.axis.length&&(h===f[g]?f={}:u&&(k(b.onAfterFirst),f={}))});k(b.onAfter)}})};p.max=function(a,d){var b="x"===d?"Width":"Height",h="scroll"+b;if(!n(a))return a[h]-$(a)[b.toLowerCase()]();var b="client"+b,k=a.ownerDocument||a.document,l=k.documentElement,k=k.body;return Math.max(l[h],k[h])-Math.min(l[b],k[b])};$.Tween.propHooks.scrollLeft=$.Tween.propHooks.scrollTop={get:function(a){return $(a.elem)[a.prop]()}, set:function(a){var d=this.get(a);if(a.options.interrupt&&a._last&&a._last!==d)return $(a.elem).stop();var b=Math.round(a.now);d!==b&&($(a.elem)[a.prop](b),a._last=this.get(a))}};return p});;
 

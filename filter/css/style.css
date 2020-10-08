@@ -1858,7 +1858,6 @@ hr {
 }
 
 .section-about {
-  scroll-margin: 50px;
   padding: 100px 0px 85px;
   background: -webkit-gradient(linear, left top, right top, color-stop(20%, white), color-stop(0%, #fbf9f1));
   background: -o-linear-gradient(left, white 20%, #fbf9f1 0%);
@@ -3768,7 +3767,7 @@ td {
     max-width: 783px;
     width: 100%;
     margin-left: 0px;
-    padding-top: 15px;
+    padding-top: 65px;
   }
 
   .section-about__right::before {
@@ -3853,7 +3852,6 @@ td {
   }
 
   .section-components__title {
-    padding-top: 50px;
     padding-bottom: 30px;
   }
 
@@ -3862,7 +3860,7 @@ td {
   }
 
   .section-prefits {
-    padding: 0px 0px 0px;
+    padding: 65px 0px 0px;
   }
 
   .section-prefits__item {
@@ -3904,10 +3902,6 @@ td {
 
   .section-types {
     padding: 20px 0px 20px;
-  }
-
-  .section-specifications {
-    padding: 10px 0px 95px;
   }
 
   .section-example__separation {
@@ -4016,7 +4010,6 @@ td {
   .section-example__up {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    margin-bottom: 20px;
   }
 
   .section-example__down {
@@ -4360,7 +4353,7 @@ td {
   }
 
   .section-specifications {
-    padding: 20px 0px 24px;
+    padding: 65px 0px 24px;
   }
 
   .section-example__separation {
@@ -4386,7 +4379,7 @@ td {
 
 @media (max-width: 721px) {
   .section-components {
-    padding: 20px 0px 545px;
+    padding: 65px 0px 545px;
   }
 
   .section-left__clarification--first {
