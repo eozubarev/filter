@@ -3334,8 +3334,8 @@ td {
 
 @media (max-width: 1443px) {
   .section-video__title {
-    top: 341px;
-    left: 430px;
+    top: 337px;
+    left: 381px;
   }
 
   .section-right__video::after {
@@ -3345,11 +3345,12 @@ td {
 
   .img-bags {
     width: 345px;
+    margin-left: -20px;
   }
 
   .inner__aside-block--video {
     top: 20%;
-    left: 78%;
+    left: 67%;
   }
 }
 
