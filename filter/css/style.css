@@ -2035,6 +2035,10 @@ hr {
   z-index: 3;
 }
 
+.duplicate {
+  display: none;
+}
+
 .section-components {
   scroll-margin: 80px;
   font-family: "Open Sans";
@@ -3790,6 +3794,14 @@ td {
     max-width: 100%;
   }
 
+  .original {
+    display: none;
+  }
+
+  .duplicate {
+    display: block;
+  }
+
   .section-left__dots {
     visibility: inherit;
   }
@@ -3801,25 +3813,25 @@ td {
   }
 
   .section-left__clarification--second {
-    top: 364px;
+    top: 305px;
     left: -75px;
     z-index: 2;
   }
 
   .section-left__clarification--third {
-    top: 559px;
+    top: 365px;
     left: -86px;
     z-index: 2;
   }
 
   .section-left__clarification--fourth {
-    top: 307px;
+    top: 476px;
     left: -99px;
     z-index: 2;
   }
 
   .section-left__clarification--fifth {
-    top: 473px;
+    top: 559px;
     left: -109px;
     z-index: 2;
   }
@@ -4390,25 +4402,25 @@ td {
   }
 
   .section-left__clarification--second {
-    top: 265px;
-    left: -61px;
+    top: 222px;
+    left: -60px;
     z-index: 2;
   }
 
   .section-left__clarification--third {
-    top: 409px;
+    top: 263px;
     left: -71px;
     z-index: 2;
   }
 
   .section-left__clarification--fourth {
-    top: 222px;
+    top: 345px;
     left: -82px;
     z-index: 2;
   }
 
   .section-left__clarification--fifth {
-    top: 342px;
+    top: 408px;
     left: -93px;
     z-index: 2;
   }
