@@ -1,0 +1,144 @@
+<!-- popup-menu-city start -->
+<div class="popup popup-menu-city">
+    <div class="popup__wrapper">
+        <div class="popup__inner">
+            <div class="popup__content mini popup__content--fluid popup__content--centered">
+                <button class="btn-close popup__btn-close popup-close"></button>
+                <p class="your-city__title page-title">Ваш город: <span>Москва</span></p>
+                <p class="modal-head city" data-name=""></p>
+                <div class="btn-block">
+                    <button class="btn btn-choise__yes popup-close">Да, все верно</button>
+                </div>
+                <button class="popup-close btn-choise__city" data-popup="popup-choise-city"><span>Выбрать другой город</span></button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- popup-menu-city end -->
+
+<!-- popup-choise-city start -->
+<div class="popup popup-choise-city">
+    <div class="popup__wrapper">
+        <div class="popup__inner">
+            <div class="popup__content big popup__content--fluid popup__content--centered">
+                <button class="btn-close popup__btn-close popup-close"></button>
+
+                <div class="cities-list__title page-title">Выберите свой город</div>
+                <form id="regionForm" action="/controllers/Region.php" method="post">
+                    <input type="hidden" name="region" value="" />
+                    <input type="hidden" name="action" value="set" />
+                    <div class="cities-list__container">
+                        <div class="cities-list__ul">
+                            <ul class="region_list">
+                                <li><a href="#" data-name="Москва">Москва</a></li>
+                                <li><a href="#" data-name="Санкт-Петербург">Санкт-Петербург</a></li>
+                                <li><a href="#" data-name="Архангельск">Архангельск</a></li>
+                                <li><a href="#" data-name="Астрахань">Астрахань</a></li>
+                                <li><a href="#" data-name="Барнаул">Барнаул</a></li>
+                                <li><a href="#" data-name="Белгород">Белгород</a></li>
+                                <li><a href="#" data-name="Благовещенск">Благовещенск</a></li>
+                                <li><a href="#" data-name="Брянск">Брянск</a></li>
+                                <li><a href="#" data-name="Великий Новгород">Великий Новгород</a></li>
+                                <li><a href="#" data-name="Владивосток">Владивосток</a></li>
+                                <li><a href="#" data-name="Владикавказ">Владикавказ</a></li>
+                                <li><a href="#" data-name="Владимир">Владимир</a></li>
+                                <li><a href="#" data-name="Волгоград">Волгоград</a></li>
+                                <li><a href="#" data-name="Вологда">Вологда</a></li>
+                                <li><a href="#" data-name="Воронеж">Воронеж</a></li>
+                                <li><a href="#" data-name="Грозный">Грозный</a></li>
+                                <li><a href="#" data-name="Екатеринбург">Екатеринбург</a></li>
+                                <li><a href="#" data-name="Иваново">Иваново</a></li>
+                                <li><a href="#" data-name="Ижевск">Ижевск</a></li>
+                            </ul>
+                        </div>
+                        <div class="cities-list__ul">
+                            <ul class="region_list">
+                                <li><a href="#" data-name="Иркутск">Иркутск</a></li>
+                                <li><a href="#" data-name="Йошкар-Ола">Йошкар-Ола</a></li>
+                                <li><a href="#" data-name="Казань">Казань</a></li>
+                                <li><a href="#" data-name="Калининград">Калининград</a></li>
+                                <li><a href="#" data-name="Калуга">Калуга</a></li>
+                                <li><a href="#" data-name="Кемерово">Кемерово</a></li>
+                                <li><a href="#" data-name="Киров">Киров</a></li>
+                                <li><a href="#" data-name="Кострома">Кострома</a></li>
+                                <li><a href="#" data-name="Краснодар">Краснодар</a></li>
+                                <li><a href="#" data-name="Красноярск">Красноярск</a></li>
+                                <li><a href="#" data-name="Курган">Курган</a></li>
+                                <li><a href="#" data-name="Курск">Курск</a></li>
+                                <li><a href="#" data-name="Липецк">Липецк</a></li>
+                                <li><a href="#" data-name="Магадан">Магадан</a></li>
+                                <li><a href="#" data-name="Майкоп">Майкоп</a></li>
+                                <li><a href="#" data-name="Махачкала">Махачкала</a></li>
+                                <li><a href="#" data-name="Мурманск">Мурманск</a></li>
+                                <li><a href="#" data-name="Нальчик">Нальчик</a></li>
+                                <li><a href="#" data-name="Нижний Новгород">Нижний Новгород</a></li>
+                            </ul>
+                        </div>
+                        <div class="cities-list__ul">
+                            <ul class="region_list">
+                                <li><a href="#" data-name="Новосибирск">Новосибирск</a></li>
+                                <li><a href="#" data-name="Омск">Омск</a></li>
+                                <li><a href="#" data-name="Оренбург">Оренбург</a></li>
+                                <li><a href="#" data-name="Орёл">Орёл</a></li>
+                                <li><a href="#" data-name="Пенза">Пенза</a></li>
+                                <li><a href="#" data-name="Пермь">Пермь</a></li>
+                                <li><a href="#" data-name="Петрозаводск">Петрозаводск</a></li>
+                                <li><a href="#" data-name="Петропавловск-Камчатский">Петропавловск-Камчатский</a></li>
+                                <li><a href="#" data-name="Псков">Псков</a></li>
+                                <li><a href="#" data-name="Ростов-на-Дону">Ростов-на-Дону</a></li>
+                                <li><a href="#" data-name="Рязань">Рязань</a></li>
+                                <li><a href="#" data-name="Самара">Самара</a></li>
+                                <li><a href="#" data-name="Саранск">Саранск</a></li>
+                                <li><a href="#" data-name="Саратов">Саратов</a></li>
+                                <li><a href="#" data-name="Севастополь">Севастополь</a></li>
+                                <li><a href="#" data-name="Симферополь">Симферополь</a></li>
+                                <li><a href="#" data-name="Смоленск">Смоленск</a></li>
+                                <li><a href="#" data-name="Сочи">Сочи</a></li>
+                                <li><a href="#" data-name="Ставрополь">Ставрополь</a></li>
+                            </ul>
+                        </div>
+                        <div class="cities-list__ul">
+                            <ul class="region_list">
+                                <li><a href="#" data-name="Сургут">Сургут</a></li>
+                                <li><a href="#" data-name="Сыктывкар">Сыктывкар</a></li>
+                                <li><a href="#" data-name="Тамбов">Тамбов</a></li>
+                                <li><a href="#" data-name="Тверь">Тверь</a></li>
+                                <li><a href="#" data-name="Томск">Томск</a></li>
+                                <li><a href="#" data-name="Тула">Тула</a></li>
+                                <li><a href="#" data-name="Тюмень">Тюмень</a></li>
+                                <li><a href="#" data-name="Улан-Удэ">Улан-Удэ</a></li>
+                                <li><a href="#" data-name="Ульяновск">Ульяновск</a></li>
+                                <li><a href="#" data-name="Уфа">Уфа</a></li>
+                                <li><a href="#" data-name="Хабаровск">Хабаровск</a></li>
+                                <li><a href="#" data-name="Ханты-Мансийск">Ханты-Мансийск</a></li>
+                                <li><a href="#" data-name="Чебоксары">Чебоксары</a></li>
+                                <li><a href="#" data-name="Челябинск">Челябинск</a></li>
+                                <li><a href="#" data-name="Чита">Чита</a></li>
+                                <li><a href="#" data-name="Южно-Сахалинск">Южно-Сахалинск</a></li>
+                                <li><a href="#" data-name="Якутск">Якутск</a></li>
+                                <li><a href="#" data-name="Ярославль">Ярославль</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- popup-choise-city end -->
+
+<!-- <div id="modal-sure-region" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <p class="modal-head">
+                                    Вы уверены, что хотите сменить Ваш регион?
+                                </p>
+                                <div class="btn-block">
+                                    <button class="btn btn-bg ylw btn-change-agree" data-city="">Да</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+<!-- /#modal-your-region -->

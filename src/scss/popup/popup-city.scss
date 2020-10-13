@@ -1,0 +1,76 @@
+
+.your-city {
+
+    &__title {
+    }
+}
+
+.btn-choise {
+    &__city {
+        font-family: $roboto;
+        font-size: 14px;
+        color: #000;
+        border-bottom: 1px dashed;
+        transition: all 0.2s linear;
+
+        background: white;
+        outline: none;
+    }
+    &__city:hover {
+        color: #1aaea4;
+    }
+
+    &__yes {
+        padding: 16px 20px;
+        margin-bottom: 10px;
+    }
+}
+
+.cities-list {
+
+    color: $black;
+
+    &__title {
+        font-size: 35px;
+    }
+    &__title span {
+        color: #1aaea4;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        max-width: 100%;
+        @media(max-width: 780px) {
+            flex-direction: column;
+        }
+    }
+
+    &__ul {
+    }
+
+    &__ul li {
+        margin-bottom: 7px;
+    }
+}
+.region {
+
+    &_list {
+        margin: 0px 45px 0px 45px;
+        line-height: 23px;
+        font-size: 15px;
+        @media(max-width: 780px) {
+            font-size: 21px;
+            text-align: center;
+        }
+    }
+
+    &_list a {
+        color: $black;
+        padding-bottom: 20px;
+        transition: all 0.2s linear;
+    }
+    &_list a:hover {
+        color: $active;
+    }
+}

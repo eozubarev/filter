@@ -1,0 +1,20 @@
+<svg id="_-" data-name="-" xmlns="http://www.w3.org/2000/svg" width="112" height="10" viewBox="0 0 112 10">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #eee7d1;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #dbb680;
+      }
+    </style>
+  </defs>
+  <rect id="Прямоугольник_13" data-name="Прямоугольник 13" class="cls-1" y="4" width="104" height="2"/>
+  <circle id="Эллипс_13_копия" data-name="Эллипс 13 копия" class="cls-2" cx="107" cy="5" r="5"/>
+  <circle id="Эллипс_13_копия_2" data-name="Эллипс 13 копия 2" class="cls-3" cx="107" cy="5" r="3"/>
+</svg>
