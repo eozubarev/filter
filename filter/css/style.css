@@ -1889,7 +1889,7 @@ hr {
   text-align: center;
   position: absolute;
   top: 14%;
-  left: 68%;
+  left: 66%;
   color: white;
 }
 
@@ -2846,6 +2846,7 @@ td {
 
 .section-example__info {
   margin-bottom: 15px;
+  font-size: 15px;
   position: relative;
 }
 
@@ -2874,18 +2875,33 @@ td {
 }
 
 .vkx::before {
-  top: 42px;
-  left: 63px;
+  top: 60px;
+  left: 47px;
 }
 
 .nkx::before {
-  top: 60px;
-  left: 32px;
+  top: 77px;
+  left: 107px;
 }
 
 .vkxo::before {
-  top: 60px;
-  left: 177px;
+  top: 92px;
+  left: 238px;
+}
+
+.aqsx::before {
+  top: 75px;
+  left: 59px;
+}
+
+.aqs-lim-x::before {
+  top: 77px;
+  left: 180px;
+}
+
+.xa:before {
+  top: 44px;
+  left: 241px;
 }
 
 .flip .section-example__card-front {
@@ -3365,13 +3381,20 @@ td {
 
 @media (min-width: 1800px) {
   .section-about__left-garant {
-    top: 33%;
-    left: 66%;
+    top: 31%;
+    left: 58%;
+    font-size: 20px;
+  }
+
+  .section-about__left-garant span {
+    font-size: 55px;
   }
 
   .section-about__right::after {
-    top: 30%;
-    left: -27%;
+    top: 28%;
+    left: -31%;
+    width: 140px;
+    height: 140px;
   }
 
   .section-right__content {
