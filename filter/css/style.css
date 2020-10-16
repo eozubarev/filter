@@ -2769,6 +2769,8 @@ td {
 
 .section-example__card {
   margin: 0px 10px 0px 10px;
+  max-width: 100%;
+  max-height: 100%;
   width: 600px;
   height: 450px;
   position: relative;
@@ -2847,7 +2849,6 @@ td {
 .section-example__info {
   margin-bottom: 15px;
   font-size: 15px;
-  position: relative;
 }
 
 .section-example__further {
@@ -2856,6 +2857,7 @@ td {
   -webkit-transition: all 0.1s linear;
   -o-transition: all 0.1s linear;
   transition: all 0.1s linear;
+  position: relative;
 }
 
 .section-example__further::before {
@@ -2866,42 +2868,12 @@ td {
   background: -o-linear-gradient(left, rgba(251, 249, 241, 0.1), #FBF9F1);
   background: linear-gradient(90deg, rgba(251, 249, 241, 0.1), #FBF9F1);
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 2px;
+  left: -34px;
 }
 
 .section-example__further:hover {
   color: #25b7ad;
-}
-
-.vkx::before {
-  top: 60px;
-  left: 47px;
-}
-
-.nkx::before {
-  top: 44px;
-  left: 229px;
-}
-
-.vkxo::before {
-  top: 77px;
-  left: 73px;
-}
-
-.aqsx::before {
-  top: 75px;
-  left: 59px;
-}
-
-.aqs-lim-x::before {
-  top: 77px;
-  left: 180px;
-}
-
-.xa:before {
-  top: 44px;
-  left: 241px;
 }
 
 .flip .section-example__card-front {
@@ -4393,6 +4365,10 @@ td {
     max-width: 260px;
   }
 
+  .popup-cards__img {
+    margin: 0 auto;
+  }
+
   .section-components__title {
     font-size: 37px;
     max-width: 690px;
@@ -4907,6 +4883,12 @@ td {
   }
 }
 
+@media (max-width: 365px) {
+  .section-example__info {
+    font-size: 13px;
+  }
+}
+
 @media (max-width: 360px) {
   .section-callback__location {
     -webkit-transform: scale(0.8);
@@ -4935,5 +4917,11 @@ td {
 @media (max-width: 345px) {
   .--tyum {
     left: 41%;
+  }
+}
+
+@media (max-width: 330px) {
+  .section-example__info {
+    font-size: 12px;
   }
 }
