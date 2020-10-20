@@ -1,18 +1,26 @@
-Для запуска моей сборки на GULP потребуется node js версии не ниже 8.0 /
-To run a build on GULP, you need node js version at least 8.0
 
-###  Выгружаем сборку с node_modules / Upload node_modules
-```
-npm i
-```
-### Запускаем GULP / Start gulp
-```
-gulp
-```
-Ссылка на GitHub Pages:  https://eozubarev.github.io/filter/filter
+Для запуска моей сборки на GULP потребуется node js версии не ниже 8.0
 
-#### Проект разделён на 3 отдела:
+#  Выгружаем сборку 
+```npm i```  
+# Запускаем GULP 
+```gulp```  
+## Возможные ошибки при запуске GULP:
+```Error: Cannot find module 'webp-converter/cwebp'```
+### Решение:
+1 
+	Если macOS: ```npm install webp-converter```   , 
+	если Windows: ```$ npm install webp-converter```  
+		
+2
+	Если не помогло, тогда выгружаем отдельно архив /node-modules ,
+	по ссылке: [node_modules](https://yadi.sk/d/65jh5VICsogthw) 
+	разархивируем и заменяем в папке проекта.  
+	Далее вновь запускаем GULP ```gulp```
 
-1. SCSS - хранятся стили scss для отдельных компонентов / scss styles for individual components are stored
-2. HTML - хранится код для отдельных компонентов / stores code for individual components
-3. SECTION - хранится SCSS,HTML код для всех секций / stored SCSS,HTML code for all sections
+#### Проект разделён на 4 отдела:
+
+1. #src хранятся исходные файлы проекта, с которыми можно взаимодействовать после настройки gulp
+2. SCSS - хранятся стили scss для отдельных компонентов / scss styles for individual components are stored
+3. HTML - хранится код для отдельных компонентов / stores code for individual components
+4. SECTION - хранится SCSS,HTML код для всех секций / stored SCSS,HTML code for all sections
